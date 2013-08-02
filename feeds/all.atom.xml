@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DQW's Blog</title><link href="http://dqw.github.io/" rel="alternate"></link><link href="http://dqw.github.io/feeds/all.atom.xml" rel="self"></link><id>http://dqw.github.io/</id><updated>2013-01-25T22:53:00+08:00</updated><entry><title>MacOS安装homebrew</title><link href="http://dqw.github.io/macosan-zhuang-homebrew.html" rel="alternate"></link><updated>2013-01-25T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2013-01-25:macosan-zhuang-homebrew.html</id><summary type="html">&lt;p&gt;homebrew是macos下的包管理工具，可以用来安装开源软件，比如apache、mysql等等，类似Debian的apt。比早起的MacPorts要好用，&lt;a href="http://mxcl.github.com/homebrew/"&gt;官方网址&lt;/a&gt;。&lt;/p&gt;
+&lt;h3&gt;安装方法&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;homebrew&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;curl&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;L&lt;/span&gt; &lt;span class="n"&gt;https:&lt;/span&gt;&lt;span class="sr"&gt;//gi&lt;/span&gt;&lt;span class="n"&gt;thub&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="sr"&gt;/mxcl/&lt;/span&gt;&lt;span class="n"&gt;homebrew&lt;/span&gt;&lt;span class="sr"&gt;/tarball/m&lt;/span&gt;&lt;span class="n"&gt;aster&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;tar&lt;/span&gt; &lt;span class="n"&gt;xz&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="n"&gt;homebrew&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;常用命令&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#查找软件包&lt;/span&gt;
+&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;search&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;
+
+&lt;span class="c1"&gt;#安装软件包&lt;/span&gt;
+&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;
+
+&lt;span class="c1"&gt;#列出已安装的软件包&lt;/span&gt;
+&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt;
+
+&lt;span class="c1"&gt;#删除软件包&lt;/span&gt;
+&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;remove&lt;/span&gt; &lt;span class="n"&gt;wget&lt;/span&gt;
+
+&lt;span class="c1"&gt;#查看软件包信息&lt;/span&gt;
+&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;info&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;
+
+&lt;span class="c1"&gt;#更新brew&lt;/span&gt;
+&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;
+
+&lt;span class="c1"&gt;#建立链接&lt;/span&gt;
+&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="nb"&gt;link&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="macos"></category><category term="homebrew"></category></entry><entry><title>MacOS安装zim</title><link href="http://dqw.github.io/macosan-zhuang-zim.html" rel="alternate"></link><updated>2013-01-25T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2013-01-25:macosan-zhuang-zim.html</id><summary type="html">&lt;p&gt;&lt;a href="http://zim-wiki.org/"&gt;zim&lt;/a&gt;是跨平台的桌面wiki软件，主要用来做一些笔记日记用，windows和linux都有现成的安装包，macos下只能用源码安装还是比较麻烦，特意记录一下。&lt;/p&gt;
+&lt;p&gt;1、安装Homebrew&lt;/p&gt;
+&lt;p&gt;2、安装python&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;3、安装gobject&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pygobject&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;4、安装pygtk&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#会自动安装依赖，gtk+等&lt;/span&gt;
+&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pygtk&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;5、链接到/usr/local/bin&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="nb"&gt;link&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;6、由于macos自带的python链接到/usr/bin，所以会优先于Homebrew安装的python，所以要改一下path。修改/etc/paths，把/usr/local/bin改到/usr/bin前边。&lt;/p&gt;
+&lt;p&gt;7、定义PYTHONPATH&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;vim&lt;/span&gt; &lt;span class="o"&gt;~/.&lt;/span&gt;&lt;span class="n"&gt;bashrc&lt;/span&gt;
+&lt;span class="n"&gt;export&lt;/span&gt; &lt;span class="n"&gt;PYTHONPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sr"&gt;/usr/&lt;/span&gt;&lt;span class="nb"&gt;local&lt;/span&gt;&lt;span class="sr"&gt;/lib/&lt;/span&gt;&lt;span class="n"&gt;python2&lt;/span&gt;&lt;span class="mf"&gt;.7&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;site&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;packages:&lt;/span&gt;&lt;span class="nv"&gt;$PYTHONPATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;8、下载并安装下载并安装，&lt;a href="http://www.linuxfromscratch.org/blfs/view/svn/x/hicolor-icon-theme.html"&gt;hicolor-icon-theme&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#先解压缩&lt;/span&gt;
+&lt;span class="o"&gt;./&lt;/span&gt;&lt;span class="n"&gt;configure&lt;/span&gt;
+&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;9、下载zim源码包，然后运行zim.py&lt;/p&gt;</summary><category term="macos"></category><category term="zim"></category></entry></feed>

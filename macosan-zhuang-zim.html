@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
         
-        <title>DQW's Blog</title>
+        <title>MacOS安装zim</title>
         <meta charset="utf-8" />
                 <link href="http://dqw.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DQW's Blog Full Atom Feed" />
                                                                 
@@ -44,56 +44,67 @@
               </ul>
             </div>
 
-          <section id="content">
-
-
+          <section id="content" class="body">
 
    <div class="row">
-
-
         <div class="eleven columns">
-		         <ol id="post-list">
-								        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://dqw.github.io/macosan-zhuang-homebrew.html" rel="bookmark" title="Permalink to MacOS安装homebrew">MacOS安装homebrew</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2013-01-25T22:53:00"> 五 25 一月 2013 </abbr>
-				                    <address class="vcard author">By <a class="url fn" href="http://dqw.github.io/author/dqw.html">dqw</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p>homebrew是macos下的包管理工具，可以用来安装开源软件，比如apache、mysql等等，类似Debian的apt。</p> </div><!-- /.entry-content -->
-
-								<div class="medium primary btn"><a href="http://dqw.github.io/macosan-zhuang-homebrew.html" rel="bookmark" title="Permalink to MacOS安装homebrew">Read more <i class="icon-arrow-right"></i></a></div>
 
 
-
-								<div class="row tag-row">
-																			<span>Tagged as : </span>
-																					<a class="danger label" href="http://dqw.github.io/tag/macos.html">macos</a>
-																					<a class="danger label" href="http://dqw.github.io/tag/homebrew.html">homebrew</a>
-																											</div>
-
-
-
-				        </article></li>
-								        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://dqw.github.io/macosan-zhuang-zim.html" rel="bookmark" title="Permalink to MacOS安装zim">MacOS安装zim</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2013-01-25T22:53:00"> 五 25 一月 2013 </abbr>
-				                    <address class="vcard author">By <a class="url fn" href="http://dqw.github.io/author/dqw.html">dqw</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p><a href="http://zim-wiki.org/">zim</a>是跨平台的桌面wiki软件，主要用来做一些笔记日记用，windows和linux都有现成的安装包，macos下只能用源码安装还是比较麻烦，特意记录一下。</p> </div><!-- /.entry-content -->
-
-								<div class="medium primary btn"><a href="http://dqw.github.io/macosan-zhuang-zim.html" rel="bookmark" title="Permalink to MacOS安装zim">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-								<div class="row tag-row">
-																			<span>Tagged as : </span>
-																					<a class="danger label" href="http://dqw.github.io/tag/macos.html">macos</a>
-																					<a class="danger label" href="http://dqw.github.io/tag/zim.html">zim</a>
-																											</div>
+            <header>
+              <h2 class="entry-title">
+                <a href="http://dqw.github.io/macosan-zhuang-zim.html" rel="bookmark"
+                   title="Permalink to MacOS安装zim">MacOS安装zim</a></h2>
+                      
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2013-01-25T22:53:00">
+                五 25 一月 2013
+              </abbr>
+                            <address class="vcard author">
+                By <a class="url fn" href="http://dqw.github.io/author/dqw.html">dqw</a>
+              </address>
+                          </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p><a href="http://zim-wiki.org/">zim</a>是跨平台的桌面wiki软件，主要用来做一些笔记日记用，windows和linux都有现成的安装包，macos下只能用源码安装还是比较麻烦，特意记录一下。</p>
+<p>1、安装Homebrew</p>
+<p>2、安装python</p>
+<div class="highlight"><pre><span class="n">brew</span> <span class="n">install</span> <span class="n">python</span>
+</pre></div>
 
 
+<p>3、安装gobject</p>
+<div class="highlight"><pre><span class="n">brew</span> <span class="n">install</span> <span class="n">pygobject</span>
+</pre></div>
 
-				        </article></li>
-								</ol><!-- /#posts-list -->
+
+<p>4、安装pygtk</p>
+<div class="highlight"><pre><span class="c1">#会自动安装依赖，gtk+等</span>
+<span class="n">brew</span> <span class="n">install</span> <span class="n">pygtk</span>
+</pre></div>
+
+
+<p>5、链接到/usr/local/bin</p>
+<div class="highlight"><pre><span class="n">brew</span> <span class="nb">link</span> <span class="n">python</span>
+</pre></div>
+
+
+<p>6、由于macos自带的python链接到/usr/bin，所以会优先于Homebrew安装的python，所以要改一下path。修改/etc/paths，把/usr/local/bin改到/usr/bin前边。</p>
+<p>7、定义PYTHONPATH</p>
+<div class="highlight"><pre><span class="n">vim</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="n">export</span> <span class="n">PYTHONPATH</span><span class="o">=</span><span class="sr">/usr/</span><span class="nb">local</span><span class="sr">/lib/</span><span class="n">python2</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages:</span><span class="nv">$PYTHONPATH</span>
+</pre></div>
+
+
+<p>8、下载并安装下载并安装，<a href="http://www.linuxfromscratch.org/blfs/view/svn/x/hicolor-icon-theme.html">hicolor-icon-theme</a></p>
+<div class="highlight"><pre><span class="c1">#先解压缩</span>
+<span class="o">./</span><span class="n">configure</span>
+<span class="n">make</span> <span class="o">&amp;&amp;</span> <span class="n">make</span> <span class="n">install</span>
+</pre></div>
+
+
+<p>9、下载zim源码包，然后运行zim.py</p>
+            </div><!-- /.entry-content -->
+            
 
         </div><!-- /.eleven.columns -->
         
@@ -128,10 +139,8 @@
 
 </div> </div><!-- /.row -->
 
-<p class="paginator">
-        Page 1 / 1
-    </p>
-</section><!-- /#content -->
+
+</section>
 
        </div><!-- /.row -->
     </div><!-- /.container -->
