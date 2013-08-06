@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        
+        <title>引号对MySQL查询性能的影响</title>
+        <meta charset="utf-8" />
+                <link href="http://dqw.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DQW's Blog Full Atom Feed" />
+                                                                
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://dqw.github.io/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://dqw.github.io/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://dqw.github.io/theme/pygment.css" />
+
+        <script src="http://dqw.github.io/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+          
+
+
+
+        </head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://dqw.github.io">DQW's Blog <strong>用适合的技术解决实际的问题</strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="http://dqw.github.io">Home</a></li>
+
+                                                  
+              </ul>
+            </div>
+
+          <section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="http://dqw.github.io/yin-hao-dui-mysqlcha-xun-xing-neng-de-ying-xiang.html" rel="bookmark"
+                   title="Permalink to 引号对MySQL查询性能的影响">引号对MySQL查询性能的影响</a></h2>
+                      
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2012-01-30T22:53:00">
+                一 30 一月 2012
+              </abbr>
+                            <address class="vcard author">
+                By <a class="url fn" href="http://dqw.github.io/author/dqw.html">dqw</a>
+              </address>
+                          </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <h3>测试数据</h3>
+<div class="highlight"><pre><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">NOT</span> <span class="n">EXISTS</span> <span class="sb">`test`</span> <span class="p">(</span>
+<span class="sb">`id`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+<span class="sb">`num`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+<span class="sb">`num_char`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+<span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="sb">`id`</span><span class="p">),</span>
+<span class="n">KEY</span> <span class="sb">`num`</span> <span class="p">(</span><span class="sb">`num`</span><span class="p">),</span>
+<span class="n">KEY</span> <span class="sb">`num_char`</span> <span class="p">(</span><span class="sb">`num_char`</span><span class="p">),</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">MyISAM</span> <span class="n">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">latin1</span> <span class="n">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">1</span> <span class="p">;</span>
+</pre></div>
+
+
+<p>插入随机数400000条记录，num和num_char内容一样，只是类型不同。分别建立索引。</p>
+<h3>测试过程</h3>
+<h4>数值字段类型匹配查询</h4>
+<div class="highlight"><pre><span class="n">EXPLAIN</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="sb">`test`</span> <span class="n">WHERE</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">837159</span>
+<span class="n">id</span> <span class="n">select_type</span> <span class="n">table</span> <span class="n">type</span> <span class="n">possible_keys</span> <span class="n">key</span> <span class="n">key_len</span> <span class="nb">ref</span> <span class="n">rows</span> <span class="n">Extra</span>
+<span class="mi">1</span> <span class="n">SIMPLE</span> <span class="n">test</span> <span class="nb">ref</span> <span class="n">num</span> <span class="n">num</span> <span class="mi">4</span> <span class="n">const</span> <span class="mi">12</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span class="err">状态</span> <span class="err">时间</span>
+<span class="n">starting</span> <span class="mf">0.000079</span>
+<span class="n">Opening</span> <span class="n">tables</span> <span class="mf">0.000014</span>
+<span class="n">System</span> <span class="n">lock</span> <span class="mf">0.000005</span>
+<span class="n">Table</span> <span class="n">lock</span> <span class="mf">0.000008</span>
+<span class="n">init</span> <span class="mf">0.000025</span>
+<span class="n">optimizing</span> <span class="mf">0.000008</span>
+<span class="n">statistics</span> <span class="mf">0.000055</span>
+<span class="n">preparing</span> <span class="mf">0.000013</span>
+<span class="n">executing</span> <span class="mf">0.000002</span>
+<span class="n">Sending</span> <span class="n">data</span> <span class="mf">0.000371</span>
+<span class="n">end</span> <span class="mf">0.000005</span>
+<span class="n">query</span> <span class="n">end</span> <span class="mf">0.000002</span>
+<span class="n">freeing</span> <span class="n">items</span> <span class="mf">0.000074</span>
+<span class="n">logging</span> <span class="n">slow</span> <span class="n">query</span> <span class="mf">0.000002</span>
+<span class="n">cleaning</span> <span class="n">up</span> <span class="mf">0.000003</span>
+<span class="err">显示行</span> <span class="mi">0</span> <span class="err">–</span> <span class="mi">12</span> <span class="p">(</span><span class="mi">13</span> <span class="err">总计</span><span class="p">,</span> <span class="err">查询花费</span> <span class="mf">0.0016</span> <span class="err">秒</span><span class="p">)</span>
+<span class="err">查询结果正常，正确使用了索引。</span>
+</pre></div>
+
+
+<h4>数值字段类型不匹配查询</h4>
+<div class="highlight"><pre><span class="n">EXPLAIN</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="sb">`test`</span> <span class="n">WHERE</span> <span class="n">num</span> <span class="o">=</span> <span class="err">’</span><span class="mi">837159</span><span class="err">′</span>
+<span class="n">id</span> <span class="n">select_type</span> <span class="n">table</span> <span class="n">type</span> <span class="n">possible_keys</span> <span class="n">key</span> <span class="n">key_len</span> <span class="nb">ref</span> <span class="n">rows</span> <span class="n">Extra</span>
+<span class="mi">1</span> <span class="n">SIMPLE</span> <span class="n">test</span> <span class="nb">ref</span> <span class="n">num</span> <span class="n">num</span> <span class="mi">4</span> <span class="n">const</span> <span class="mi">12</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span class="err">状态</span> <span class="err">时间</span>
+<span class="n">starting</span> <span class="mf">0.000069</span>
+<span class="n">Opening</span> <span class="n">tables</span> <span class="mf">0.000015</span>
+<span class="n">System</span> <span class="n">lock</span> <span class="mf">0.000004</span>
+<span class="n">Table</span> <span class="n">lock</span> <span class="mf">0.000007</span>
+<span class="n">init</span> <span class="mf">0.000024</span>
+<span class="n">optimizing</span> <span class="mf">0.000009</span>
+<span class="n">statistics</span> <span class="mf">0.000148</span>
+<span class="n">preparing</span> <span class="mf">0.000014</span>
+<span class="n">executing</span> <span class="mf">0.000002</span>
+<span class="n">Sending</span> <span class="n">data</span> <span class="mf">0.000321</span>
+<span class="n">end</span> <span class="mf">0.000004</span>
+<span class="n">query</span> <span class="n">end</span> <span class="mf">0.000002</span>
+<span class="n">freeing</span> <span class="n">items</span> <span class="mf">0.000063</span>
+<span class="n">logging</span> <span class="n">slow</span> <span class="n">query</span> <span class="mf">0.000001</span>
+<span class="n">cleaning</span> <span class="n">up</span> <span class="mf">0.000003</span>
+<span class="err">显示行</span> <span class="mi">0</span> <span class="err">–</span> <span class="mi">12</span> <span class="p">(</span><span class="mi">13</span> <span class="err">总计</span><span class="p">,</span> <span class="err">查询花费</span> <span class="mf">0.0011</span> <span class="err">秒</span><span class="p">)</span>
+</pre></div>
+
+
+<p>查询结果正常，正确的使用了索引，看来MySQL把查询关键字’837159′隐式转换为了数值类型进行比较。</p>
+<h4>字符字段类型匹配查询</h4>
+<div class="highlight"><pre><span class="n">EXPLAIN</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="sb">`test`</span> <span class="n">WHERE</span> <span class="n">num_char</span> <span class="o">=</span> <span class="err">’</span><span class="mi">837159</span><span class="err">′</span>
+<span class="n">id</span> <span class="n">select_type</span> <span class="n">table</span> <span class="n">type</span> <span class="n">possible_keys</span> <span class="n">key</span> <span class="n">key_len</span> <span class="nb">ref</span> <span class="n">rows</span> <span class="n">Extra</span>
+<span class="mi">1</span> <span class="n">SIMPLE</span> <span class="n">test</span> <span class="nb">ref</span> <span class="n">num_char</span> <span class="n">num_char</span> <span class="mi">52</span> <span class="n">const</span> <span class="mi">13</span> <span class="n">Using</span> <span class="n">where</span>
+</pre></div>
+
+
+<p>查询结果正常，正确的使用了索引，但是key长度比数值型要长，整体性能肯定比数值型要差。</p>
+<div class="highlight"><pre><span class="err">状态</span> <span class="err">时间</span>
+<span class="n">starting</span> <span class="mf">0.000197</span>
+<span class="n">Opening</span> <span class="n">tables</span> <span class="mf">0.000031</span>
+<span class="n">System</span> <span class="n">lock</span> <span class="mf">0.000013</span>
+<span class="n">Table</span> <span class="n">lock</span> <span class="mf">0.000017</span>
+<span class="n">init</span> <span class="mf">0.000088</span>
+<span class="n">optimizing</span> <span class="mf">0.000022</span>
+<span class="n">statistics</span> <span class="mf">0.000284</span>
+<span class="n">preparing</span> <span class="mf">0.000039</span>
+<span class="n">executing</span> <span class="mf">0.000005</span>
+<span class="n">Sending</span> <span class="n">data</span> <span class="mf">0.001232</span>
+<span class="n">end</span> <span class="mf">0.000017</span>
+<span class="n">query</span> <span class="n">end</span> <span class="mf">0.000005</span>
+<span class="n">freeing</span> <span class="n">items</span> <span class="mf">0.001041</span>
+<span class="n">logging</span> <span class="n">slow</span> <span class="n">query</span> <span class="mf">0.000004</span>
+<span class="n">cleaning</span> <span class="n">up</span> <span class="mf">0.000007</span>
+<span class="err">显示行</span> <span class="mi">0</span> <span class="err">–</span> <span class="mi">12</span> <span class="p">(</span><span class="mi">13</span> <span class="err">总计</span><span class="p">,</span> <span class="err">查询花费</span> <span class="mf">0.0065</span> <span class="err">秒</span><span class="p">)</span>
+</pre></div>
+
+
+<h4>字符字段类型不匹配查询</h4>
+<div class="highlight"><pre><span class="n">EXPLAIN</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="sb">`test`</span> <span class="n">WHERE</span> <span class="n">num_char</span> <span class="o">=</span> <span class="mi">837159</span>
+<span class="n">id</span> <span class="n">select_type</span> <span class="n">table</span> <span class="n">type</span> <span class="n">possible_keys</span> <span class="n">key</span> <span class="n">key_len</span> <span class="nb">ref</span> <span class="n">rows</span> <span class="n">Extra</span>
+<span class="mi">1</span> <span class="n">SIMPLE</span> <span class="n">test</span> <span class="n">ALL</span> <span class="n">num_char</span> <span class="n">NULL</span> <span class="n">NULL</span> <span class="n">NULL</span> <span class="mi">400348</span> <span class="n">Using</span> <span class="n">where</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span class="err">状态</span> <span class="err">时间</span>
+<span class="n">starting</span> <span class="mf">0.000072</span>
+<span class="n">Opening</span> <span class="n">tables</span> <span class="mf">0.000013</span>
+<span class="n">System</span> <span class="n">lock</span> <span class="mf">0.000011</span>
+<span class="n">Table</span> <span class="n">lock</span> <span class="mf">0.000008</span>
+<span class="n">init</span> <span class="mf">0.000025</span>
+<span class="n">optimizing</span> <span class="mf">0.000008</span>
+<span class="n">statistics</span> <span class="mf">0.000036</span>
+<span class="n">preparing</span> <span class="mf">0.000012</span>
+<span class="n">executing</span> <span class="mf">0.000002</span>
+<span class="n">Sending</span> <span class="n">data</span> <span class="mf">0.244489</span>
+<span class="n">end</span> <span class="mf">0.000008</span>
+<span class="n">query</span> <span class="n">end</span> <span class="mf">0.000003</span>
+<span class="n">freeing</span> <span class="n">items</span> <span class="mf">0.000095</span>
+<span class="n">logging</span> <span class="n">slow</span> <span class="n">query</span> <span class="mf">0.000002</span>
+<span class="n">cleaning</span> <span class="n">up</span> <span class="mf">0.000004</span>
+<span class="err">显示行</span> <span class="mi">0</span> <span class="err">–</span> <span class="mi">12</span> <span class="p">(</span><span class="mi">13</span> <span class="err">总计</span><span class="p">,</span> <span class="err">查询花费</span> <span class="mf">0.2451</span> <span class="err">秒）</span>
+</pre></div>
+
+
+<p>查询结果异常，没有正确使用索引，进行了全表扫描。关于这个问题，没有找到合理的解释，分析有可能MySQL把字段的每个值转换为数字然后和关键字进行比较，造成的和索引类型不一致，导致索引失效。并且由于转换带来的开销，使整个查询效率更加低效。</p>
+<h4>特殊情况</h4>
+<p>从测试情况来看，如果字段为数值型，关键字加不加引号似乎影响并不大，但是在一种特殊情况下会有比较大的影响。</p>
+<p>例：</p>
+<div class="highlight"><pre><span class="n">UPDATE</span> <span class="sb">`test`</span> <span class="n">SET</span> <span class="n">num_char</span> <span class="o">=</span> <span class="err">‘</span><span class="n">aaa</span><span class="err">’</span> <span class="n">WHERE</span> <span class="n">num</span> <span class="o">=</span> <span class="err">’</span><span class="mi">837159</span><span class="err">′</span>
+<span class="mi">13</span> <span class="n">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">affected</span><span class="o">.</span> <span class="p">(</span> <span class="err">查询花费</span> <span class="mf">0.0044</span> <span class="err">秒</span> <span class="p">)</span>
+
+<span class="n">update</span> <span class="sb">`test`</span> <span class="n">set</span> <span class="n">num_char</span><span class="o">=</span><span class="err">’</span><span class="n">aaa</span><span class="err">’</span> <span class="n">WHERE</span> <span class="n">num</span> <span class="o">=</span> <span class="err">’</span><span class="mi">83715999999</span><span class="err">′</span>
+<span class="mi">0</span> <span class="n">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">affected</span><span class="o">.</span> <span class="p">(</span> <span class="err">查询花费</span> <span class="mf">4.2821</span> <span class="err">秒</span> <span class="p">)</span>
+
+<span class="n">UPDATE</span> <span class="sb">`test`</span> <span class="n">SET</span> <span class="n">num_char</span> <span class="o">=</span> <span class="err">‘</span><span class="n">aaa</span><span class="err">’</span> <span class="n">WHERE</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">83715999999</span>
+<span class="mi">0</span> <span class="n">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">affected</span><span class="o">.</span> <span class="p">(</span> <span class="err">查询花费</span> <span class="mf">0.0032</span> <span class="err">秒</span> <span class="p">)</span>
+</pre></div>
+
+
+<p>当进行更新操作时正常情况下没有异常，但是如果数值超出了int的范围加引号的时候就会有相当大的问题。具体为什么出现这种情况还不是很清楚，需要进一步深入分析。</p>
+<h3>总结</h3>
+<ol>
+<li>查询关键字要保证和查询字段类型一致，在类型不一致时MySQL需要进行隐式转换，转换成相同的类型才能进行比较。隐式转换可能会使索引失效，严重影响系统性能。尤其是字段为字符型但是查询关键字没有加引号的情况下，开销相当的巨大。</li>
+<li>如果类型不一致，有一方为数值行，MySQL会优先转换成数值型。</li>
+<li>数值类型的查询效率要比字符型高。</li>
+<li>如果字段为字符型，查询关键字一定要加上引号。</li>
+<li>如果字段为数值型，查询关键字最好不要加引号，虽然只是很小的可能会出现问题，但是性能影响巨大，至于安全隐患可以使用intval函数强制转换来避免。</li>
+<li>总之要避免隐式转换，隐式转换本身会有系统开销，而且会造成不可预知的影响。</li>
+</ol>
+            </div><!-- /.entry-content -->
+            
+
+        </div><!-- /.eleven.columns -->
+        
+     <div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+            </ul>
+
+<h4>Categories</h4>
+<ul>
+			<li><a href="http://dqw.github.io/category/linux.html">Linux</a></li>
+			<li><a href="http://dqw.github.io/category/mysql.html">MySQL</a></li>
+			<li><a href="http://dqw.github.io/category/apache.html">apache</a></li>
+			<li><a href="http://dqw.github.io/category/dokuwiki.html">dokuwiki</a></li>
+			<li><a href="http://dqw.github.io/category/javascript.html">javascript</a></li>
+			<li><a href="http://dqw.github.io/category/macos.html">macos</a></li>
+			<li><a href="http://dqw.github.io/category/other.html">other</a></li>
+			<li><a href="http://dqw.github.io/category/php.html">php</a></li>
+	</ul>
+
+
+<h4>Tags</h4>
+	<ul>
+		    <li class="tag-4"><a href="http://dqw.github.io/tag/apache.html">apache</a></li>
+		    <li class="tag-4"><a href="http://dqw.github.io/tag/rewrite.html">rewrite</a></li>
+		    <li class="tag-4"><a href="http://dqw.github.io/tag/dokuwiki.html">dokuwiki</a></li>
+		    <li class="tag-1"><a href="http://dqw.github.io/tag/mysql.html">MySQL</a></li>
+		    <li class="tag-4"><a href="http://dqw.github.io/tag/replication.html">replication</a></li>
+		    <li class="tag-4"><a href="http://dqw.github.io/tag/vga.html">VGA</a></li>
+		    <li class="tag-4"><a href="http://dqw.github.io/tag/php.html">php</a></li>
+		    <li class="tag-4"><a href="http://dqw.github.io/tag/suo-yin.html">索引</a></li>
+		    <li class="tag-4"><a href="http://dqw.github.io/tag/javascript.html">javascript</a></li>
+		    <li class="tag-4"><a href="http://dqw.github.io/tag/homebrew.html">homebrew</a></li>
+		    <li class="tag-4"><a href="http://dqw.github.io/tag/zim.html">zim</a></li>
+		    <li class="tag-4"><a href="http://dqw.github.io/tag/shu-zu.html">数组</a></li>
+		    <li class="tag-4"><a href="http://dqw.github.io/tag/mysql.html">mysql</a></li>
+		    <li class="tag-4"><a href="http://dqw.github.io/tag/ubuntu.html">Ubuntu</a></li>
+		    <li class="tag-4"><a href="http://dqw.github.io/tag/cconv.html">cconv</a></li>
+		    <li class="tag-1"><a href="http://dqw.github.io/tag/macos.html">macos</a></li>
+		    <li class="tag-1"><a href="http://dqw.github.io/tag/fen-bian-lu.html">分辨率</a></li>
+	</ul>
+
+
+<nav class="widget">
+  <h4>LINKS</h4>
+  <ul>
+      <li><a href="https://github.com/dqw" target="_blank">github</a></li>
+      <li><a href="http://dqw3721.blog.51cto.com/" target="_blank">51cto上的Blog</a></li>
+      <li><a href="http://dqw3721.cnblogs.com/" target="_blank">cnblogs上的Blog</a></li>
+    </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+                
+                
+                
+                
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="http://dqw.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://dqw.github.io/theme/js/libs/gumby.min.js"></script>
+  <script src="http://dqw.github.io/theme/js/plugins.js"></script>
+
+</body>
+</html>

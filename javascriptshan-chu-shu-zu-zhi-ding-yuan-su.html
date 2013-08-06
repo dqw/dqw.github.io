@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
         
-        <title>DQW's Blog - zim</title>
+        <title>javascript删除数组指定元素</title>
         <meta charset="utf-8" />
                 <link href="http://dqw.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DQW's Blog Full Atom Feed" />
                                                                 
@@ -44,36 +44,55 @@
               </ul>
             </div>
 
-          <section id="content">
-
-
+          <section id="content" class="body">
 
    <div class="row">
-
-
         <div class="eleven columns">
-		         <ol id="post-list">
-								        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://dqw.github.io/macosan-zhuang-zim.html" rel="bookmark" title="Permalink to MacOS安装zim">MacOS安装zim</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2013-01-25T22:53:00"> 五 25 一月 2013 </abbr>
-				                    <address class="vcard author">By <a class="url fn" href="http://dqw.github.io/author/dqw.html">dqw</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p><a href="http://zim-wiki.org/">zim</a>是跨平台的桌面wiki软件，主要用来做一些笔记日记用，windows和linux都有现成的安装包，macos下只能用源码安装还是比较麻烦，特意记录一下。</p> </div><!-- /.entry-content -->
-
-								<div class="medium primary btn"><a href="http://dqw.github.io/macosan-zhuang-zim.html" rel="bookmark" title="Permalink to MacOS安装zim">Read more <i class="icon-arrow-right"></i></a></div>
 
 
+            <header>
+              <h2 class="entry-title">
+                <a href="http://dqw.github.io/javascriptshan-chu-shu-zu-zhi-ding-yuan-su.html" rel="bookmark"
+                   title="Permalink to javascript删除数组指定元素">javascript删除数组指定元素</a></h2>
+                      
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2013-01-25T22:53:00">
+                五 25 一月 2013
+              </abbr>
+                            <address class="vcard author">
+                By <a class="url fn" href="http://dqw.github.io/author/dqw.html">dqw</a>
+              </address>
+                          </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>原生javascipt</p>
+<div class="highlight"><pre><span class="n">Array</span><span class="o">.</span><span class="nb">prototype</span><span class="o">.</span><span class="n">indexOf</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">var</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">this</span><span class="o">.</span><span class="nb">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">this</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">val</span><span class="p">)</span> <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">};</span>
 
-								<div class="row tag-row">
-																			<span>Tagged as : </span>
-																					<a class="danger label" href="http://dqw.github.io/tag/macos.html">macos</a>
-																					<a class="danger label" href="http://dqw.github.io/tag/zim.html">zim</a>
-																											</div>
+<span class="n">Array</span><span class="o">.</span><span class="nb">prototype</span><span class="o">.</span><span class="n">remove</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="nb">index</span> <span class="o">=</span> <span class="n">this</span><span class="o">.</span><span class="n">indexOf</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">index</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="nb">splice</span><span class="p">(</span><span class="nb">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="n">var</span> <span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="n">array</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</pre></div>
 
 
-
-				        </article></li>
-								</ol><!-- /#posts-list -->
+<p>jquery</p>
+<div class="highlight"><pre><span class="n">var</span> <span class="nb">index</span> <span class="o">=</span> <span class="nv">$</span><span class="err">.</span><span class="nv">inArray</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">array</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">index</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">array</span><span class="o">.</span><span class="nb">splice</span><span class="p">(</span><span class="nb">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+            </div><!-- /.entry-content -->
+            
 
         </div><!-- /.eleven.columns -->
         
@@ -130,10 +149,8 @@
 
 </div> </div><!-- /.row -->
 
-<p class="paginator">
-        Page 1 / 1
-    </p>
-</section><!-- /#content -->
+
+</section>
 
        </div><!-- /.row -->
     </div><!-- /.container -->

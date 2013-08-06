@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
         
-        <title>DQW's Blog - zim</title>
+        <title>apache最简单的url rewrite</title>
         <meta charset="utf-8" />
                 <link href="http://dqw.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DQW's Blog Full Atom Feed" />
                                                                 
@@ -44,36 +44,43 @@
               </ul>
             </div>
 
-          <section id="content">
-
-
+          <section id="content" class="body">
 
    <div class="row">
-
-
         <div class="eleven columns">
-		         <ol id="post-list">
-								        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://dqw.github.io/macosan-zhuang-zim.html" rel="bookmark" title="Permalink to MacOS安装zim">MacOS安装zim</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2013-01-25T22:53:00"> 五 25 一月 2013 </abbr>
-				                    <address class="vcard author">By <a class="url fn" href="http://dqw.github.io/author/dqw.html">dqw</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p><a href="http://zim-wiki.org/">zim</a>是跨平台的桌面wiki软件，主要用来做一些笔记日记用，windows和linux都有现成的安装包，macos下只能用源码安装还是比较麻烦，特意记录一下。</p> </div><!-- /.entry-content -->
-
-								<div class="medium primary btn"><a href="http://dqw.github.io/macosan-zhuang-zim.html" rel="bookmark" title="Permalink to MacOS安装zim">Read more <i class="icon-arrow-right"></i></a></div>
 
 
+            <header>
+              <h2 class="entry-title">
+                <a href="http://dqw.github.io/apachezui-jian-dan-de-url-rewrite.html" rel="bookmark"
+                   title="Permalink to apache最简单的url rewrite">apache最简单的url rewrite</a></h2>
+                      
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2011-11-06T22:53:00">
+                日 06 十一月 2011
+              </abbr>
+                            <address class="vcard author">
+                By <a class="url fn" href="http://dqw.github.io/author/dqw.html">dqw</a>
+              </address>
+                          </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>要实现访问rewrite-xxx.html然后重定向到rewrite.php?id=xxx</p>
+<p>1、开启apahce的重定向功能，打开apahce的配置文件，httd.conf</p>
+<p>去掉该行前边的注释</p>
+<p>LoadModule rewrite_module modules/mod_rewrite.so</p>
+<p>把对应的AllowOverride None 改为AllowOverride All</p>
+<p>2、在主机根目录建立一个.htaccess文件写入如下内容</p>
+<div class="highlight"><pre><span class="nt">&lt;IfModule</span> <span class="err">mod_rewrite.c</span><span class="nt">&gt;</span>
+RewriteEngine on
+RewriteRule ^rewrite-(.*).html$  rewrite.php?id=$1
+<span class="nt">&lt;/IfModule&gt;</span>
+</pre></div>
 
-								<div class="row tag-row">
-																			<span>Tagged as : </span>
-																					<a class="danger label" href="http://dqw.github.io/tag/macos.html">macos</a>
-																					<a class="danger label" href="http://dqw.github.io/tag/zim.html">zim</a>
-																											</div>
 
-
-
-				        </article></li>
-								</ol><!-- /#posts-list -->
+<p>windows下没法直接新建.htaccess文件，可以先建立一个合法的名字比如htaccess.txt，然后用dos命令ren htaccess.txt .htaccess改名就可以了</p>
+            </div><!-- /.entry-content -->
+            
 
         </div><!-- /.eleven.columns -->
         
@@ -130,10 +137,8 @@
 
 </div> </div><!-- /.row -->
 
-<p class="paginator">
-        Page 1 / 1
-    </p>
-</section><!-- /#content -->
+
+</section>
 
        </div><!-- /.row -->
     </div><!-- /.container -->

@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>DQW's Blog</title><link href="http://dqw.github.io/" rel="alternate"></link><link href="http://dqw.github.io/feeds/all.atom.xml" rel="self"></link><id>http://dqw.github.io/</id><updated>2013-01-25T22:53:00+08:00</updated><entry><title>MacOS安装homebrew</title><link href="http://dqw.github.io/macosan-zhuang-homebrew.html" rel="alternate"></link><updated>2013-01-25T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2013-01-25:macosan-zhuang-homebrew.html</id><summary type="html">&lt;p&gt;homebrew是macos下的包管理工具，可以用来安装开源软件，比如apache、mysql等等，类似Debian的apt。比早起的MacPorts要好用，&lt;a href="http://mxcl.github.com/homebrew/"&gt;官方网址&lt;/a&gt;。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DQW's Blog</title><link href="http://dqw.github.io/" rel="alternate"></link><link href="http://dqw.github.io/feeds/all.atom.xml" rel="self"></link><id>http://dqw.github.io/</id><updated>2013-01-25T22:53:00+08:00</updated><entry><title>javascript删除数组指定元素</title><link href="http://dqw.github.io/javascriptshan-chu-shu-zu-zhi-ding-yuan-su.html" rel="alternate"></link><updated>2013-01-25T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2013-01-25:javascriptshan-chu-shu-zu-zhi-ding-yuan-su.html</id><summary type="html">&lt;p&gt;原生javascipt&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Array&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nb"&gt;prototype&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;indexOf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nb"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="n"&gt;Array&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nb"&gt;prototype&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="nb"&gt;index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;indexOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;index&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nb"&gt;splice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;index&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;jquery&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="nb"&gt;index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$&lt;/span&gt;&lt;span class="err"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;inArray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;index&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+   &lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nb"&gt;splice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;index&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="javascript"></category><category term="数组"></category></entry><entry><title>MacOS安装homebrew</title><link href="http://dqw.github.io/macosan-zhuang-homebrew.html" rel="alternate"></link><updated>2013-01-25T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2013-01-25:macosan-zhuang-homebrew.html</id><summary type="html">&lt;p&gt;homebrew是macos下的包管理工具，可以用来安装开源软件，比如apache、mysql等等，类似Debian的apt。比早起的MacPorts要好用，&lt;a href="http://mxcl.github.com/homebrew/"&gt;官方网址&lt;/a&gt;。&lt;/p&gt;
 &lt;h3&gt;安装方法&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;homebrew&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;curl&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;L&lt;/span&gt; &lt;span class="n"&gt;https:&lt;/span&gt;&lt;span class="sr"&gt;//gi&lt;/span&gt;&lt;span class="n"&gt;thub&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="sr"&gt;/mxcl/&lt;/span&gt;&lt;span class="n"&gt;homebrew&lt;/span&gt;&lt;span class="sr"&gt;/tarball/m&lt;/span&gt;&lt;span class="n"&gt;aster&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;tar&lt;/span&gt; &lt;span class="n"&gt;xz&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt; &lt;span class="n"&gt;homebrew&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -63,4 +88,373 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;9、下载zim源码包，然后运行zim.py&lt;/p&gt;</summary><category term="macos"></category><category term="zim"></category></entry></feed>
+&lt;p&gt;9、下载zim源码包，然后运行zim.py&lt;/p&gt;</summary><category term="macos"></category><category term="zim"></category></entry><entry><title>VGA线质量不好导致无法调整分辨率</title><link href="http://dqw.github.io/vgaxian-zhi-liang-bu-hao-dao-zhi-wu-fa-diao-zheng-fen-bian-lu.html" rel="alternate"></link><updated>2013-01-25T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2013-01-25:vgaxian-zhi-liang-bu-hao-dao-zhi-wu-fa-diao-zheng-fen-bian-lu.html</id><summary type="html">&lt;p&gt;新换了块独立显卡，安装后分辨率列表没有1920×1080，折腾了一天也没有解决，最后怀疑是我的加长VGA线的问题，更换显示器原厂线解决。原来VGA线质量分好多种，3+4、3+6、3+9、3+11，最少7根线通就能用。但是原来的整合显卡没有问题，具体什么原因不太清楚。&lt;/p&gt;</summary><category term="VGA"></category><category term="分辨率"></category></entry><entry><title>Ubuntu清理无用内核</title><link href="http://dqw.github.io/ubuntuqing-li-wu-yong-nei-he.html" rel="alternate"></link><updated>2012-12-23T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2012-12-23:ubuntuqing-li-wu-yong-nei-he.html</id><summary type="html">&lt;p&gt;buntu12.04用了一段时间了，不断升级，无用的内核一共占用了2G多磁盘空间。&lt;/p&gt;
+&lt;p&gt;清理方法一：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;remove&lt;/span&gt; &lt;span class="sr"&gt;&amp;lt;无用的内核&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;清理方法二：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;直接使用&lt;/span&gt;&lt;span class="n"&gt;Ubuntu&lt;/span&gt; &lt;span class="n"&gt;Tweak&lt;/span&gt;&lt;span class="err"&gt;，现在的&lt;/span&gt;&lt;span class="n"&gt;Ubuntu&lt;/span&gt; &lt;span class="n"&gt;Tweak&lt;/span&gt;&lt;span class="err"&gt;直接有清理无用内核功能，非常方便。&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Ubuntu"></category><category term="分辨率"></category></entry><entry><title>dokuwiki修改缓存文件位置</title><link href="http://dqw.github.io/dokuwikixiu-gai-huan-cun-wen-jian-wei-zhi.html" rel="alternate"></link><updated>2012-04-09T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2012-04-09:dokuwikixiu-gai-huan-cun-wen-jian-wei-zhi.html</id><summary type="html">&lt;p&gt;用网盘同步时可以减少同步的文件，在conf下新建local.protected.php&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;empty&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$_ENV&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;TEMP&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nv"&gt;$conf&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cachedir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/tmp/dokuwiki/cache&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$conf&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;tmpdir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/tmp/dokuwiki/tmp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$conf&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;lockdir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/tmp/dokuwiki/locks&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="nb"&gt;mkdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/tmp/dokuwiki&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="nb"&gt;mkdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$conf&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cachedir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+    &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="nb"&gt;mkdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$conf&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;tmpdir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+    &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="nb"&gt;mkdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$conf&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;lockdir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nv"&gt;$conf&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cachedir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$_ENV&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;TEMP&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/dokuwiki/cache&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$conf&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;tmpdir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$_ENV&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;TEMP&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/dokuwiki/tmp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;$conf&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;lockdir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$_ENV&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;TEMP&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/dokuwiki/locks&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="nb"&gt;mkdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$_ENV&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;TEMP&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/dokuwiki&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="nb"&gt;mkdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$conf&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cachedir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+    &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="nb"&gt;mkdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$conf&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;tmpdir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+    &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="nb"&gt;mkdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$conf&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;lockdir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="dokuwiki"></category></entry><entry><title>MySQL索引总结</title><link href="http://dqw.github.io/mysqlsuo-yin-zong-jie.html" rel="alternate"></link><updated>2012-01-30T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2012-01-30:mysqlsuo-yin-zong-jie.html</id><summary type="html">&lt;h3&gt;索引简介&lt;/h3&gt;
+&lt;p&gt;系统中最频繁的操作应该就是查询操作了，使用索引可快速访问表中的特定信息，提高查询和排序的操作效率。在关系数据库中，索引是一种与表有关的数据库结构，它可以使对应于表的SQL语句执行得更快。 索引的作用相当于图书的目录，可以根据目录中的页码快速找到所需的内容。当表中有大量记录时如果没有索引，查询时需要对表中的记录逐一匹配，这样做会消耗大量数据库系统时间，并造成大量磁盘I/O操作。索引提供指向存储在表的指定列中的数据值的指针，然后根据您指定的排序顺序对这些指针排序。数据库使用索引的方式与书籍中的索引的方式很相似，它搜索索引以找到特定值，然后顺指针找到包含该值的行。&lt;/p&gt;
+&lt;h3&gt;MySQL的索引类型&lt;/h3&gt;
+&lt;p&gt;1、普通索引&lt;/p&gt;
+&lt;p&gt;基本的索引类型，没有唯一性之类的限制，是最常用的索引类型。&lt;/p&gt;
+&lt;p&gt;2、唯一性索引&lt;/p&gt;
+&lt;p&gt;这种索引和普通索引基本相同，但索引列的所有值都只能出现一次，即必须唯一。&lt;/p&gt;
+&lt;p&gt;3、主键&lt;/p&gt;
+&lt;p&gt;主键是一种唯一性索引，它必须指定为“PRIMARY KEY”,每个表只能有一个主键，并且不能有null值。&lt;/p&gt;
+&lt;h3&gt;主键的选择&lt;/h3&gt;
+&lt;p&gt;1)主键的主要作用就是唯一的标识一行，所以主键不应该与业务和逻辑有太多关系。&lt;/p&gt;
+&lt;p&gt;2)优先使用自增Integer类型作为主键使用。&lt;/p&gt;
+&lt;p&gt;3）尽量避免使用字符类型作为主键，因为字符类型比Integer类型占用更多存储空间，而且排序和查找也比Integer效率低。&lt;/p&gt;
+&lt;h3&gt;全文索引Full-text&lt;/h3&gt;
+&lt;p&gt;目前MySQL中只有MyISAM存储引擎支持全文索引，而且仅支持CHAR、VARCHAR、TEXT三种数据类型。一般来讲，全文索引用于替代效率低下的LIKE操作。由于全文索引开销比较大，且对中文支持问题在使用时需要提前做好评估。&lt;/p&gt;
+&lt;h3&gt;组合索引&lt;/h3&gt;
+&lt;p&gt;多个列组合在一起的索引，可以包含15个列，但是会占用更多的存储空间，实际使用时需要根据实际情况做出评估。&lt;/p&gt;
+&lt;h3&gt;索引的优点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;索引可以大幅提高数据的检索速度，数据量越大时，索引的效率越高　　&lt;/li&gt;
+&lt;li&gt;主键索引和唯一索引可以保证数据库表中每一行数据的唯一性 　　&lt;/li&gt;
+&lt;li&gt;在使用group by和order by检索数据时，可以显著减少查询中分组和排序的时间&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;索引的缺点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;索引需要占用额外的存储空间，如果有多个组合索引，会占用相当多的磁盘空间，有时索引所占的磁盘空间会比主表还要多。&lt;/li&gt;
+&lt;li&gt;在增删改数据时需要额外的开销来维护索引，如果索引较多会对整体性能有比较大的影响。所以使用索引前要对系统的整体进行分析，分析需要建立的表是以查询为主还是以写入为主，然后再决定是否建立索引。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;索引的使用原则和注意事项&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;主要的查询字段和排序字段应该建立索引。&lt;/li&gt;
+&lt;li&gt;过滤效果不佳的字段不应该建立索引，通过该字段并不能有效的过滤出较少的数据集合，这时索引并不能发挥出作用，有时甚至比全表扫描还要慢。&lt;/li&gt;
+&lt;li&gt;更新过于频繁的字段不应该建立索引，由于表更新时会同时维护索引，如果更新过于频繁，会对整体性能有很大的影响。&lt;/li&gt;
+&lt;li&gt;不等比较时不能使用索引，比如’!=’、’ &amp;lt;&amp;gt;‘、 NOT。&lt;/li&gt;
+&lt;li&gt;函数或运算后的字段不能使用索引，比如abs(col)、col+1等。&lt;/li&gt;
+&lt;li&gt;使用like语句时，以通配符开头不能使用索引，比如LIKE ‘%key’。&lt;/li&gt;
+&lt;li&gt;字段类型和关键字类型不统一时，造成的隐式类型转换，可能会使索引失效。比如字段col的类型为字符型，查询语句为 “where col = 123″，这样MySQL会隐式转换类型，无法使用索引，造成查询效率低下。&lt;/li&gt;
+&lt;li&gt;由于MySQL Query Optimizer通常只会选择一个索引，索引具体建立索引时需要根据具体的查询情况，分析使用要建立组合索引还是单一索引，哪个字段需要建立索引。并不是把所有的查询字段都建立索引就能提高检索效率，这样不仅浪费了更多的存储空间还有可能使Query Optimizer错误的选择了不合适的索引，造成查询效率低下。&lt;/li&gt;
+&lt;li&gt;尽可能使用短的索引字段，可以提高检索效率占用更少的存储空间。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Explain的使用&lt;/h3&gt;
+&lt;p&gt;通过使用Explain命令，可以让MySQL Query Optimizer显示出查询语句的执行计划。&lt;/p&gt;
+&lt;p&gt;比如：EXPLAIN SELECT * FROM goods WHERE goods_id = 40；执行计划显示这是一个简单查询，使用了主键索引。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="n"&gt;select_type&lt;/span&gt; &lt;span class="n"&gt;table&lt;/span&gt; &lt;span class="n"&gt;type&lt;/span&gt; &lt;span class="n"&gt;possible_keys&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;key_len&lt;/span&gt; &lt;span class="nb"&gt;ref&lt;/span&gt; &lt;span class="n"&gt;rows&lt;/span&gt; &lt;span class="n"&gt;Extra&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;SIMPLE&lt;/span&gt; &lt;span class="n"&gt;goods&lt;/span&gt; &lt;span class="n"&gt;const&lt;/span&gt; &lt;span class="n"&gt;PRIMARY&lt;/span&gt; &lt;span class="n"&gt;PRIMARY&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="n"&gt;const&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;select_type&lt;/h4&gt;
+&lt;p&gt;SIMPLE:简单SELECT(不使用UNION或子查询)&lt;/p&gt;
+&lt;p&gt;PRIMARY: 最外面的SELECT&lt;/p&gt;
+&lt;p&gt;UNION: UNION中的第二个或后面的SELECT语句&lt;/p&gt;
+&lt;p&gt;DEPENDENT UNION: UNION中的第二个或后面的SELECT语句，取决于外面的查询&lt;/p&gt;
+&lt;p&gt;UNION RESULT: UNION的结果&lt;/p&gt;
+&lt;p&gt;UBQUERY:子查询中的第一个SELECT&lt;/p&gt;
+&lt;p&gt;DEPENDENT SUBQUERY:子查询中的第一个SELECT，取决于外面的查询&lt;/p&gt;
+&lt;p&gt;DERIVED:导出表的SELECT(FROM子句的子查询)&lt;/p&gt;
+&lt;h4&gt;主要的type类型，从优到劣&lt;/h4&gt;
+&lt;p&gt;Const:表最多有一个匹配行，它将在查询开始时被读取。因为仅有一行，在这行的列值可被优化器剩余部分认为是常数。Const类型速度很快。&lt;/p&gt;
+&lt;p&gt;Eq_ref:最多匹配一条记录，一般通过主键或者唯一索引访问。&lt;/p&gt;
+&lt;p&gt;Ref:对于每个来自于前面的表的行组合，所有有匹配索引值的行将从这张表中读取。如果联接只使用键的最左边的前缀，或如果键不是UNIQUE或PRIMARY KEY（换句话说，如果联接不能基于关键字选择单个行的话），则使用ref。如果使用的键仅仅匹配少量行，该联接类型是不错的。&lt;/p&gt;
+&lt;p&gt;index_merge:该联接类型表示使用了索引合并优化方法。在这种情况下，key列包含了使用的索引的清单，key_len包含了使用的索引的最长的关键元素。&lt;/p&gt;
+&lt;p&gt;Range:索引范围扫描。 只检索给定范围的行，使用一个索引来选择行。key列显示使用了哪个索引。key_len包含所使用索引的最长关键元素。&lt;/p&gt;
+&lt;p&gt;Index:全索引扫描。该联接类型与ALL相同，除了只有索引树被扫描。通常比ALL快，因为索引文件通常比数据文件小。&lt;/p&gt;
+&lt;p&gt;ALL:全表扫描，没有可用的索引。&lt;/p&gt;
+&lt;h4&gt;Possible_keys&lt;/h4&gt;
+&lt;p&gt;可以使用的索引列表&lt;/p&gt;
+&lt;h4&gt;Key&lt;/h4&gt;
+&lt;p&gt;选中使用的索引&lt;/p&gt;
+&lt;h4&gt;Key_len&lt;/h4&gt;
+&lt;p&gt;索引长度&lt;/p&gt;
+&lt;h4&gt;Extra&lt;/h4&gt;
+&lt;p&gt;Using filesort:使用了ORDER BY语句但是没有可用索引的时候使用的排序算法，性能会有影响。&lt;/p&gt;
+&lt;p&gt;Using index：只需要查询索引即可获取数据是一种比较理想的方式。&lt;/p&gt;
+&lt;p&gt;Using temporary：使用了临时表，性能比较差，一般需要优化。&lt;/p&gt;
+&lt;h3&gt;使用Profiling 分析查询性能&lt;/h3&gt;
+&lt;p&gt;MySQL 5.0.37以上版本提供了MySQL Query Profiler,可以查询到此SQL会执行多少时间,并看出CPU/Memory使用量,执行过程中System lock, Table lock花多少时间等等，Query PRofiler是一个非常方便的Query诊断分析工具，可以用来分析查询语句的性能，分析语句执行过程中的资源消耗情况。&lt;/p&gt;
+&lt;p&gt;比如：select * from goods where goods_id &amp;gt;10;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;状态&lt;/span&gt; &lt;span class="err"&gt;时间&lt;/span&gt;
+&lt;span class="n"&gt;starting&lt;/span&gt; &lt;span class="mf"&gt;0.000075&lt;/span&gt;
+&lt;span class="n"&gt;Opening&lt;/span&gt; &lt;span class="n"&gt;tables&lt;/span&gt; &lt;span class="mf"&gt;0.000013&lt;/span&gt;
+&lt;span class="n"&gt;System&lt;/span&gt; &lt;span class="n"&gt;lock&lt;/span&gt; &lt;span class="mf"&gt;0.000005&lt;/span&gt;
+&lt;span class="n"&gt;Table&lt;/span&gt; &lt;span class="n"&gt;lock&lt;/span&gt; &lt;span class="mf"&gt;0.000006&lt;/span&gt;
+&lt;span class="n"&gt;init&lt;/span&gt; &lt;span class="mf"&gt;0.000044&lt;/span&gt;
+&lt;span class="n"&gt;optimizing&lt;/span&gt; &lt;span class="mf"&gt;0.000007&lt;/span&gt;
+&lt;span class="n"&gt;statistics&lt;/span&gt; &lt;span class="mf"&gt;0.000041&lt;/span&gt;
+&lt;span class="n"&gt;preparing&lt;/span&gt; &lt;span class="mf"&gt;0.000018&lt;/span&gt;
+&lt;span class="n"&gt;executing&lt;/span&gt; &lt;span class="mf"&gt;0.000002&lt;/span&gt;
+&lt;span class="n"&gt;Sending&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="mf"&gt;0.000738&lt;/span&gt;
+&lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="mf"&gt;0.000016&lt;/span&gt;
+&lt;span class="n"&gt;query&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="mf"&gt;0.000002&lt;/span&gt;
+&lt;span class="n"&gt;freeing&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt; &lt;span class="mf"&gt;0.001547&lt;/span&gt;
+&lt;span class="n"&gt;logging&lt;/span&gt; &lt;span class="n"&gt;slow&lt;/span&gt; &lt;span class="n"&gt;query&lt;/span&gt; &lt;span class="mf"&gt;0.000005&lt;/span&gt;
+&lt;span class="n"&gt;cleaning&lt;/span&gt; &lt;span class="n"&gt;up&lt;/span&gt; &lt;span class="mf"&gt;0.000006&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="MySQL"></category><category term="索引"></category></entry><entry><title>引号对MySQL查询性能的影响</title><link href="http://dqw.github.io/yin-hao-dui-mysqlcha-xun-xing-neng-de-ying-xiang.html" rel="alternate"></link><updated>2012-01-30T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2012-01-30:yin-hao-dui-mysqlcha-xun-xing-neng-de-ying-xiang.html</id><summary type="html">&lt;h3&gt;测试数据&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;CREATE&lt;/span&gt; &lt;span class="n"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;IF&lt;/span&gt; &lt;span class="n"&gt;NOT&lt;/span&gt; &lt;span class="n"&gt;EXISTS&lt;/span&gt; &lt;span class="sb"&gt;`test`&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="sb"&gt;`id`&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;NOT&lt;/span&gt; &lt;span class="n"&gt;NULL&lt;/span&gt; &lt;span class="n"&gt;AUTO_INCREMENT&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="sb"&gt;`num`&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;NOT&lt;/span&gt; &lt;span class="n"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="sb"&gt;`num_char`&lt;/span&gt; &lt;span class="n"&gt;varchar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;NOT&lt;/span&gt; &lt;span class="n"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="n"&gt;PRIMARY&lt;/span&gt; &lt;span class="n"&gt;KEY&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sb"&gt;`id`&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="n"&gt;KEY&lt;/span&gt; &lt;span class="sb"&gt;`num`&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sb"&gt;`num`&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="n"&gt;KEY&lt;/span&gt; &lt;span class="sb"&gt;`num_char`&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sb"&gt;`num_char`&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;ENGINE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;MyISAM&lt;/span&gt; &lt;span class="n"&gt;DEFAULT&lt;/span&gt; &lt;span class="n"&gt;CHARSET&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;latin1&lt;/span&gt; &lt;span class="n"&gt;AUTO_INCREMENT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;插入随机数400000条记录，num和num_char内容一样，只是类型不同。分别建立索引。&lt;/p&gt;
+&lt;h3&gt;测试过程&lt;/h3&gt;
+&lt;h4&gt;数值字段类型匹配查询&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;EXPLAIN&lt;/span&gt; &lt;span class="n"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;FROM&lt;/span&gt; &lt;span class="sb"&gt;`test`&lt;/span&gt; &lt;span class="n"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;num&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;837159&lt;/span&gt;
+&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="n"&gt;select_type&lt;/span&gt; &lt;span class="n"&gt;table&lt;/span&gt; &lt;span class="n"&gt;type&lt;/span&gt; &lt;span class="n"&gt;possible_keys&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;key_len&lt;/span&gt; &lt;span class="nb"&gt;ref&lt;/span&gt; &lt;span class="n"&gt;rows&lt;/span&gt; &lt;span class="n"&gt;Extra&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;SIMPLE&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt; &lt;span class="nb"&gt;ref&lt;/span&gt; &lt;span class="n"&gt;num&lt;/span&gt; &lt;span class="n"&gt;num&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="n"&gt;const&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;状态&lt;/span&gt; &lt;span class="err"&gt;时间&lt;/span&gt;
+&lt;span class="n"&gt;starting&lt;/span&gt; &lt;span class="mf"&gt;0.000079&lt;/span&gt;
+&lt;span class="n"&gt;Opening&lt;/span&gt; &lt;span class="n"&gt;tables&lt;/span&gt; &lt;span class="mf"&gt;0.000014&lt;/span&gt;
+&lt;span class="n"&gt;System&lt;/span&gt; &lt;span class="n"&gt;lock&lt;/span&gt; &lt;span class="mf"&gt;0.000005&lt;/span&gt;
+&lt;span class="n"&gt;Table&lt;/span&gt; &lt;span class="n"&gt;lock&lt;/span&gt; &lt;span class="mf"&gt;0.000008&lt;/span&gt;
+&lt;span class="n"&gt;init&lt;/span&gt; &lt;span class="mf"&gt;0.000025&lt;/span&gt;
+&lt;span class="n"&gt;optimizing&lt;/span&gt; &lt;span class="mf"&gt;0.000008&lt;/span&gt;
+&lt;span class="n"&gt;statistics&lt;/span&gt; &lt;span class="mf"&gt;0.000055&lt;/span&gt;
+&lt;span class="n"&gt;preparing&lt;/span&gt; &lt;span class="mf"&gt;0.000013&lt;/span&gt;
+&lt;span class="n"&gt;executing&lt;/span&gt; &lt;span class="mf"&gt;0.000002&lt;/span&gt;
+&lt;span class="n"&gt;Sending&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="mf"&gt;0.000371&lt;/span&gt;
+&lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="mf"&gt;0.000005&lt;/span&gt;
+&lt;span class="n"&gt;query&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="mf"&gt;0.000002&lt;/span&gt;
+&lt;span class="n"&gt;freeing&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt; &lt;span class="mf"&gt;0.000074&lt;/span&gt;
+&lt;span class="n"&gt;logging&lt;/span&gt; &lt;span class="n"&gt;slow&lt;/span&gt; &lt;span class="n"&gt;query&lt;/span&gt; &lt;span class="mf"&gt;0.000002&lt;/span&gt;
+&lt;span class="n"&gt;cleaning&lt;/span&gt; &lt;span class="n"&gt;up&lt;/span&gt; &lt;span class="mf"&gt;0.000003&lt;/span&gt;
+&lt;span class="err"&gt;显示行&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt; &lt;span class="err"&gt;总计&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;查询花费&lt;/span&gt; &lt;span class="mf"&gt;0.0016&lt;/span&gt; &lt;span class="err"&gt;秒&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="err"&gt;查询结果正常，正确使用了索引。&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;数值字段类型不匹配查询&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;EXPLAIN&lt;/span&gt; &lt;span class="n"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;FROM&lt;/span&gt; &lt;span class="sb"&gt;`test`&lt;/span&gt; &lt;span class="n"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;num&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;’&lt;/span&gt;&lt;span class="mi"&gt;837159&lt;/span&gt;&lt;span class="err"&gt;′&lt;/span&gt;
+&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="n"&gt;select_type&lt;/span&gt; &lt;span class="n"&gt;table&lt;/span&gt; &lt;span class="n"&gt;type&lt;/span&gt; &lt;span class="n"&gt;possible_keys&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;key_len&lt;/span&gt; &lt;span class="nb"&gt;ref&lt;/span&gt; &lt;span class="n"&gt;rows&lt;/span&gt; &lt;span class="n"&gt;Extra&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;SIMPLE&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt; &lt;span class="nb"&gt;ref&lt;/span&gt; &lt;span class="n"&gt;num&lt;/span&gt; &lt;span class="n"&gt;num&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="n"&gt;const&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;状态&lt;/span&gt; &lt;span class="err"&gt;时间&lt;/span&gt;
+&lt;span class="n"&gt;starting&lt;/span&gt; &lt;span class="mf"&gt;0.000069&lt;/span&gt;
+&lt;span class="n"&gt;Opening&lt;/span&gt; &lt;span class="n"&gt;tables&lt;/span&gt; &lt;span class="mf"&gt;0.000015&lt;/span&gt;
+&lt;span class="n"&gt;System&lt;/span&gt; &lt;span class="n"&gt;lock&lt;/span&gt; &lt;span class="mf"&gt;0.000004&lt;/span&gt;
+&lt;span class="n"&gt;Table&lt;/span&gt; &lt;span class="n"&gt;lock&lt;/span&gt; &lt;span class="mf"&gt;0.000007&lt;/span&gt;
+&lt;span class="n"&gt;init&lt;/span&gt; &lt;span class="mf"&gt;0.000024&lt;/span&gt;
+&lt;span class="n"&gt;optimizing&lt;/span&gt; &lt;span class="mf"&gt;0.000009&lt;/span&gt;
+&lt;span class="n"&gt;statistics&lt;/span&gt; &lt;span class="mf"&gt;0.000148&lt;/span&gt;
+&lt;span class="n"&gt;preparing&lt;/span&gt; &lt;span class="mf"&gt;0.000014&lt;/span&gt;
+&lt;span class="n"&gt;executing&lt;/span&gt; &lt;span class="mf"&gt;0.000002&lt;/span&gt;
+&lt;span class="n"&gt;Sending&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="mf"&gt;0.000321&lt;/span&gt;
+&lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="mf"&gt;0.000004&lt;/span&gt;
+&lt;span class="n"&gt;query&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="mf"&gt;0.000002&lt;/span&gt;
+&lt;span class="n"&gt;freeing&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt; &lt;span class="mf"&gt;0.000063&lt;/span&gt;
+&lt;span class="n"&gt;logging&lt;/span&gt; &lt;span class="n"&gt;slow&lt;/span&gt; &lt;span class="n"&gt;query&lt;/span&gt; &lt;span class="mf"&gt;0.000001&lt;/span&gt;
+&lt;span class="n"&gt;cleaning&lt;/span&gt; &lt;span class="n"&gt;up&lt;/span&gt; &lt;span class="mf"&gt;0.000003&lt;/span&gt;
+&lt;span class="err"&gt;显示行&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt; &lt;span class="err"&gt;总计&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;查询花费&lt;/span&gt; &lt;span class="mf"&gt;0.0011&lt;/span&gt; &lt;span class="err"&gt;秒&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;查询结果正常，正确的使用了索引，看来MySQL把查询关键字’837159′隐式转换为了数值类型进行比较。&lt;/p&gt;
+&lt;h4&gt;字符字段类型匹配查询&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;EXPLAIN&lt;/span&gt; &lt;span class="n"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;FROM&lt;/span&gt; &lt;span class="sb"&gt;`test`&lt;/span&gt; &lt;span class="n"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;num_char&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;’&lt;/span&gt;&lt;span class="mi"&gt;837159&lt;/span&gt;&lt;span class="err"&gt;′&lt;/span&gt;
+&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="n"&gt;select_type&lt;/span&gt; &lt;span class="n"&gt;table&lt;/span&gt; &lt;span class="n"&gt;type&lt;/span&gt; &lt;span class="n"&gt;possible_keys&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;key_len&lt;/span&gt; &lt;span class="nb"&gt;ref&lt;/span&gt; &lt;span class="n"&gt;rows&lt;/span&gt; &lt;span class="n"&gt;Extra&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;SIMPLE&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt; &lt;span class="nb"&gt;ref&lt;/span&gt; &lt;span class="n"&gt;num_char&lt;/span&gt; &lt;span class="n"&gt;num_char&lt;/span&gt; &lt;span class="mi"&gt;52&lt;/span&gt; &lt;span class="n"&gt;const&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt; &lt;span class="n"&gt;Using&lt;/span&gt; &lt;span class="n"&gt;where&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;查询结果正常，正确的使用了索引，但是key长度比数值型要长，整体性能肯定比数值型要差。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;状态&lt;/span&gt; &lt;span class="err"&gt;时间&lt;/span&gt;
+&lt;span class="n"&gt;starting&lt;/span&gt; &lt;span class="mf"&gt;0.000197&lt;/span&gt;
+&lt;span class="n"&gt;Opening&lt;/span&gt; &lt;span class="n"&gt;tables&lt;/span&gt; &lt;span class="mf"&gt;0.000031&lt;/span&gt;
+&lt;span class="n"&gt;System&lt;/span&gt; &lt;span class="n"&gt;lock&lt;/span&gt; &lt;span class="mf"&gt;0.000013&lt;/span&gt;
+&lt;span class="n"&gt;Table&lt;/span&gt; &lt;span class="n"&gt;lock&lt;/span&gt; &lt;span class="mf"&gt;0.000017&lt;/span&gt;
+&lt;span class="n"&gt;init&lt;/span&gt; &lt;span class="mf"&gt;0.000088&lt;/span&gt;
+&lt;span class="n"&gt;optimizing&lt;/span&gt; &lt;span class="mf"&gt;0.000022&lt;/span&gt;
+&lt;span class="n"&gt;statistics&lt;/span&gt; &lt;span class="mf"&gt;0.000284&lt;/span&gt;
+&lt;span class="n"&gt;preparing&lt;/span&gt; &lt;span class="mf"&gt;0.000039&lt;/span&gt;
+&lt;span class="n"&gt;executing&lt;/span&gt; &lt;span class="mf"&gt;0.000005&lt;/span&gt;
+&lt;span class="n"&gt;Sending&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="mf"&gt;0.001232&lt;/span&gt;
+&lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="mf"&gt;0.000017&lt;/span&gt;
+&lt;span class="n"&gt;query&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="mf"&gt;0.000005&lt;/span&gt;
+&lt;span class="n"&gt;freeing&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt; &lt;span class="mf"&gt;0.001041&lt;/span&gt;
+&lt;span class="n"&gt;logging&lt;/span&gt; &lt;span class="n"&gt;slow&lt;/span&gt; &lt;span class="n"&gt;query&lt;/span&gt; &lt;span class="mf"&gt;0.000004&lt;/span&gt;
+&lt;span class="n"&gt;cleaning&lt;/span&gt; &lt;span class="n"&gt;up&lt;/span&gt; &lt;span class="mf"&gt;0.000007&lt;/span&gt;
+&lt;span class="err"&gt;显示行&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt; &lt;span class="err"&gt;总计&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;查询花费&lt;/span&gt; &lt;span class="mf"&gt;0.0065&lt;/span&gt; &lt;span class="err"&gt;秒&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;字符字段类型不匹配查询&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;EXPLAIN&lt;/span&gt; &lt;span class="n"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;FROM&lt;/span&gt; &lt;span class="sb"&gt;`test`&lt;/span&gt; &lt;span class="n"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;num_char&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;837159&lt;/span&gt;
+&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="n"&gt;select_type&lt;/span&gt; &lt;span class="n"&gt;table&lt;/span&gt; &lt;span class="n"&gt;type&lt;/span&gt; &lt;span class="n"&gt;possible_keys&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;key_len&lt;/span&gt; &lt;span class="nb"&gt;ref&lt;/span&gt; &lt;span class="n"&gt;rows&lt;/span&gt; &lt;span class="n"&gt;Extra&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;SIMPLE&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt; &lt;span class="n"&gt;ALL&lt;/span&gt; &lt;span class="n"&gt;num_char&lt;/span&gt; &lt;span class="n"&gt;NULL&lt;/span&gt; &lt;span class="n"&gt;NULL&lt;/span&gt; &lt;span class="n"&gt;NULL&lt;/span&gt; &lt;span class="mi"&gt;400348&lt;/span&gt; &lt;span class="n"&gt;Using&lt;/span&gt; &lt;span class="n"&gt;where&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;状态&lt;/span&gt; &lt;span class="err"&gt;时间&lt;/span&gt;
+&lt;span class="n"&gt;starting&lt;/span&gt; &lt;span class="mf"&gt;0.000072&lt;/span&gt;
+&lt;span class="n"&gt;Opening&lt;/span&gt; &lt;span class="n"&gt;tables&lt;/span&gt; &lt;span class="mf"&gt;0.000013&lt;/span&gt;
+&lt;span class="n"&gt;System&lt;/span&gt; &lt;span class="n"&gt;lock&lt;/span&gt; &lt;span class="mf"&gt;0.000011&lt;/span&gt;
+&lt;span class="n"&gt;Table&lt;/span&gt; &lt;span class="n"&gt;lock&lt;/span&gt; &lt;span class="mf"&gt;0.000008&lt;/span&gt;
+&lt;span class="n"&gt;init&lt;/span&gt; &lt;span class="mf"&gt;0.000025&lt;/span&gt;
+&lt;span class="n"&gt;optimizing&lt;/span&gt; &lt;span class="mf"&gt;0.000008&lt;/span&gt;
+&lt;span class="n"&gt;statistics&lt;/span&gt; &lt;span class="mf"&gt;0.000036&lt;/span&gt;
+&lt;span class="n"&gt;preparing&lt;/span&gt; &lt;span class="mf"&gt;0.000012&lt;/span&gt;
+&lt;span class="n"&gt;executing&lt;/span&gt; &lt;span class="mf"&gt;0.000002&lt;/span&gt;
+&lt;span class="n"&gt;Sending&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="mf"&gt;0.244489&lt;/span&gt;
+&lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="mf"&gt;0.000008&lt;/span&gt;
+&lt;span class="n"&gt;query&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="mf"&gt;0.000003&lt;/span&gt;
+&lt;span class="n"&gt;freeing&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt; &lt;span class="mf"&gt;0.000095&lt;/span&gt;
+&lt;span class="n"&gt;logging&lt;/span&gt; &lt;span class="n"&gt;slow&lt;/span&gt; &lt;span class="n"&gt;query&lt;/span&gt; &lt;span class="mf"&gt;0.000002&lt;/span&gt;
+&lt;span class="n"&gt;cleaning&lt;/span&gt; &lt;span class="n"&gt;up&lt;/span&gt; &lt;span class="mf"&gt;0.000004&lt;/span&gt;
+&lt;span class="err"&gt;显示行&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt; &lt;span class="err"&gt;总计&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;查询花费&lt;/span&gt; &lt;span class="mf"&gt;0.2451&lt;/span&gt; &lt;span class="err"&gt;秒）&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;查询结果异常，没有正确使用索引，进行了全表扫描。关于这个问题，没有找到合理的解释，分析有可能MySQL把字段的每个值转换为数字然后和关键字进行比较，造成的和索引类型不一致，导致索引失效。并且由于转换带来的开销，使整个查询效率更加低效。&lt;/p&gt;
+&lt;h4&gt;特殊情况&lt;/h4&gt;
+&lt;p&gt;从测试情况来看，如果字段为数值型，关键字加不加引号似乎影响并不大，但是在一种特殊情况下会有比较大的影响。&lt;/p&gt;
+&lt;p&gt;例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;UPDATE&lt;/span&gt; &lt;span class="sb"&gt;`test`&lt;/span&gt; &lt;span class="n"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;num_char&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;‘&lt;/span&gt;&lt;span class="n"&gt;aaa&lt;/span&gt;&lt;span class="err"&gt;’&lt;/span&gt; &lt;span class="n"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;num&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;’&lt;/span&gt;&lt;span class="mi"&gt;837159&lt;/span&gt;&lt;span class="err"&gt;′&lt;/span&gt;
+&lt;span class="mi"&gt;13&lt;/span&gt; &lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;affected&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="err"&gt;查询花费&lt;/span&gt; &lt;span class="mf"&gt;0.0044&lt;/span&gt; &lt;span class="err"&gt;秒&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="sb"&gt;`test`&lt;/span&gt; &lt;span class="n"&gt;set&lt;/span&gt; &lt;span class="n"&gt;num_char&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;’&lt;/span&gt;&lt;span class="n"&gt;aaa&lt;/span&gt;&lt;span class="err"&gt;’&lt;/span&gt; &lt;span class="n"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;num&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;’&lt;/span&gt;&lt;span class="mi"&gt;83715999999&lt;/span&gt;&lt;span class="err"&gt;′&lt;/span&gt;
+&lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;affected&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="err"&gt;查询花费&lt;/span&gt; &lt;span class="mf"&gt;4.2821&lt;/span&gt; &lt;span class="err"&gt;秒&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;UPDATE&lt;/span&gt; &lt;span class="sb"&gt;`test`&lt;/span&gt; &lt;span class="n"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;num_char&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;‘&lt;/span&gt;&lt;span class="n"&gt;aaa&lt;/span&gt;&lt;span class="err"&gt;’&lt;/span&gt; &lt;span class="n"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;num&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;83715999999&lt;/span&gt;
+&lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;affected&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="err"&gt;查询花费&lt;/span&gt; &lt;span class="mf"&gt;0.0032&lt;/span&gt; &lt;span class="err"&gt;秒&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;当进行更新操作时正常情况下没有异常，但是如果数值超出了int的范围加引号的时候就会有相当大的问题。具体为什么出现这种情况还不是很清楚，需要进一步深入分析。&lt;/p&gt;
+&lt;h3&gt;总结&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;查询关键字要保证和查询字段类型一致，在类型不一致时MySQL需要进行隐式转换，转换成相同的类型才能进行比较。隐式转换可能会使索引失效，严重影响系统性能。尤其是字段为字符型但是查询关键字没有加引号的情况下，开销相当的巨大。&lt;/li&gt;
+&lt;li&gt;如果类型不一致，有一方为数值行，MySQL会优先转换成数值型。&lt;/li&gt;
+&lt;li&gt;数值类型的查询效率要比字符型高。&lt;/li&gt;
+&lt;li&gt;如果字段为字符型，查询关键字一定要加上引号。&lt;/li&gt;
+&lt;li&gt;如果字段为数值型，查询关键字最好不要加引号，虽然只是很小的可能会出现问题，但是性能影响巨大，至于安全隐患可以使用intval函数强制转换来避免。&lt;/li&gt;
+&lt;li&gt;总之要避免隐式转换，隐式转换本身会有系统开销，而且会造成不可预知的影响。&lt;/li&gt;
+&lt;/ol&gt;</summary><category term="MySQL"></category></entry><entry><title>使用cconv批量简体转繁体</title><link href="http://dqw.github.io/shi-yong-cconvpi-liang-jian-ti-zhuan-fan-ti.html" rel="alternate"></link><updated>2011-11-09T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2011-11-09:shi-yong-cconvpi-liang-jian-ti-zhuan-fan-ti.html</id><summary type="html">&lt;p&gt;cconv是一个批量简繁转换项目，目前只能在linux下使用，&lt;a href="http://code.google.com/p/cconv/"&gt;项目地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在ubuntu下安装很简单&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;cconv&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;批量转换脚本，最好直接在linux下编辑，windows下编辑后传到linux下可能会出问题&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/bin/sh&lt;/span&gt;
+find ./ -type f -name &lt;span class="s2"&gt;&amp;quot;*.php&amp;quot;&lt;/span&gt; |while &lt;span class="nb"&gt;read &lt;/span&gt;line
+&lt;span class="k"&gt;do&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$line&lt;/span&gt;
+cconv -f UTF8-CN -t UTF8-HK &lt;span class="nv"&gt;$line&lt;/span&gt; -o &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;line&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;.zh
+&lt;span class="k"&gt;done&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="cconv"></category></entry><entry><title>apache最简单的url rewrite</title><link href="http://dqw.github.io/apachezui-jian-dan-de-url-rewrite.html" rel="alternate"></link><updated>2011-11-06T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2011-11-06:apachezui-jian-dan-de-url-rewrite.html</id><summary type="html">&lt;p&gt;要实现访问rewrite-xxx.html然后重定向到rewrite.php?id=xxx&lt;/p&gt;
+&lt;p&gt;1、开启apahce的重定向功能，打开apahce的配置文件，httd.conf&lt;/p&gt;
+&lt;p&gt;去掉该行前边的注释&lt;/p&gt;
+&lt;p&gt;LoadModule rewrite_module modules/mod_rewrite.so&lt;/p&gt;
+&lt;p&gt;把对应的AllowOverride None 改为AllowOverride All&lt;/p&gt;
+&lt;p&gt;2、在主机根目录建立一个.htaccess文件写入如下内容&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;IfModule&lt;/span&gt; &lt;span class="err"&gt;mod_rewrite.c&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+RewriteEngine on
+RewriteRule ^rewrite-(.*).html$  rewrite.php?id=$1
+&lt;span class="nt"&gt;&amp;lt;/IfModule&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;windows下没法直接新建.htaccess文件，可以先建立一个合法的名字比如htaccess.txt，然后用dos命令ren htaccess.txt .htaccess改名就可以了&lt;/p&gt;</summary><category term="apache"></category><category term="rewrite"></category></entry><entry><title>总结php的-&gt;、::、this、self、parent</title><link href="http://dqw.github.io/zong-jie-phpde-this-self-parent.html" rel="alternate"></link><updated>2011-11-06T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2011-11-06:zong-jie-phpde-this-self-parent.html</id><summary type="html">&lt;p&gt;-&amp;gt;用于访问对象的的成员&lt;/p&gt;
+&lt;p&gt;::用于访问静态成员(static)，或者直接调用类的成员&lt;/p&gt;
+&lt;p&gt;$this用来调用实例化对象的内部成员&lt;/p&gt;
+&lt;p&gt;self代表的是类本身，不是任何一个实例化的对象&lt;/p&gt;
+&lt;p&gt;parent代表父类&lt;/p&gt;</summary><category term="php"></category></entry><entry><title>mysql replication</title><link href="http://dqw.github.io/mysql-replication.html" rel="alternate"></link><updated>2011-10-19T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2011-10-19:mysql-replication.html</id><summary type="html">&lt;p&gt;mysql的replication是基于二进制日志的，按照手册配置就可以了，配置很简单&lt;/p&gt;
+&lt;h3&gt;主服务器&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;配置文件&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ini&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;mysqld&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="c1"&gt;#服务器ID号，整数值，保证唯一标识一台服务器就可以&lt;/span&gt;
+&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;410&lt;/span&gt;
+&lt;span class="c1"&gt;#打开二进制日志&lt;/span&gt;
+&lt;span class="nb"&gt;log&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;e:&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;myoa&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;logs&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;mysqlbin&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nb"&gt;log&lt;/span&gt;
+&lt;span class="c1"&gt;#忽略mysql数据库复制&lt;/span&gt;
+&lt;span class="n"&gt;binlog&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ignore&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;
+&lt;span class="c1"&gt;#忽略information_schema数据库复制&lt;/span&gt;
+&lt;span class="n"&gt;binlog&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ignore&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;information_schema&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#创建用于复制的账号&lt;/span&gt;
+&lt;span class="n"&gt;GRANT&lt;/span&gt; &lt;span class="n"&gt;REPLICATION&lt;/span&gt; &lt;span class="n"&gt;SLAVE&lt;/span&gt; &lt;span class="n"&gt;ON&lt;/span&gt; &lt;span class="o"&gt;*.*&lt;/span&gt; &lt;span class="n"&gt;TO&lt;/span&gt; &lt;span class="err"&gt;‘&lt;/span&gt;&lt;span class="n"&gt;repl&lt;/span&gt;&lt;span class="err"&gt;’&lt;/span&gt; &lt;span class="n"&gt;IDENTIFIED&lt;/span&gt; &lt;span class="n"&gt;BY&lt;/span&gt; &lt;span class="err"&gt;‘&lt;/span&gt;&lt;span class="n"&gt;slavepass&lt;/span&gt;&lt;span class="err"&gt;’&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="c1"&gt;#选择数据库&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="n"&gt;dbname&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="c1"&gt;#设置表为只读&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;FLUSH&lt;/span&gt; &lt;span class="n"&gt;TABLES&lt;/span&gt; &lt;span class="n"&gt;WITH&lt;/span&gt; &lt;span class="n"&gt;READ&lt;/span&gt; &lt;span class="n"&gt;LOCK&lt;/span&gt;&lt;span class="err"&gt;；&lt;/span&gt;
+&lt;span class="c1"&gt;#备份数据库文件zip&lt;/span&gt;
+&lt;span class="c1"&gt;#显示并记录日志文件名和状态，需要在从服务器设置&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;SHOW&lt;/span&gt; &lt;span class="n"&gt;MASTER&lt;/span&gt; &lt;span class="n"&gt;STATUS&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;—————&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;———&lt;/span&gt;&lt;span class="o"&gt;-+&lt;/span&gt;&lt;span class="err"&gt;————–&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;——————&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;File&lt;/span&gt;          &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Position&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Binlog_Do_DB&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Binlog_Ignore_DB&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;—————&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;———&lt;/span&gt;&lt;span class="o"&gt;-+&lt;/span&gt;&lt;span class="err"&gt;————–&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;——————&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="mf"&gt;.003&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;73&lt;/span&gt;       &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt;         &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;manual&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;—————&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;———&lt;/span&gt;&lt;span class="o"&gt;-+&lt;/span&gt;&lt;span class="err"&gt;————–&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="err"&gt;——————&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;
+&lt;span class="c1"&gt;#数据表解锁&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;unlock&lt;/span&gt; &lt;span class="n"&gt;tables&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;从服务器&lt;/h3&gt;
+&lt;p&gt;把从主服务器备份的文件在从服务器恢复&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#设置主服务器信息&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;CHANGE&lt;/span&gt; &lt;span class="n"&gt;MASTER&lt;/span&gt; &lt;span class="n"&gt;TO&lt;/span&gt;
+           &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;  &lt;span class="n"&gt;MASTER_HOST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;’&lt;/span&gt;&lt;span class="mf"&gt;192.168.113.128&lt;/span&gt;&lt;span class="err"&gt;′&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;  &lt;span class="n"&gt;MASTER_PORT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3306&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;   
+           &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;  &lt;span class="n"&gt;MASTER_USER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;’&lt;/span&gt;&lt;span class="n"&gt;repl&lt;/span&gt;&lt;span class="err"&gt;’&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;  &lt;span class="n"&gt;MASTER_PASSWORD&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;’&lt;/span&gt;&lt;span class="n"&gt;slavepass&lt;/span&gt;&lt;span class="err"&gt;’&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;  &lt;span class="n"&gt;MASTER_LOG_FILE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;’&lt;/span&gt;&lt;span class="n"&gt;recorded_log_file_name&lt;/span&gt;&lt;span class="err"&gt;’&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;  &lt;span class="n"&gt;MASTER_LOG_POS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;recorded_log_position&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="c1"&gt;#启动&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;START&lt;/span&gt; &lt;span class="n"&gt;SLAVE&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="c1"&gt;#显示状态 查看状态&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Show&lt;/span&gt; &lt;span class="n"&gt;slave&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;G&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;配置文件&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ini&lt;/span&gt;
+&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ini&lt;/span&gt;
+&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;411&lt;/span&gt;
+&lt;span class="c1"&gt;#排除不需要同步的表&lt;/span&gt;
+&lt;span class="n"&gt;replicate_ignore_table&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;TD_OA&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SYS_LOG&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;遇到的问题&lt;/h3&gt;
+&lt;p&gt;使用自增字段如果在从服务器写入数据会出现冲突，比如登录日志的表，需要在从服务器排除同步该表&lt;/p&gt;
+&lt;p&gt;show master status empty set 服务器端没有配置ini文件&lt;/p&gt;
+&lt;p&gt;slave_io_running no 检查端口 log文件名 和便宜量 等一会再观察&lt;/p&gt;
+&lt;p&gt;最好主从服务器版本一致&lt;/p&gt;</summary><category term="mysql"></category><category term="replication"></category></entry></feed>
