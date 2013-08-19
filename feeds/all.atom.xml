@@ -1,5 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>DQW's Blog</title><link href="http://www.dqw.me/" rel="alternate"></link><link href="http://www.dqw.me/feeds/all.atom.xml" rel="self"></link><id>http://www.dqw.me/</id><updated>2013-01-25T22:53:00+08:00</updated><entry><title>javascript删除数组指定元素</title><link href="http://www.dqw.me/javascriptshan-chu-shu-zu-zhi-ding-yuan-su.html" rel="alternate"></link><updated>2013-01-25T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:www.dqw.me,2013-01-25:javascriptshan-chu-shu-zu-zhi-ding-yuan-su.html</id><summary type="html">&lt;p&gt;原生javascipt&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DQW's Blog</title><link href="http://www.dqw.me/" rel="alternate"></link><link href="http://www.dqw.me/feeds/all.atom.xml" rel="self"></link><id>http://www.dqw.me/</id><updated>2013-08-19T23:31:00+08:00</updated><entry><title>使用Pelican建立Blog</title><link href="http://www.dqw.me/shi-yong-pelicanjian-li-blog.html" rel="alternate"></link><updated>2013-08-19T23:31:00+08:00</updated><author><name>dqw</name></author><id>tag:www.dqw.me,2013-08-19:shi-yong-pelicanjian-li-blog.html</id><summary type="html">&lt;p&gt;Pelican是用python开发的类似Jekyll静态网站生成工具，支持Markdown、reStructuredText、AsciiDoc等格式，支持RSS输出。&lt;/p&gt;
+&lt;h3&gt;安装&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
+&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;Markdown&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;建立Blog&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt;
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt;
+&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;写文章&lt;/h3&gt;
+&lt;p&gt;在content目录建立hello.md&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Title:&lt;/span&gt; &lt;span class="err"&gt;文章标题&lt;/span&gt;
+&lt;span class="n"&gt;Date:&lt;/span&gt; &lt;span class="mi"&gt;2013&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;08&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;19&lt;/span&gt;
+&lt;span class="n"&gt;Category:&lt;/span&gt; &lt;span class="err"&gt;文章目录&lt;/span&gt;
+&lt;span class="n"&gt;Author:&lt;/span&gt; &lt;span class="err"&gt;文章作者&lt;/span&gt;
+&lt;span class="n"&gt;Tag:&lt;/span&gt; &lt;span class="err"&gt;标签&lt;/span&gt;
+&lt;span class="n"&gt;Summary:&lt;/span&gt; &lt;span class="err"&gt;文章摘要&lt;/span&gt;
+
+&lt;span class="err"&gt;这里是正文&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;创建页面&lt;/h3&gt;
+&lt;p&gt;在content目录创建pages目录，然后创建about.md&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Title:&lt;/span&gt; &lt;span class="err"&gt;关于我&lt;/span&gt;
+&lt;span class="n"&gt;Date:&lt;/span&gt; &lt;span class="mi"&gt;2013&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;08&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;19&lt;/span&gt;
+
+&lt;span class="err"&gt;这里是页面正文&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;生成页面&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;html&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;使用Disqus评论&lt;/h3&gt;
+&lt;p&gt;在Disqus申请, 然后在pelicanconf.py里添加如下内容:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;DISQUS_SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;dqw&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;然后重新生成页面&lt;/p&gt;
+&lt;h3&gt;更换主题&lt;/h3&gt;
+&lt;p&gt;把主题目录拷贝到blog目录，然后在pelicanconf.py里添加如下内容:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;gum&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;生成sitemap&lt;/h3&gt;
+&lt;p&gt;把pelican-plugins拷贝到blog目录，然后在pelicanconf.py里添加如下内容:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;PLUGIN_PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;pelican-plugins&amp;quot;&lt;/span&gt;
+
+&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;sitemap&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="c1"&gt;## 配置sitemap 插件&lt;/span&gt;
+&lt;span class="n"&gt;SITEMAP&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s"&gt;&amp;quot;format&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;xml&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s"&gt;&amp;quot;priorities&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="s"&gt;&amp;quot;articles&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s"&gt;&amp;quot;indexes&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s"&gt;&amp;quot;pages&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="s"&gt;&amp;quot;changefreqs&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="s"&gt;&amp;quot;articles&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;monthly&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s"&gt;&amp;quot;indexes&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;daily&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="s"&gt;&amp;quot;pages&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;monthly&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;重新生成页面&lt;/p&gt;
+&lt;h3&gt;使用Github的Pages服务托管站点&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;新建一个&lt;/span&gt;&lt;span class="n"&gt;Repository&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;Repository&lt;/span&gt;&lt;span class="err"&gt;名字可以是&lt;/span&gt; &lt;span class="n"&gt;xxx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt; &lt;span class="err"&gt;或者&lt;/span&gt; &lt;span class="n"&gt;xxx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="err"&gt;，其中&lt;/span&gt; &lt;span class="n"&gt;xxx&lt;/span&gt; &lt;span class="err"&gt;是您的用户&lt;/span&gt;&lt;span class="n"&gt;ID&lt;/span&gt;&lt;span class="err"&gt;。把生成的页面&lt;/span&gt;&lt;span class="nb"&gt;push&lt;/span&gt;&lt;span class="err"&gt;过去就可以了。&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;绑定域名&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;新建一个名为&lt;/span&gt;&lt;span class="n"&gt;CNAME&lt;/span&gt;&lt;span class="err"&gt;的文本文件，里面写入你要绑定的域名，比如&lt;/span&gt;&lt;span class="n"&gt;www&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dqw&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;me&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+
+&lt;span class="err"&gt;如果绑定的是顶级域名，则&lt;/span&gt;&lt;span class="n"&gt;DNS&lt;/span&gt;&lt;span class="err"&gt;要新建一条&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="err"&gt;记录，指向&lt;/span&gt;&lt;span class="mf"&gt;204.232.175.78&lt;/span&gt;&lt;span class="err"&gt;。如果绑定的是二级域名，则&lt;/span&gt;&lt;span class="n"&gt;DNS&lt;/span&gt;&lt;span class="err"&gt;要新建一条&lt;/span&gt;&lt;span class="n"&gt;CNAME&lt;/span&gt;&lt;span class="err"&gt;记录，指向&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="pelican"></category><category term="github"></category></entry><entry><title>javascript删除数组指定元素</title><link href="http://www.dqw.me/javascriptshan-chu-shu-zu-zhi-ding-yuan-su.html" rel="alternate"></link><updated>2013-01-25T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:www.dqw.me,2013-01-25:javascriptshan-chu-shu-zu-zhi-ding-yuan-su.html</id><summary type="html">&lt;p&gt;原生javascipt&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Array&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nb"&gt;prototype&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;indexOf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nb"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
