@@ -66,23 +66,23 @@
               </address>
                           </footer><!-- /.post-info -->
             <div class="entry-content">
-              <h3>LAMP</h3>
+              <h2>LAMP</h2>
 <div class="highlight"><pre><span class="n">yum</span> <span class="n">install</span> <span class="n">httpd</span> <span class="n">php</span> <span class="n">php</span><span class="o">-</span><span class="n">mysql</span> <span class="n">php</span><span class="o">-</span><span class="n">pecl</span><span class="o">-</span><span class="n">memcache</span> <span class="n">php</span><span class="o">-</span><span class="n">gd</span> <span class="n">php</span><span class="o">-</span><span class="n">mbstring</span> <span class="n">php</span><span class="o">-</span><span class="n">mcrypt</span> <span class="n">php</span><span class="o">-</span><span class="n">cli</span> <span class="n">php</span><span class="o">-</span><span class="n">common</span> <span class="n">php</span><span class="o">-</span><span class="n">pdo</span> <span class="n">php</span><span class="o">-</span><span class="n">pear</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span>
 </pre></div>
 
 
-<h3>LNMP</h3>
+<h2>LNMP</h2>
 <div class="highlight"><pre><span class="c1"># Nginx源的版本比较新，或者用EPEL源里的也可以但版本比较老</span>
 <span class="n">rpm</span> <span class="o">-</span><span class="n">Uvh</span> <span class="n">http:</span><span class="sr">//</span><span class="n">nginx</span><span class="o">.</span><span class="n">org</span><span class="sr">/packages/c</span><span class="n">entos</span><span class="sr">/6/</span><span class="n">noarch</span><span class="sr">/RPMS/</span><span class="n">nginx</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="n">centos</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">0</span><span class="o">.</span><span class="n">el6</span><span class="o">.</span><span class="n">ngx</span><span class="o">.</span><span class="n">noarch</span><span class="o">.</span><span class="n">rpm</span>
 </pre></div>
 
 
-<h4>安装软件包</h4>
+<h3>安装软件包</h3>
 <div class="highlight"><pre><span class="n">yum</span> <span class="n">install</span> <span class="n">nginx</span> <span class="n">php</span><span class="o">-</span><span class="n">fpm</span> <span class="n">php</span><span class="o">-</span><span class="n">mysql</span> <span class="n">php</span><span class="o">-</span><span class="n">pecl</span><span class="o">-</span><span class="n">memcache</span> <span class="n">php</span><span class="o">-</span><span class="n">gd</span> <span class="n">php</span><span class="o">-</span><span class="n">mbstring</span> <span class="n">php</span><span class="o">-</span><span class="n">mcrypt</span> <span class="n">php</span><span class="o">-</span><span class="n">cli</span> <span class="n">php</span><span class="o">-</span><span class="n">common</span> <span class="n">php</span><span class="o">-</span><span class="n">pdo</span> <span class="n">php</span><span class="o">-</span><span class="n">pear</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span>
 </pre></div>
 
 
-<h4>Nginx配置范例</h4>
+<h3>Nginx配置范例</h3>
 <div class="highlight"><pre><span class="c1">#/etc/nginx/conf.d/default.conf</span>
 
 <span class="c1">#</span>
@@ -141,21 +141,21 @@
 </pre></div>
 
 
-<h4>手动启动服务</h4>
+<h3>手动启动服务</h3>
 <div class="highlight"><pre><span class="sr">/etc/i</span><span class="n">nit</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">nginx</span> <span class="n">start</span>
 <span class="sr">/etc/i</span><span class="n">nit</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">php</span><span class="o">-</span><span class="n">fpm</span> <span class="n">start</span>
 <span class="sr">/etc/i</span><span class="n">nit</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">mysqld</span> <span class="n">start</span>
 </pre></div>
 
 
-<h4>开机自启动</h4>
+<h3>开机自启动</h3>
 <div class="highlight"><pre><span class="n">chkconfig</span> <span class="n">nginx</span> <span class="n">on</span>
 <span class="n">chkconfig</span> <span class="n">php</span><span class="o">-</span><span class="n">fpm</span> <span class="n">on</span>
 <span class="n">chkconfig</span> <span class="n">mysqld</span> <span class="n">on</span>
 </pre></div>
 
 
-<h3>开放端口</h3>
+<h2>开放端口</h2>
 <div class="highlight"><pre><span class="sr">/sbin/i</span><span class="n">ptables</span> <span class="o">-</span><span class="n">I</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">80</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
 <span class="sr">/etc/</span><span class="n">rc</span><span class="o">.</span><span class="n">d</span><span class="sr">/init.d/i</span><span class="n">ptables</span> <span class="n">save</span>
 </pre></div>
@@ -190,28 +190,28 @@
 
 <h4>Tags</h4>
 	<ul>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/shu-zu.html">数组</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/dokuwiki.html">dokuwiki</a></li>
-		    <li class="tag-1"><a href="http://www.dqw.me/tag/mysql.html">mysql</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/github.html">github</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/ubuntu.html">Ubuntu</a></li>
+		    <li class="tag-2"><a href="http://www.dqw.me/tag/nginx.html">nginx</a></li>
+		    <li class="tag-1"><a href="http://www.dqw.me/tag/apache.html">apache</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/pelican.html">pelican</a></li>
+		    <li class="tag-1"><a href="http://www.dqw.me/tag/php.html">php</a></li>
+		    <li class="tag-2"><a href="http://www.dqw.me/tag/mysql.html">MySQL</a></li>
 		    <li class="tag-4"><a href="http://www.dqw.me/tag/javascript.html">javascript</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/replication.html">replication</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/dokuwiki.html">dokuwiki</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/zim.html">zim</a></li>
+		    <li class="tag-2"><a href="http://www.dqw.me/tag/macos.html">macos</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/cconv.html">cconv</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/rewrite.html">rewrite</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/suo-yin.html">索引</a></li>
+		    <li class="tag-1"><a href="http://www.dqw.me/tag/mysql.html">mysql</a></li>
+		    <li class="tag-2"><a href="http://www.dqw.me/tag/fen-bian-lu.html">分辨率</a></li>
 		    <li class="tag-2"><a href="http://www.dqw.me/tag/centos.html">centos</a></li>
 		    <li class="tag-4"><a href="http://www.dqw.me/tag/vga.html">VGA</a></li>
-		    <li class="tag-2"><a href="http://www.dqw.me/tag/fen-bian-lu.html">分辨率</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/replication.html">replication</a></li>
-		    <li class="tag-2"><a href="http://www.dqw.me/tag/nginx.html">nginx</a></li>
-		    <li class="tag-2"><a href="http://www.dqw.me/tag/mysql.html">MySQL</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/ubuntu.html">Ubuntu</a></li>
 		    <li class="tag-4"><a href="http://www.dqw.me/tag/.html"></a></li>
-		    <li class="tag-2"><a href="http://www.dqw.me/tag/macos.html">macos</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/pelican.html">pelican</a></li>
 		    <li class="tag-4"><a href="http://www.dqw.me/tag/homebrew.html">homebrew</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/suo-yin.html">索引</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/zim.html">zim</a></li>
-		    <li class="tag-1"><a href="http://www.dqw.me/tag/apache.html">apache</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/rewrite.html">rewrite</a></li>
-		    <li class="tag-1"><a href="http://www.dqw.me/tag/php.html">php</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/cconv.html">cconv</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/github.html">github</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/shu-zu.html">数组</a></li>
 	</ul>
 
 
