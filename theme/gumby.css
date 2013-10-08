@@ -170,12 +170,13 @@ h2 {
   font-size: 42px;
   font-size: 2.625rem;
   border-bottom: 1px solid #CCCCCC;
+  margin-bottom: 10px;
 }
 
 h3 {
   font-size: 30px;
   font-size: 1.875rem;
-  padding-left: 20xp;
+  padding-left: 20px;
 }
 
 h4 {
@@ -414,7 +415,6 @@ abbr {
   pre, blockquote {
     border: 1px solid #999999;
     page-break-inside: avoid;
-    margin-left: 20px;
   }
 
   thead {
