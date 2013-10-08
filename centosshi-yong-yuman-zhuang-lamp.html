@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        
+        <title>CentOS使用yum安装lamp</title>
+        <meta charset="utf-8" />
+                <link href="http://www.dqw.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DQW's Blog Full Atom Feed" />
+                                                                
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://www.dqw.me/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.dqw.me/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.dqw.me/theme/pygment.css" />
+
+        <script src="http://www.dqw.me/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+          
+
+
+
+        </head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://www.dqw.me">DQW's Blog <strong>用适合的技术解决实际的问题</strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="http://www.dqw.me">Home</a></li>
+
+                                                      <li><a href="http://www.dqw.me/pages/about.html">About</a></li>
+                          
+              </ul>
+            </div>
+
+          <section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="http://www.dqw.me/centosshi-yong-yuman-zhuang-lamp.html" rel="bookmark"
+                   title="Permalink to CentOS使用yum安装lamp">CentOS使用yum安装lamp</a></h2>
+                      
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2013-10-08T22:47:00">
+                二 08 十月 2013
+              </abbr>
+                            <address class="vcard author">
+                By <a class="url fn" href="http://www.dqw.me/author/dqw.html">dqw</a>
+              </address>
+                          </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <h3>LAMP</h3>
+<div class="highlight"><pre><span class="n">yum</span> <span class="n">install</span> <span class="n">httpd</span> <span class="n">php</span> <span class="n">php</span><span class="o">-</span><span class="n">mysql</span> <span class="n">php</span><span class="o">-</span><span class="n">pecl</span><span class="o">-</span><span class="n">memcache</span> <span class="n">php</span><span class="o">-</span><span class="n">gd</span> <span class="n">php</span><span class="o">-</span><span class="n">mbstring</span> <span class="n">php</span><span class="o">-</span><span class="n">mcrypt</span> <span class="n">php</span><span class="o">-</span><span class="n">cli</span> <span class="n">php</span><span class="o">-</span><span class="n">common</span> <span class="n">php</span><span class="o">-</span><span class="n">pdo</span> <span class="n">php</span><span class="o">-</span><span class="n">pear</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span>
+</pre></div>
+
+
+<h3>LNMP</h3>
+<div class="highlight"><pre><span class="c1"># Nginx源的版本比较新，或者用EPEL源里的也可以但版本比较老</span>
+<span class="n">rpm</span> <span class="o">-</span><span class="n">Uvh</span> <span class="n">http:</span><span class="sr">//</span><span class="n">nginx</span><span class="o">.</span><span class="n">org</span><span class="sr">/packages/c</span><span class="n">entos</span><span class="sr">/6/</span><span class="n">noarch</span><span class="sr">/RPMS/</span><span class="n">nginx</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="n">centos</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">0</span><span class="o">.</span><span class="n">el6</span><span class="o">.</span><span class="n">ngx</span><span class="o">.</span><span class="n">noarch</span><span class="o">.</span><span class="n">rpm</span>
+</pre></div>
+
+
+<h4>安装软件包</h4>
+<div class="highlight"><pre><span class="n">yum</span> <span class="n">install</span> <span class="n">nginx</span> <span class="n">php</span><span class="o">-</span><span class="n">fpm</span> <span class="n">php</span><span class="o">-</span><span class="n">mysql</span> <span class="n">php</span><span class="o">-</span><span class="n">pecl</span><span class="o">-</span><span class="n">memcache</span> <span class="n">php</span><span class="o">-</span><span class="n">gd</span> <span class="n">php</span><span class="o">-</span><span class="n">mbstring</span> <span class="n">php</span><span class="o">-</span><span class="n">mcrypt</span> <span class="n">php</span><span class="o">-</span><span class="n">cli</span> <span class="n">php</span><span class="o">-</span><span class="n">common</span> <span class="n">php</span><span class="o">-</span><span class="n">pdo</span> <span class="n">php</span><span class="o">-</span><span class="n">pear</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span>
+</pre></div>
+
+
+<h4>Nginx配置范例</h4>
+<div class="highlight"><pre><span class="c1">#/etc/nginx/conf.d/default.conf</span>
+
+<span class="c1">#</span>
+<span class="c1"># The default server</span>
+<span class="c1">#</span>
+<span class="n">server</span> <span class="p">{</span>
+    <span class="nb">listen</span>       <span class="mi">80</span> <span class="n">default_server</span><span class="p">;</span>
+    <span class="n">server_name</span>  <span class="n">_</span><span class="p">;</span>
+
+    <span class="c1">#charset koi8-r;</span>
+
+    <span class="c1">#access_log  logs/host.access.log  main;</span>
+
+    <span class="n">location</span> <span class="o">/</span> <span class="p">{</span>
+        <span class="n">root</span>   <span class="sr">/usr/s</span><span class="n">hare</span><span class="sr">/nginx/</span><span class="n">html</span><span class="p">;</span>
+        <span class="nb">index</span>  <span class="nb">index</span><span class="o">.</span><span class="n">html</span> <span class="nb">index</span><span class="o">.</span><span class="n">htm</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">error_page</span>  <span class="mi">404</span>              <span class="o">/</span><span class="mi">404</span><span class="o">.</span><span class="n">html</span><span class="p">;</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="o">/</span><span class="mi">404</span><span class="o">.</span><span class="n">html</span> <span class="p">{</span>
+        <span class="n">root</span>   <span class="sr">/usr/s</span><span class="n">hare</span><span class="sr">/nginx/</span><span class="n">html</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1"># redirect server error pages to the static page /50x.html</span>
+    <span class="c1">#</span>
+    <span class="n">error_page</span>   <span class="mi">500</span> <span class="mi">502</span> <span class="mi">503</span> <span class="mi">504</span>  <span class="o">/</span><span class="mi">50</span><span class="n">x</span><span class="o">.</span><span class="n">html</span><span class="p">;</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="o">/</span><span class="mi">50</span><span class="n">x</span><span class="o">.</span><span class="n">html</span> <span class="p">{</span>
+        <span class="n">root</span>   <span class="sr">/usr/s</span><span class="n">hare</span><span class="sr">/nginx/</span><span class="n">html</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span>
+    <span class="c1">#</span>
+    <span class="c1">#location ~ \.php$ {</span>
+    <span class="c1">#    proxy_pass   http://127.0.0.1;</span>
+    <span class="c1">#}</span>
+
+    <span class="c1"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span>
+    <span class="c1">#</span>
+    <span class="n">location</span> <span class="o">~</span> <span class="o">\.</span><span class="n">php</span><span class="nv">$</span> <span class="p">{</span>
+        <span class="c1">#root           html;</span>
+        <span class="n">fastcgi_pass</span>   <span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">9000</span><span class="p">;</span>
+        <span class="n">fastcgi_index</span>  <span class="nb">index</span><span class="o">.</span><span class="n">php</span><span class="p">;</span>
+
+        <span class="c1"># 这行也要修改为实际路径</span>
+        <span class="n">fastcgi_param</span>  <span class="n">SCRIPT_FILENAME</span>  <span class="sr">/usr/s</span><span class="n">hare</span><span class="sr">/nginx/</span><span class="n">html</span><span class="nv">$fastcgi_script_name</span><span class="p">;</span>
+        <span class="n">include</span>        <span class="n">fastcgi_params</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1"># deny access to .htaccess files, if Apache&#39;s document root</span>
+    <span class="c1"># concurs with nginx&#39;s one</span>
+    <span class="c1">#</span>
+    <span class="c1">#location ~ /\.ht {</span>
+    <span class="c1">#    deny  all;</span>
+    <span class="c1">#}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h4>手动启动服务</h4>
+<div class="highlight"><pre><span class="sr">/etc/i</span><span class="n">nit</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">nginx</span> <span class="n">start</span>
+<span class="sr">/etc/i</span><span class="n">nit</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">php</span><span class="o">-</span><span class="n">fpm</span> <span class="n">start</span>
+<span class="sr">/etc/i</span><span class="n">nit</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">mysqld</span> <span class="n">start</span>
+</pre></div>
+
+
+<h4>开机自启动</h4>
+<div class="highlight"><pre><span class="n">chkconfig</span> <span class="n">nginx</span> <span class="n">on</span>
+<span class="n">chkconfig</span> <span class="n">php</span><span class="o">-</span><span class="n">fpm</span> <span class="n">on</span>
+<span class="n">chkconfig</span> <span class="n">mysqld</span> <span class="n">on</span>
+</pre></div>
+
+
+<h3>开放端口</h3>
+<div class="highlight"><pre><span class="sr">/sbin/i</span><span class="n">ptables</span> <span class="o">-</span><span class="n">I</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">80</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+<span class="sr">/etc/</span><span class="n">rc</span><span class="o">.</span><span class="n">d</span><span class="sr">/init.d/i</span><span class="n">ptables</span> <span class="n">save</span>
+</pre></div>
+            </div><!-- /.entry-content -->
+            
+
+        </div><!-- /.eleven.columns -->
+        
+     <div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+              <li><a href="http://www.dqw.me/pages/about.html">About</a></li>
+        </ul>
+
+<h4>Categories</h4>
+<ul>
+			<li><a href="http://www.dqw.me/category/linux.html">Linux</a></li>
+			<li><a href="http://www.dqw.me/category/mysql.html">MySQL</a></li>
+			<li><a href="http://www.dqw.me/category/apache.html">apache</a></li>
+			<li><a href="http://www.dqw.me/category/centos.html">centos</a></li>
+			<li><a href="http://www.dqw.me/category/dokuwiki.html">dokuwiki</a></li>
+			<li><a href="http://www.dqw.me/category/javascript.html">javascript</a></li>
+			<li><a href="http://www.dqw.me/category/macos.html">macos</a></li>
+			<li><a href="http://www.dqw.me/category/mysql.html">mysql</a></li>
+			<li><a href="http://www.dqw.me/category/other.html">other</a></li>
+			<li><a href="http://www.dqw.me/category/pelican.html">pelican</a></li>
+			<li><a href="http://www.dqw.me/category/php.html">php</a></li>
+	</ul>
+
+
+<h4>Tags</h4>
+	<ul>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/vga.html">VGA</a></li>
+		    <li class="tag-2"><a href="http://www.dqw.me/tag/centos.html">centos</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/replication.html">replication</a></li>
+		    <li class="tag-1"><a href="http://www.dqw.me/tag/php.html">php</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/.html"></a></li>
+		    <li class="tag-2"><a href="http://www.dqw.me/tag/nginx.html">nginx</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/shu-zu.html">数组</a></li>
+		    <li class="tag-1"><a href="http://www.dqw.me/tag/mysql.html">mysql</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/pelican.html">pelican</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/cconv.html">cconv</a></li>
+		    <li class="tag-2"><a href="http://www.dqw.me/tag/macos.html">macos</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/github.html">github</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/zim.html">zim</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/suo-yin.html">索引</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/homebrew.html">homebrew</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/dokuwiki.html">dokuwiki</a></li>
+		    <li class="tag-1"><a href="http://www.dqw.me/tag/apache.html">apache</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/ubuntu.html">Ubuntu</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/javascript.html">javascript</a></li>
+		    <li class="tag-2"><a href="http://www.dqw.me/tag/fen-bian-lu.html">分辨率</a></li>
+		    <li class="tag-2"><a href="http://www.dqw.me/tag/mysql.html">MySQL</a></li>
+		    <li class="tag-4"><a href="http://www.dqw.me/tag/rewrite.html">rewrite</a></li>
+	</ul>
+
+
+<nav class="widget">
+  <h4>LINKS</h4>
+  <ul>
+      <li><a href="feeds/all.atom.xml" target="_blank">RSS</a></li>
+      <li><a href="https://github.com/dqw" target="_blank">github</a></li>
+      <li><a href="http://www.douban.com/people/47947350/" target="_blank">douban</a></li>
+      <li><a href="http://dqw3721.blog.51cto.com/" target="_blank">以前51cto上的Blog</a></li>
+      <li><a href="http://dqw3721.cnblogs.com/" target="_blank">以前cnblogs上的Blog</a></li>
+      <li><a href="http://www.dqw.me/sitemap.xml" target="_blank">sitemap</a></li>
+    </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+                
+                
+                
+                
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="http://www.dqw.me/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://www.dqw.me/theme/js/libs/gumby.min.js"></script>
+  <script src="http://www.dqw.me/theme/js/plugins.js"></script>
+
+</body>
+</html>
