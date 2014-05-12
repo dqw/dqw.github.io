@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-        
+
         <title>引号对MySQL查询性能的影响</title>
         <meta charset="utf-8" />
-                <link href="http://www.dqw.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DQW's Blog Full Atom Feed" />
-                                                                
+        <link href="http://www.dqw.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DQW's Blog Full Atom Feed" />
+
 
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
@@ -17,11 +17,11 @@
         <script src="http://www.dqw.me/theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
-          
 
 
 
-        </head>
+
+</head>
 
 <body id="index" class="home">
 
@@ -40,12 +40,12 @@
               <ul class="columns">
                 <li><a href="http://www.dqw.me">Home</a></li>
 
-                                                      <li><a href="http://www.dqw.me/pages/about.html">About</a></li>
-                          
+                <li><a href="http://www.dqw.me/pages/about.html">About</a></li>
+
               </ul>
             </div>
 
-          <section id="content" class="body">
+<section id="content" class="body">
 
    <div class="row">
         <div class="eleven columns">
@@ -55,25 +55,25 @@
               <h2 class="entry-title">
                 <a href="http://www.dqw.me/yin-hao-dui-mysqlcha-xun-xing-neng-de-ying-xiang.html" rel="bookmark"
                    title="Permalink to 引号对MySQL查询性能的影响">引号对MySQL查询性能的影响</a></h2>
-                      
+           
             </header>
             <footer class="post-info">
               <abbr class="published" title="2012-01-30T22:53:00">
                 一 30 一月 2012
               </abbr>
-                            <address class="vcard author">
+              <address class="vcard author">
                 By <a class="url fn" href="http://www.dqw.me/author/dqw.html">dqw</a>
               </address>
-                          </footer><!-- /.post-info -->
+            </footer><!-- /.post-info -->
             <div class="entry-content">
               <h3>测试数据</h3>
-<div class="highlight"><pre><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">NOT</span> <span class="n">EXISTS</span> <span class="sb">`test`</span> <span class="p">(</span>
-<span class="sb">`id`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-<span class="sb">`num`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-<span class="sb">`num_char`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-<span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="sb">`id`</span><span class="p">),</span>
-<span class="n">KEY</span> <span class="sb">`num`</span> <span class="p">(</span><span class="sb">`num`</span><span class="p">),</span>
-<span class="n">KEY</span> <span class="sb">`num_char`</span> <span class="p">(</span><span class="sb">`num_char`</span><span class="p">),</span>
+<div class="highlight"><pre><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">NOT</span> <span class="n">EXISTS</span> <span class="err">`</span><span class="n">test</span><span class="err">`</span> <span class="p">(</span>
+<span class="err">`</span><span class="n">id</span><span class="err">`</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="n">NOT</span> <span class="nb">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+<span class="err">`</span><span class="n">num</span><span class="err">`</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="n">NOT</span> <span class="nb">NULL</span><span class="p">,</span>
+<span class="err">`</span><span class="n">num_char</span><span class="err">`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="n">NOT</span> <span class="nb">NULL</span><span class="p">,</span>
+<span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="err">`</span><span class="n">id</span><span class="err">`</span><span class="p">),</span>
+<span class="n">KEY</span> <span class="err">`</span><span class="n">num</span><span class="err">`</span> <span class="p">(</span><span class="err">`</span><span class="n">num</span><span class="err">`</span><span class="p">),</span>
+<span class="n">KEY</span> <span class="err">`</span><span class="n">num_char</span><span class="err">`</span> <span class="p">(</span><span class="err">`</span><span class="n">num_char</span><span class="err">`</span><span class="p">),</span>
 <span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">MyISAM</span> <span class="n">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">latin1</span> <span class="n">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">1</span> <span class="p">;</span>
 </pre></div>
 
@@ -81,9 +81,9 @@
 <p>插入随机数400000条记录，num和num_char内容一样，只是类型不同。分别建立索引。</p>
 <h3>测试过程</h3>
 <h4>数值字段类型匹配查询</h4>
-<div class="highlight"><pre><span class="n">EXPLAIN</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="sb">`test`</span> <span class="n">WHERE</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">837159</span>
-<span class="n">id</span> <span class="n">select_type</span> <span class="n">table</span> <span class="n">type</span> <span class="n">possible_keys</span> <span class="n">key</span> <span class="n">key_len</span> <span class="nb">ref</span> <span class="n">rows</span> <span class="n">Extra</span>
-<span class="mi">1</span> <span class="n">SIMPLE</span> <span class="n">test</span> <span class="nb">ref</span> <span class="n">num</span> <span class="n">num</span> <span class="mi">4</span> <span class="n">const</span> <span class="mi">12</span>
+<div class="highlight"><pre><span class="n">EXPLAIN</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="err">`</span><span class="n">test</span><span class="err">`</span> <span class="n">WHERE</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">837159</span>
+<span class="n">id</span> <span class="n">select_type</span> <span class="n">table</span> <span class="n">type</span> <span class="n">possible_keys</span> <span class="n">key</span> <span class="n">key_len</span> <span class="n">ref</span> <span class="n">rows</span> <span class="n">Extra</span>
+<span class="mi">1</span> <span class="n">SIMPLE</span> <span class="n">test</span> <span class="n">ref</span> <span class="n">num</span> <span class="n">num</span> <span class="mi">4</span> <span class="k">const</span> <span class="mi">12</span>
 </pre></div>
 
 
@@ -109,9 +109,9 @@
 
 
 <h4>数值字段类型不匹配查询</h4>
-<div class="highlight"><pre><span class="n">EXPLAIN</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="sb">`test`</span> <span class="n">WHERE</span> <span class="n">num</span> <span class="o">=</span> <span class="err">’</span><span class="mi">837159</span><span class="err">′</span>
-<span class="n">id</span> <span class="n">select_type</span> <span class="n">table</span> <span class="n">type</span> <span class="n">possible_keys</span> <span class="n">key</span> <span class="n">key_len</span> <span class="nb">ref</span> <span class="n">rows</span> <span class="n">Extra</span>
-<span class="mi">1</span> <span class="n">SIMPLE</span> <span class="n">test</span> <span class="nb">ref</span> <span class="n">num</span> <span class="n">num</span> <span class="mi">4</span> <span class="n">const</span> <span class="mi">12</span>
+<div class="highlight"><pre><span class="n">EXPLAIN</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="err">`</span><span class="n">test</span><span class="err">`</span> <span class="n">WHERE</span> <span class="n">num</span> <span class="o">=</span> <span class="err">’</span><span class="mi">837159</span><span class="err">′</span>
+<span class="n">id</span> <span class="n">select_type</span> <span class="n">table</span> <span class="n">type</span> <span class="n">possible_keys</span> <span class="n">key</span> <span class="n">key_len</span> <span class="n">ref</span> <span class="n">rows</span> <span class="n">Extra</span>
+<span class="mi">1</span> <span class="n">SIMPLE</span> <span class="n">test</span> <span class="n">ref</span> <span class="n">num</span> <span class="n">num</span> <span class="mi">4</span> <span class="k">const</span> <span class="mi">12</span>
 </pre></div>
 
 
@@ -137,9 +137,9 @@
 
 <p>查询结果正常，正确的使用了索引，看来MySQL把查询关键字’837159′隐式转换为了数值类型进行比较。</p>
 <h4>字符字段类型匹配查询</h4>
-<div class="highlight"><pre><span class="n">EXPLAIN</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="sb">`test`</span> <span class="n">WHERE</span> <span class="n">num_char</span> <span class="o">=</span> <span class="err">’</span><span class="mi">837159</span><span class="err">′</span>
-<span class="n">id</span> <span class="n">select_type</span> <span class="n">table</span> <span class="n">type</span> <span class="n">possible_keys</span> <span class="n">key</span> <span class="n">key_len</span> <span class="nb">ref</span> <span class="n">rows</span> <span class="n">Extra</span>
-<span class="mi">1</span> <span class="n">SIMPLE</span> <span class="n">test</span> <span class="nb">ref</span> <span class="n">num_char</span> <span class="n">num_char</span> <span class="mi">52</span> <span class="n">const</span> <span class="mi">13</span> <span class="n">Using</span> <span class="n">where</span>
+<div class="highlight"><pre><span class="n">EXPLAIN</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="err">`</span><span class="n">test</span><span class="err">`</span> <span class="n">WHERE</span> <span class="n">num_char</span> <span class="o">=</span> <span class="err">’</span><span class="mi">837159</span><span class="err">′</span>
+<span class="n">id</span> <span class="n">select_type</span> <span class="n">table</span> <span class="n">type</span> <span class="n">possible_keys</span> <span class="n">key</span> <span class="n">key_len</span> <span class="n">ref</span> <span class="n">rows</span> <span class="n">Extra</span>
+<span class="mi">1</span> <span class="n">SIMPLE</span> <span class="n">test</span> <span class="n">ref</span> <span class="n">num_char</span> <span class="n">num_char</span> <span class="mi">52</span> <span class="k">const</span> <span class="mi">13</span> <span class="n">Using</span> <span class="n">where</span>
 </pre></div>
 
 
@@ -165,9 +165,9 @@
 
 
 <h4>字符字段类型不匹配查询</h4>
-<div class="highlight"><pre><span class="n">EXPLAIN</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="sb">`test`</span> <span class="n">WHERE</span> <span class="n">num_char</span> <span class="o">=</span> <span class="mi">837159</span>
-<span class="n">id</span> <span class="n">select_type</span> <span class="n">table</span> <span class="n">type</span> <span class="n">possible_keys</span> <span class="n">key</span> <span class="n">key_len</span> <span class="nb">ref</span> <span class="n">rows</span> <span class="n">Extra</span>
-<span class="mi">1</span> <span class="n">SIMPLE</span> <span class="n">test</span> <span class="n">ALL</span> <span class="n">num_char</span> <span class="n">NULL</span> <span class="n">NULL</span> <span class="n">NULL</span> <span class="mi">400348</span> <span class="n">Using</span> <span class="n">where</span>
+<div class="highlight"><pre><span class="n">EXPLAIN</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="err">`</span><span class="n">test</span><span class="err">`</span> <span class="n">WHERE</span> <span class="n">num_char</span> <span class="o">=</span> <span class="mi">837159</span>
+<span class="n">id</span> <span class="n">select_type</span> <span class="n">table</span> <span class="n">type</span> <span class="n">possible_keys</span> <span class="n">key</span> <span class="n">key_len</span> <span class="n">ref</span> <span class="n">rows</span> <span class="n">Extra</span>
+<span class="mi">1</span> <span class="n">SIMPLE</span> <span class="n">test</span> <span class="n">ALL</span> <span class="n">num_char</span> <span class="nb">NULL</span> <span class="nb">NULL</span> <span class="nb">NULL</span> <span class="mi">400348</span> <span class="n">Using</span> <span class="n">where</span>
 </pre></div>
 
 
@@ -195,14 +195,14 @@
 <h4>特殊情况</h4>
 <p>从测试情况来看，如果字段为数值型，关键字加不加引号似乎影响并不大，但是在一种特殊情况下会有比较大的影响。</p>
 <p>例：</p>
-<div class="highlight"><pre><span class="n">UPDATE</span> <span class="sb">`test`</span> <span class="n">SET</span> <span class="n">num_char</span> <span class="o">=</span> <span class="err">‘</span><span class="n">aaa</span><span class="err">’</span> <span class="n">WHERE</span> <span class="n">num</span> <span class="o">=</span> <span class="err">’</span><span class="mi">837159</span><span class="err">′</span>
-<span class="mi">13</span> <span class="n">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">affected</span><span class="o">.</span> <span class="p">(</span> <span class="err">查询花费</span> <span class="mf">0.0044</span> <span class="err">秒</span> <span class="p">)</span>
+<div class="highlight"><pre><span class="n">UPDATE</span> <span class="err">`</span><span class="n">test</span><span class="err">`</span> <span class="n">SET</span> <span class="n">num_char</span> <span class="o">=</span> <span class="err">‘</span><span class="n">aaa</span><span class="err">’</span> <span class="n">WHERE</span> <span class="n">num</span> <span class="o">=</span> <span class="err">’</span><span class="mi">837159</span><span class="err">′</span>
+<span class="mi">13</span> <span class="n">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">affected</span><span class="p">.</span> <span class="p">(</span> <span class="err">查询花费</span> <span class="mf">0.0044</span> <span class="err">秒</span> <span class="p">)</span>
 
-<span class="n">update</span> <span class="sb">`test`</span> <span class="n">set</span> <span class="n">num_char</span><span class="o">=</span><span class="err">’</span><span class="n">aaa</span><span class="err">’</span> <span class="n">WHERE</span> <span class="n">num</span> <span class="o">=</span> <span class="err">’</span><span class="mi">83715999999</span><span class="err">′</span>
-<span class="mi">0</span> <span class="n">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">affected</span><span class="o">.</span> <span class="p">(</span> <span class="err">查询花费</span> <span class="mf">4.2821</span> <span class="err">秒</span> <span class="p">)</span>
+<span class="n">update</span> <span class="err">`</span><span class="n">test</span><span class="err">`</span> <span class="n">set</span> <span class="n">num_char</span><span class="o">=</span><span class="err">’</span><span class="n">aaa</span><span class="err">’</span> <span class="n">WHERE</span> <span class="n">num</span> <span class="o">=</span> <span class="err">’</span><span class="mi">83715999999</span><span class="err">′</span>
+<span class="mi">0</span> <span class="n">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">affected</span><span class="p">.</span> <span class="p">(</span> <span class="err">查询花费</span> <span class="mf">4.2821</span> <span class="err">秒</span> <span class="p">)</span>
 
-<span class="n">UPDATE</span> <span class="sb">`test`</span> <span class="n">SET</span> <span class="n">num_char</span> <span class="o">=</span> <span class="err">‘</span><span class="n">aaa</span><span class="err">’</span> <span class="n">WHERE</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">83715999999</span>
-<span class="mi">0</span> <span class="n">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">affected</span><span class="o">.</span> <span class="p">(</span> <span class="err">查询花费</span> <span class="mf">0.0032</span> <span class="err">秒</span> <span class="p">)</span>
+<span class="n">UPDATE</span> <span class="err">`</span><span class="n">test</span><span class="err">`</span> <span class="n">SET</span> <span class="n">num_char</span> <span class="o">=</span> <span class="err">‘</span><span class="n">aaa</span><span class="err">’</span> <span class="n">WHERE</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">83715999999</span>
+<span class="mi">0</span> <span class="n">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">affected</span><span class="p">.</span> <span class="p">(</span> <span class="err">查询花费</span> <span class="mf">0.0032</span> <span class="err">秒</span> <span class="p">)</span>
 </pre></div>
 
 
@@ -217,71 +217,74 @@
 <li>总之要避免隐式转换，隐式转换本身会有系统开销，而且会造成不可预知的影响。</li>
 </ol>
             </div><!-- /.entry-content -->
-            
+
 
         </div><!-- /.eleven.columns -->
         
-     <div class="three columns">
+<div class="three columns">
 
 <h4>Pages</h4>
 
  <ul>
-              <li><a href="http://www.dqw.me/pages/about.html">About</a></li>
-        </ul>
+      <li><a href="http://www.dqw.me/pages/about.html">About</a></li>
+  </ul>
 
 <h4>Categories</h4>
 <ul>
-			<li><a href="http://www.dqw.me/category/linux.html">Linux</a></li>
-			<li><a href="http://www.dqw.me/category/mysql.html">MySQL</a></li>
-			<li><a href="http://www.dqw.me/category/apache.html">apache</a></li>
-			<li><a href="http://www.dqw.me/category/centos.html">centos</a></li>
-			<li><a href="http://www.dqw.me/category/dokuwiki.html">dokuwiki</a></li>
-			<li><a href="http://www.dqw.me/category/javascript.html">javascript</a></li>
-			<li><a href="http://www.dqw.me/category/macos.html">macos</a></li>
-			<li><a href="http://www.dqw.me/category/mysql.html">mysql</a></li>
-			<li><a href="http://www.dqw.me/category/other.html">other</a></li>
-			<li><a href="http://www.dqw.me/category/pelican.html">pelican</a></li>
-			<li><a href="http://www.dqw.me/category/php.html">php</a></li>
-	</ul>
+		<li><a href="http://www.dqw.me/category/apache.html">apache</a></li>
+		<li><a href="http://www.dqw.me/category/centos.html">centos</a></li>
+		<li><a href="http://www.dqw.me/category/dokuwiki.html">dokuwiki</a></li>
+		<li><a href="http://www.dqw.me/category/javascript.html">javascript</a></li>
+		<li><a href="http://www.dqw.me/category/linux.html">Linux</a></li>
+		<li><a href="http://www.dqw.me/category/macos.html">macos</a></li>
+		<li><a href="http://www.dqw.me/category/mysql.html">MySQL</a></li>
+		<li><a href="http://www.dqw.me/category/other.html">other</a></li>
+		<li><a href="http://www.dqw.me/category/pelican.html">pelican</a></li>
+		<li><a href="http://www.dqw.me/category/php.html">php</a></li>
+		<li><a href="http://www.dqw.me/category/xie-yi.html">协议</a></li>
+</ul>
 
 
 <h4>Tags</h4>
 	<ul>
-		    <li class="tag-2"><a href="http://www.dqw.me/tag/centos.html">centos</a></li>
-		    <li class="tag-1"><a href="http://www.dqw.me/tag/php.html">php</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/shu-zu.html">数组</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/homebrew.html">homebrew</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/zim.html">zim</a></li>
-		    <li class="tag-2"><a href="http://www.dqw.me/tag/nginx.html">nginx</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/ubuntu.html">Ubuntu</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/suo-yin.html">索引</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/replication.html">replication</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/github.html">github</a></li>
-		    <li class="tag-1"><a href="http://www.dqw.me/tag/apache.html">apache</a></li>
-		    <li class="tag-2"><a href="http://www.dqw.me/tag/macos.html">macos</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/vga.html">VGA</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/pelican.html">pelican</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/dokuwiki.html">dokuwiki</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/rewrite.html">rewrite</a></li>
-		    <li class="tag-1"><a href="http://www.dqw.me/tag/mysql.html">mysql</a></li>
-		    <li class="tag-2"><a href="http://www.dqw.me/tag/fen-bian-lu.html">分辨率</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/.html"></a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/javascript.html">javascript</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/cconv.html">cconv</a></li>
-		    <li class="tag-2"><a href="http://www.dqw.me/tag/mysql.html">MySQL</a></li>
-	</ul>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/github.html">github</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/pelican.html">pelican</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/.html"></a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/ubuntu.html">Ubuntu</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/http.html">http</a></li>
+	    <li class="tag-2"><a href="http://www.dqw.me/tag/nginx.html">nginx</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/suo-yin.html">索引</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/https.html">https</a></li>
+	    <li class="tag-2"><a href="http://www.dqw.me/tag/macos.html">macos</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/replication.html">replication</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/cconv.html">cconv</a></li>
+	    <li class="tag-2"><a href="http://www.dqw.me/tag/centos.html">centos</a></li>
+	    <li class="tag-2"><a href="http://www.dqw.me/tag/apache.html">apache</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/homebrew.html">homebrew</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/xie-yi.html">协议</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/rewrite.html">rewrite</a></li>
+	    <li class="tag-0"><a href="http://www.dqw.me/tag/mysql.html">mysql</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/vga.html">VGA</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/dokuwiki.html">dokuwiki</a></li>
+	    <li class="tag-2"><a href="http://www.dqw.me/tag/php.html">php</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/cookie.html">cookie</a></li>
+	    <li class="tag-2"><a href="http://www.dqw.me/tag/fen-bian-lu.html">分辨率</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/shu-zu.html">数组</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/javascript.html">javascript</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/zim.html">zim</a></li>
+</ul>
 
 
 <nav class="widget">
   <h4>LINKS</h4>
   <ul>
-      <li><a href="feeds/all.atom.xml" target="_blank">RSS</a></li>
-      <li><a href="https://github.com/dqw" target="_blank">github</a></li>
-      <li><a href="http://www.douban.com/people/47947350/" target="_blank">douban</a></li>
-      <li><a href="http://dqw3721.blog.51cto.com/" target="_blank">以前51cto上的Blog</a></li>
-      <li><a href="http://dqw3721.cnblogs.com/" target="_blank">以前cnblogs上的Blog</a></li>
-      <li><a href="http://www.dqw.me/sitemap.xml" target="_blank">sitemap</a></li>
-    </ul>
+    <li><a href="feeds/all.atom.xml" target="_blank">RSS</a></li>
+    <li><a href="https://github.com/dqw" target="_blank">github</a></li>
+    <li><a href="http://www.douban.com/people/47947350/" target="_blank">douban</a></li>
+    <li><a href="http://dqw3721.blog.51cto.com/" target="_blank">以前51cto上的Blog</a></li>
+    <li><a href="http://dqw3721.cnblogs.com/" target="_blank">以前cnblogs上的Blog</a></li>
+    <li><a href="http://www.dqw.me/sitemap.xml" target="_blank">sitemap</a></li>
+  </ul>
 </nav>
 
 </div> </div><!-- /.row -->
@@ -312,10 +315,10 @@
             <div class="row">
               <ul class="socbtns">
 
-                
-                
-                
-                
+
+
+
+
               </ul>
             </div>
           </div>

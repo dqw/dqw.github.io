@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>DQW's Blog</title>
+        <title>http和https下的cookie共享</title>
         <meta charset="utf-8" />
         <link href="http://www.dqw.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DQW's Blog Full Atom Feed" />
 
@@ -45,36 +45,48 @@
               </ul>
             </div>
 
-<section id="content">
-<h2>Articles in the pelican category</h2>
-
+<section id="content" class="body">
 
    <div class="row">
-
-
         <div class="eleven columns">
-		         <ol id="post-list">
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://www.dqw.me/shi-yong-pelicanjian-li-blog.html" rel="bookmark" title="Permalink to 使用Pelican建立Blog">使用Pelican建立Blog</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2013-08-19T23:31:00"> 一 19 八月 2013 </abbr>
-<address class="vcard author">By <a class="url fn" href="http://www.dqw.me/author/dqw.html">dqw</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <p>Pelican是用python开发的类似Jekyll静态网站生成工具，支持Markdown、reStructuredText、AsciiDoc等格式，支持RSS输出。</p> </div><!-- /.entry-content -->
-
-								<div class="medium primary btn"><a href="http://www.dqw.me/shi-yong-pelicanjian-li-blog.html" rel="bookmark" title="Permalink to 使用Pelican建立Blog">Read more <i class="icon-arrow-right"></i></a></div>
 
 
+            <header>
+              <h2 class="entry-title">
+                <a href="http://www.dqw.me/httphe-httpsxia-de-cookiegong-xiang.html" rel="bookmark"
+                   title="Permalink to http和https下的cookie共享">http和https下的cookie共享</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2014-04-23T22:47:00">
+                三 23 四月 2014
+              </abbr>
+              <address class="vcard author">
+                By <a class="url fn" href="http://www.dqw.me/author/dqw.html">dqw</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <h2>起因</h2>
+<p>一天客户提出一个需求，站点的登陆和注销使用https，其它功能还是使用http协议。由于身份认证使用的是SESSION，而识别SESSION需要依靠Cookie中的SESSIONID。其实最根本的问题就是http和https下的Cookie是否可以共享。那么https协议下写入Cookie的SESSIONID，在跳转到http协议后能够正常读取吗？第一反应是不行，因为浏览器有同源策略，那实际情况又是怎么样的呢？</p>
+<h2>实际情况</h2>
+<ol>
+<li>经过测试，当混用http和https时，firefox、chrome、ie8都可以正常读取Cookie</li>
+<li>https协议下，浏览器默认不会加载页面中的http请求(图片会正常加载，js和css不加载)。可以不写明具体的协议只写两个斜杠，即用//代替http://和https://，这样浏览器加载的时候会自动匹配当前页面的协议。这也是<a href="http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml#Protocol">Google HTML/CSS Style Guide</a>推荐的方式。 </li>
+</ol>
+<h2>总结</h2>
+<ol>
+<li>Cookie的安全策略和Javascript的同源策略并不完全相同，Cookie只受Domian、Path、Expires、HttpOnly、Secure等属性的影响。</li>
+<li>Cookie的传输并不受端口限制。</li>
+<li>当Cookie属性secure设置为true时，Cookie只能在https中传输，http不会传输。</li>
+</ol>
+<h2>参考</h2>
+<ol>
+<li><a href="http://stackoverflow.com/questions/1612177/are-http-cookies-port-specific">Are HTTP cookies port specific?</a></li>
+<li><a href="http://tools.ietf.org/html/rfc2965">RFC2965</a> </li>
+<li><a href="http://tools.ietf.org/html/rfc6265">RFC6265</a></li>
+</ol>
+            </div><!-- /.entry-content -->
 
-								<div class="row tag-row">
-										<span>Tagged as : </span>
-											<a class="danger label" href="http://www.dqw.me/tag/pelican.html">pelican</a>
-											<a class="danger label" href="http://www.dqw.me/tag/github.html">github</a>
-								</div>
-
-
-
-				        </article></li>
-				</ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
         
@@ -104,31 +116,31 @@
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/github.html">github</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/pelican.html">pelican</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/.html"></a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/ubuntu.html">Ubuntu</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/http.html">http</a></li>
 	    <li class="tag-2"><a href="http://www.dqw.me/tag/nginx.html">nginx</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/suo-yin.html">索引</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/https.html">https</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/macos.html">macos</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/replication.html">replication</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/cconv.html">cconv</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/centos.html">centos</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/apache.html">apache</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/homebrew.html">homebrew</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/.html"></a></li>
 	    <li class="tag-4"><a href="http://www.dqw.me/tag/xie-yi.html">协议</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/rewrite.html">rewrite</a></li>
 	    <li class="tag-0"><a href="http://www.dqw.me/tag/mysql.html">mysql</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/vga.html">VGA</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/http.html">http</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/pelican.html">pelican</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/suo-yin.html">索引</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/cconv.html">cconv</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/shu-zu.html">数组</a></li>
 	    <li class="tag-4"><a href="http://www.dqw.me/tag/dokuwiki.html">dokuwiki</a></li>
+	    <li class="tag-2"><a href="http://www.dqw.me/tag/macos.html">macos</a></li>
 	    <li class="tag-2"><a href="http://www.dqw.me/tag/php.html">php</a></li>
 	    <li class="tag-4"><a href="http://www.dqw.me/tag/cookie.html">cookie</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/fen-bian-lu.html">分辨率</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/shu-zu.html">数组</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/javascript.html">javascript</a></li>
 	    <li class="tag-4"><a href="http://www.dqw.me/tag/zim.html">zim</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/github.html">github</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/homebrew.html">homebrew</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/replication.html">replication</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/javascript.html">javascript</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/https.html">https</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/rewrite.html">rewrite</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/vga.html">VGA</a></li>
+	    <li class="tag-2"><a href="http://www.dqw.me/tag/apache.html">apache</a></li>
+	    <li class="tag-2"><a href="http://www.dqw.me/tag/fen-bian-lu.html">分辨率</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/ubuntu.html">Ubuntu</a></li>
+	    <li class="tag-2"><a href="http://www.dqw.me/tag/centos.html">centos</a></li>
 </ul>
 
 
@@ -146,10 +158,8 @@
 
 </div> </div><!-- /.row -->
 
-<p class="paginator">
-    Page 1 / 1
-</p>
-</section><!-- /#content -->
+
+</section>
 
        </div><!-- /.row -->
     </div><!-- /.container -->

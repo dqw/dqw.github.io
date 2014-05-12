@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-        
+
         <title>MacOS安装zim</title>
         <meta charset="utf-8" />
-                <link href="http://www.dqw.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DQW's Blog Full Atom Feed" />
-                                                                
+        <link href="http://www.dqw.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DQW's Blog Full Atom Feed" />
+
 
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
@@ -17,11 +17,11 @@
         <script src="http://www.dqw.me/theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
-          
 
 
 
-        </head>
+
+</head>
 
 <body id="index" class="home">
 
@@ -40,12 +40,12 @@
               <ul class="columns">
                 <li><a href="http://www.dqw.me">Home</a></li>
 
-                                                      <li><a href="http://www.dqw.me/pages/about.html">About</a></li>
-                          
+                <li><a href="http://www.dqw.me/pages/about.html">About</a></li>
+
               </ul>
             </div>
 
-          <section id="content" class="body">
+<section id="content" class="body">
 
    <div class="row">
         <div class="eleven columns">
@@ -55,16 +55,16 @@
               <h2 class="entry-title">
                 <a href="http://www.dqw.me/macosan-zhuang-zim.html" rel="bookmark"
                    title="Permalink to MacOS安装zim">MacOS安装zim</a></h2>
-                      
+           
             </header>
             <footer class="post-info">
               <abbr class="published" title="2013-01-25T22:53:00">
                 五 25 一月 2013
               </abbr>
-                            <address class="vcard author">
+              <address class="vcard author">
                 By <a class="url fn" href="http://www.dqw.me/author/dqw.html">dqw</a>
               </address>
-                          </footer><!-- /.post-info -->
+            </footer><!-- /.post-info -->
             <div class="entry-content">
               <p><a href="http://zim-wiki.org/">zim</a>是跨平台的桌面wiki软件，主要用来做一些笔记日记用，windows和linux都有现成的安装包，macos下只能用源码安装还是比较麻烦，特意记录一下。</p>
 <p>1、安装Homebrew</p>
@@ -79,97 +79,100 @@
 
 
 <p>4、安装pygtk</p>
-<div class="highlight"><pre><span class="c1">#会自动安装依赖，gtk+等</span>
+<div class="highlight"><pre><span class="cp">#会自动安装依赖，gtk+等</span>
 <span class="n">brew</span> <span class="n">install</span> <span class="n">pygtk</span>
 </pre></div>
 
 
 <p>5、链接到/usr/local/bin</p>
-<div class="highlight"><pre><span class="n">brew</span> <span class="nb">link</span> <span class="n">python</span>
+<div class="highlight"><pre><span class="n">brew</span> <span class="n">link</span> <span class="n">python</span>
 </pre></div>
 
 
 <p>6、由于macos自带的python链接到/usr/bin，所以会优先于Homebrew安装的python，所以要改一下path。修改/etc/paths，把/usr/local/bin改到/usr/bin前边。</p>
 <p>7、定义PYTHONPATH</p>
-<div class="highlight"><pre><span class="n">vim</span> <span class="o">~/.</span><span class="n">bashrc</span>
-<span class="n">export</span> <span class="n">PYTHONPATH</span><span class="o">=</span><span class="sr">/usr/</span><span class="nb">local</span><span class="sr">/lib/</span><span class="n">python2</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages:</span><span class="nv">$PYTHONPATH</span>
+<div class="highlight"><pre><span class="n">vim</span> <span class="o">~/</span><span class="p">.</span><span class="n">bashrc</span>
+<span class="n">export</span> <span class="n">PYTHONPATH</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python2</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">:</span><span class="err">$</span><span class="n">PYTHONPATH</span>
 </pre></div>
 
 
 <p>8、下载并安装下载并安装，<a href="http://www.linuxfromscratch.org/blfs/view/svn/x/hicolor-icon-theme.html">hicolor-icon-theme</a></p>
-<div class="highlight"><pre><span class="c1">#先解压缩</span>
-<span class="o">./</span><span class="n">configure</span>
+<div class="highlight"><pre><span class="cp">#先解压缩</span>
+<span class="p">.</span><span class="o">/</span><span class="n">configure</span>
 <span class="n">make</span> <span class="o">&amp;&amp;</span> <span class="n">make</span> <span class="n">install</span>
 </pre></div>
 
 
 <p>9、下载zim源码包，然后运行zim.py</p>
             </div><!-- /.entry-content -->
-            
+
 
         </div><!-- /.eleven.columns -->
         
-     <div class="three columns">
+<div class="three columns">
 
 <h4>Pages</h4>
 
  <ul>
-              <li><a href="http://www.dqw.me/pages/about.html">About</a></li>
-        </ul>
+      <li><a href="http://www.dqw.me/pages/about.html">About</a></li>
+  </ul>
 
 <h4>Categories</h4>
 <ul>
-			<li><a href="http://www.dqw.me/category/linux.html">Linux</a></li>
-			<li><a href="http://www.dqw.me/category/mysql.html">MySQL</a></li>
-			<li><a href="http://www.dqw.me/category/apache.html">apache</a></li>
-			<li><a href="http://www.dqw.me/category/centos.html">centos</a></li>
-			<li><a href="http://www.dqw.me/category/dokuwiki.html">dokuwiki</a></li>
-			<li><a href="http://www.dqw.me/category/javascript.html">javascript</a></li>
-			<li><a href="http://www.dqw.me/category/macos.html">macos</a></li>
-			<li><a href="http://www.dqw.me/category/mysql.html">mysql</a></li>
-			<li><a href="http://www.dqw.me/category/other.html">other</a></li>
-			<li><a href="http://www.dqw.me/category/pelican.html">pelican</a></li>
-			<li><a href="http://www.dqw.me/category/php.html">php</a></li>
-	</ul>
+		<li><a href="http://www.dqw.me/category/apache.html">apache</a></li>
+		<li><a href="http://www.dqw.me/category/centos.html">centos</a></li>
+		<li><a href="http://www.dqw.me/category/dokuwiki.html">dokuwiki</a></li>
+		<li><a href="http://www.dqw.me/category/javascript.html">javascript</a></li>
+		<li><a href="http://www.dqw.me/category/linux.html">Linux</a></li>
+		<li><a href="http://www.dqw.me/category/macos.html">macos</a></li>
+		<li><a href="http://www.dqw.me/category/mysql.html">MySQL</a></li>
+		<li><a href="http://www.dqw.me/category/other.html">other</a></li>
+		<li><a href="http://www.dqw.me/category/pelican.html">pelican</a></li>
+		<li><a href="http://www.dqw.me/category/php.html">php</a></li>
+		<li><a href="http://www.dqw.me/category/xie-yi.html">协议</a></li>
+</ul>
 
 
 <h4>Tags</h4>
 	<ul>
-		    <li class="tag-2"><a href="http://www.dqw.me/tag/centos.html">centos</a></li>
-		    <li class="tag-1"><a href="http://www.dqw.me/tag/php.html">php</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/shu-zu.html">数组</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/homebrew.html">homebrew</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/zim.html">zim</a></li>
-		    <li class="tag-2"><a href="http://www.dqw.me/tag/nginx.html">nginx</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/ubuntu.html">Ubuntu</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/suo-yin.html">索引</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/replication.html">replication</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/github.html">github</a></li>
-		    <li class="tag-1"><a href="http://www.dqw.me/tag/apache.html">apache</a></li>
-		    <li class="tag-2"><a href="http://www.dqw.me/tag/macos.html">macos</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/vga.html">VGA</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/pelican.html">pelican</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/dokuwiki.html">dokuwiki</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/rewrite.html">rewrite</a></li>
-		    <li class="tag-1"><a href="http://www.dqw.me/tag/mysql.html">mysql</a></li>
-		    <li class="tag-2"><a href="http://www.dqw.me/tag/fen-bian-lu.html">分辨率</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/.html"></a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/javascript.html">javascript</a></li>
-		    <li class="tag-4"><a href="http://www.dqw.me/tag/cconv.html">cconv</a></li>
-		    <li class="tag-2"><a href="http://www.dqw.me/tag/mysql.html">MySQL</a></li>
-	</ul>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/github.html">github</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/pelican.html">pelican</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/.html"></a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/ubuntu.html">Ubuntu</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/http.html">http</a></li>
+	    <li class="tag-2"><a href="http://www.dqw.me/tag/nginx.html">nginx</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/suo-yin.html">索引</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/https.html">https</a></li>
+	    <li class="tag-2"><a href="http://www.dqw.me/tag/macos.html">macos</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/replication.html">replication</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/cconv.html">cconv</a></li>
+	    <li class="tag-2"><a href="http://www.dqw.me/tag/centos.html">centos</a></li>
+	    <li class="tag-2"><a href="http://www.dqw.me/tag/apache.html">apache</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/homebrew.html">homebrew</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/xie-yi.html">协议</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/rewrite.html">rewrite</a></li>
+	    <li class="tag-0"><a href="http://www.dqw.me/tag/mysql.html">mysql</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/vga.html">VGA</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/dokuwiki.html">dokuwiki</a></li>
+	    <li class="tag-2"><a href="http://www.dqw.me/tag/php.html">php</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/cookie.html">cookie</a></li>
+	    <li class="tag-2"><a href="http://www.dqw.me/tag/fen-bian-lu.html">分辨率</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/shu-zu.html">数组</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/javascript.html">javascript</a></li>
+	    <li class="tag-4"><a href="http://www.dqw.me/tag/zim.html">zim</a></li>
+</ul>
 
 
 <nav class="widget">
   <h4>LINKS</h4>
   <ul>
-      <li><a href="feeds/all.atom.xml" target="_blank">RSS</a></li>
-      <li><a href="https://github.com/dqw" target="_blank">github</a></li>
-      <li><a href="http://www.douban.com/people/47947350/" target="_blank">douban</a></li>
-      <li><a href="http://dqw3721.blog.51cto.com/" target="_blank">以前51cto上的Blog</a></li>
-      <li><a href="http://dqw3721.cnblogs.com/" target="_blank">以前cnblogs上的Blog</a></li>
-      <li><a href="http://www.dqw.me/sitemap.xml" target="_blank">sitemap</a></li>
-    </ul>
+    <li><a href="feeds/all.atom.xml" target="_blank">RSS</a></li>
+    <li><a href="https://github.com/dqw" target="_blank">github</a></li>
+    <li><a href="http://www.douban.com/people/47947350/" target="_blank">douban</a></li>
+    <li><a href="http://dqw3721.blog.51cto.com/" target="_blank">以前51cto上的Blog</a></li>
+    <li><a href="http://dqw3721.cnblogs.com/" target="_blank">以前cnblogs上的Blog</a></li>
+    <li><a href="http://www.dqw.me/sitemap.xml" target="_blank">sitemap</a></li>
+  </ul>
 </nav>
 
 </div> </div><!-- /.row -->
@@ -200,10 +203,10 @@
             <div class="row">
               <ul class="socbtns">
 
-                
-                
-                
-                
+
+
+
+
               </ul>
             </div>
           </div>
