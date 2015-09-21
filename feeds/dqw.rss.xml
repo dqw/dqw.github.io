@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>DQW's Blog</title><link href="http://dqw.github.io/" rel="alternate"></link><link href="http://dqw.github.io/feeds/all.atom.xml" rel="self"></link><id>http://dqw.github.io/</id><updated>2014-04-23T22:47:00+08:00</updated><entry><title>http和https下的cookie共享</title><link href="http://dqw.github.io/httphe-httpsxia-de-cookiegong-xiang.html" rel="alternate"></link><updated>2014-04-23T22:47:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2014-04-23:httphe-httpsxia-de-cookiegong-xiang.html</id><summary type="html">&lt;h2&gt;起因&lt;/h2&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DQW's Blog</title><link>http://dqw.github.io/</link><description>用适合的技术解决实际的问题</description><atom:link href="http://dqw.github.io/feeds/dqw.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 23 Apr 2014 22:47:00 +0800</lastBuildDate><item><title>http和https下的cookie共享</title><link>http://dqw.github.io/httphe-httpsxia-de-cookiegong-xiang.html</link><description>&lt;h2&gt;起因&lt;/h2&gt;
 &lt;p&gt;一天客户提出一个需求，站点的登陆和注销使用https，其它功能还是使用http协议。由于身份认证使用的是SESSION，而识别SESSION需要依靠Cookie中的SESSIONID。其实最根本的问题就是http和https下的Cookie是否可以共享。那么https协议下写入Cookie的SESSIONID，在跳转到http协议后能够正常读取吗？第一反应是不行，因为浏览器有同源策略，那实际情况又是怎么样的呢？&lt;/p&gt;
 &lt;h2&gt;实际情况&lt;/h2&gt;
 &lt;ol&gt;
@@ -17,7 +17,7 @@
 &lt;li&gt;&lt;a href="http://stackoverflow.com/questions/1612177/are-http-cookies-port-specific"&gt;Are HTTP cookies port specific?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://tools.ietf.org/html/rfc2965"&gt;RFC2965&lt;/a&gt; &lt;/li&gt;
 &lt;li&gt;&lt;a href="http://tools.ietf.org/html/rfc6265"&gt;RFC6265&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</summary><category term="http"></category><category term="https"></category><category term="cookie"></category><category term="协议"></category></entry><entry><title>CentOS使用yum安装lamp</title><link href="http://dqw.github.io/centosshi-yong-yuman-zhuang-lamp.html" rel="alternate"></link><updated>2013-10-08T22:47:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2013-10-08:centosshi-yong-yuman-zhuang-lamp.html</id><summary type="html">&lt;h2&gt;LAMP&lt;/h2&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Wed, 23 Apr 2014 22:47:00 +0800</pubDate><guid>tag:dqw.github.io,2014-04-23:httphe-httpsxia-de-cookiegong-xiang.html</guid><category>http</category><category>https</category><category>cookie</category><category>协议</category></item><item><title>CentOS使用yum安装lamp</title><link>http://dqw.github.io/centosshi-yong-yuman-zhuang-lamp.html</link><description>&lt;h2&gt;LAMP&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;yum install httpd php php-mysql php-pecl-memcache php-gd php-mbstring php-mcrypt php-cli php-common php-pdo php-pear mysql-server
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -109,7 +109,7 @@ chkconfig mysqld on
 &lt;h2&gt;开放端口&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 /etc/rc.d/init.d/iptables save
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="centos"></category><category term="apache"></category><category term="nginx"></category><category term="mysql"></category><category term="php"></category></entry><entry><title>CentOS源码编译安装lnmp</title><link href="http://dqw.github.io/centosyuan-ma-bian-yi-an-zhuang-lnmp.html" rel="alternate"></link><updated>2013-10-08T22:47:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2013-10-08:centosyuan-ma-bian-yi-an-zhuang-lnmp.html</id><summary type="html">&lt;h2&gt;安装编译环境&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Tue, 08 Oct 2013 22:47:00 +0800</pubDate><guid>tag:dqw.github.io,2013-10-08:centosshi-yong-yuman-zhuang-lamp.html</guid><category>centos</category><category>apache</category><category>nginx</category><category>mysql</category><category>php</category></item><item><title>CentOS源码编译安装lnmp</title><link>http://dqw.github.io/centosyuan-ma-bian-yi-an-zhuang-lnmp.html</link><description>&lt;h2&gt;安装编译环境&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;yum install gcc gcc-c++ automake autoconf libtool make
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -313,7 +313,7 @@ httpd=&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HTTPD&lt;/span
 prog=httpd
 pidfile=&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;PIDFILE&lt;/span&gt;&lt;span class="o"&gt;-/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;httpd&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;logs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;httpd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pid&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;
 lockfile=&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;LOCKFILE&lt;/span&gt;&lt;span class="o"&gt;-/&lt;/span&gt;&lt;span class="n"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;lock&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;subsys&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;httpd&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="centos"></category><category term="apache"></category><category term="nginx"></category><category term="mysql"></category><category term="php"></category></entry><entry><title>MySQL用户授权与密码修改</title><link href="http://dqw.github.io/mysqlyong-hu-shou-quan-yu-mi-ma-xiu-gai.html" rel="alternate"></link><updated>2013-10-08T22:40:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2013-10-08:mysqlyong-hu-shou-quan-yu-mi-ma-xiu-gai.html</id><summary type="html">&lt;h3&gt;授权&lt;/h3&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Tue, 08 Oct 2013 22:47:00 +0800</pubDate><guid>tag:dqw.github.io,2013-10-08:centosyuan-ma-bian-yi-an-zhuang-lnmp.html</guid><category>centos</category><category>apache</category><category>nginx</category><category>mysql</category><category>php</category></item><item><title>MySQL用户授权与密码修改</title><link>http://dqw.github.io/mysqlyong-hu-shou-quan-yu-mi-ma-xiu-gai.html</link><description>&lt;h3&gt;授权&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;GRANT ALL PRIVILEGES ON *.* TO &amp;#39;root&amp;#39;@&amp;#39;192.168.56.%&amp;#39;;
 FLUSH PRIVILEGES;
 &lt;/pre&gt;&lt;/div&gt;
@@ -323,7 +323,7 @@ FLUSH PRIVILEGES;
 &lt;div class="highlight"&gt;&lt;pre&gt;USE mysql
 UPDATE mysql.user SET Password=PASSWORD(&amp;#39;111111&amp;#39;) WHERE User=&amp;#39;bob&amp;#39; AND Host=&amp;#39;%.example.org&amp;#39;;
 FLUSH PRIVILEGES;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="mysql"></category></entry><entry><title>使用Pelican建立Blog</title><link href="http://dqw.github.io/shi-yong-pelicanjian-li-blog.html" rel="alternate"></link><updated>2013-08-19T23:31:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2013-08-19:shi-yong-pelicanjian-li-blog.html</id><summary type="html">&lt;p&gt;Pelican是用python开发的类似Jekyll静态网站生成工具，支持Markdown、reStructuredText、AsciiDoc等格式，支持RSS输出。&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Tue, 08 Oct 2013 22:40:00 +0800</pubDate><guid>tag:dqw.github.io,2013-10-08:mysqlyong-hu-shou-quan-yu-mi-ma-xiu-gai.html</guid><category>mysql</category></item><item><title>使用Pelican建立Blog</title><link>http://dqw.github.io/shi-yong-pelicanjian-li-blog.html</link><description>&lt;p&gt;Pelican是用python开发的类似Jekyll静态网站生成工具，支持Markdown、reStructuredText、AsciiDoc等格式，支持RSS输出。&lt;/p&gt;
 &lt;h3&gt;安装&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;pip install pelican
 pip install Markdown
@@ -410,7 +410,7 @@ SITEMAP = {
 &lt;div class="highlight"&gt;&lt;pre&gt;新建一个名为CNAME的文本文件，里面写入你要绑定的域名，比如www.dqw.me。
 
 如果绑定的是顶级域名，则DNS要新建一条A记录，指向204.232.175.78。如果绑定的是二级域名，则DNS要新建一条CNAME记录，指向username.github.io。
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="pelican"></category><category term="github"></category></entry><entry><title>javascript删除数组指定元素</title><link href="http://dqw.github.io/javascriptshan-chu-shu-zu-zhi-ding-yuan-su.html" rel="alternate"></link><updated>2013-01-25T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2013-01-25:javascriptshan-chu-shu-zu-zhi-ding-yuan-su.html</id><summary type="html">&lt;p&gt;原生javascipt&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Mon, 19 Aug 2013 23:31:00 +0800</pubDate><guid>tag:dqw.github.io,2013-08-19:shi-yong-pelicanjian-li-blog.html</guid><category>pelican</category><category>github</category></item><item><title>javascript删除数组指定元素</title><link>http://dqw.github.io/javascriptshan-chu-shu-zu-zhi-ding-yuan-su.html</link><description>&lt;p&gt;原生javascipt&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;Array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;prototype&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;indexOf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nx"&gt;val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -435,7 +435,7 @@ SITEMAP = {
 if (index &amp;gt;= 0) {
    array.splice(index, 1);
 }
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="javascript"></category><category term="数组"></category></entry><entry><title>MacOS安装homebrew</title><link href="http://dqw.github.io/macosan-zhuang-homebrew.html" rel="alternate"></link><updated>2013-01-25T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2013-01-25:macosan-zhuang-homebrew.html</id><summary type="html">&lt;p&gt;homebrew是macos下的包管理工具，可以用来安装开源软件，比如apache、mysql等等，类似Debian的apt。比早起的MacPorts要好用，&lt;a href="http://mxcl.github.com/homebrew/"&gt;官方网址&lt;/a&gt;。&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Fri, 25 Jan 2013 22:53:00 +0800</pubDate><guid>tag:dqw.github.io,2013-01-25:javascriptshan-chu-shu-zu-zhi-ding-yuan-su.html</guid><category>javascript</category><category>数组</category></item><item><title>MacOS安装homebrew</title><link>http://dqw.github.io/macosan-zhuang-homebrew.html</link><description>&lt;p&gt;homebrew是macos下的包管理工具，可以用来安装开源软件，比如apache、mysql等等，类似Debian的apt。比早起的MacPorts要好用，&lt;a href="http://mxcl.github.com/homebrew/"&gt;官方网址&lt;/a&gt;。&lt;/p&gt;
 &lt;h3&gt;安装方法&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;mkdir homebrew &amp;amp;&amp;amp; curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C homebrew
 &lt;/pre&gt;&lt;/div&gt;
@@ -462,7 +462,7 @@ brew update
 
 #建立链接
 brew link python
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="macos"></category><category term="homebrew"></category></entry><entry><title>MacOS安装zim</title><link href="http://dqw.github.io/macosan-zhuang-zim.html" rel="alternate"></link><updated>2013-01-25T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2013-01-25:macosan-zhuang-zim.html</id><summary type="html">&lt;p&gt;&lt;a href="http://zim-wiki.org/"&gt;zim&lt;/a&gt;是跨平台的桌面wiki软件，主要用来做一些笔记日记用，windows和linux都有现成的安装包，macos下只能用源码安装还是比较麻烦，特意记录一下。&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Fri, 25 Jan 2013 22:53:00 +0800</pubDate><guid>tag:dqw.github.io,2013-01-25:macosan-zhuang-homebrew.html</guid><category>macos</category><category>homebrew</category></item><item><title>MacOS安装zim</title><link>http://dqw.github.io/macosan-zhuang-zim.html</link><description>&lt;p&gt;&lt;a href="http://zim-wiki.org/"&gt;zim&lt;/a&gt;是跨平台的桌面wiki软件，主要用来做一些笔记日记用，windows和linux都有现成的安装包，macos下只能用源码安装还是比较麻烦，特意记录一下。&lt;/p&gt;
 &lt;p&gt;1、安装Homebrew&lt;/p&gt;
 &lt;p&gt;2、安装python&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;brew install python
@@ -499,7 +499,7 @@ make &amp;amp;&amp;amp; make install
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;9、下载zim源码包，然后运行zim.py&lt;/p&gt;</summary><category term="macos"></category><category term="zim"></category></entry><entry><title>VGA线质量不好导致无法调整分辨率</title><link href="http://dqw.github.io/vgaxian-zhi-liang-bu-hao-dao-zhi-wu-fa-diao-zheng-fen-bian-lu.html" rel="alternate"></link><updated>2013-01-25T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2013-01-25:vgaxian-zhi-liang-bu-hao-dao-zhi-wu-fa-diao-zheng-fen-bian-lu.html</id><summary type="html">&lt;p&gt;新换了块独立显卡，安装后分辨率列表没有1920×1080，折腾了一天也没有解决，最后怀疑是我的加长VGA线的问题，更换显示器原厂线解决。原来VGA线质量分好多种，3+4、3+6、3+9、3+11，最少7根线通就能用。但是原来的整合显卡没有问题，具体什么原因不太清楚。&lt;/p&gt;</summary><category term="VGA"></category><category term="分辨率"></category></entry><entry><title>Ubuntu清理无用内核</title><link href="http://dqw.github.io/ubuntuqing-li-wu-yong-nei-he.html" rel="alternate"></link><updated>2012-12-23T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2012-12-23:ubuntuqing-li-wu-yong-nei-he.html</id><summary type="html">&lt;p&gt;buntu12.04用了一段时间了，不断升级，无用的内核一共占用了2G多磁盘空间。&lt;/p&gt;
+&lt;p&gt;9、下载zim源码包，然后运行zim.py&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Fri, 25 Jan 2013 22:53:00 +0800</pubDate><guid>tag:dqw.github.io,2013-01-25:macosan-zhuang-zim.html</guid><category>macos</category><category>zim</category></item><item><title>VGA线质量不好导致无法调整分辨率</title><link>http://dqw.github.io/vgaxian-zhi-liang-bu-hao-dao-zhi-wu-fa-diao-zheng-fen-bian-lu.html</link><description>&lt;p&gt;新换了块独立显卡，安装后分辨率列表没有1920×1080，折腾了一天也没有解决，最后怀疑是我的加长VGA线的问题，更换显示器原厂线解决。原来VGA线质量分好多种，3+4、3+6、3+9、3+11，最少7根线通就能用。但是原来的整合显卡没有问题，具体什么原因不太清楚。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Fri, 25 Jan 2013 22:53:00 +0800</pubDate><guid>tag:dqw.github.io,2013-01-25:vgaxian-zhi-liang-bu-hao-dao-zhi-wu-fa-diao-zheng-fen-bian-lu.html</guid><category>VGA</category><category>分辨率</category></item><item><title>Ubuntu清理无用内核</title><link>http://dqw.github.io/ubuntuqing-li-wu-yong-nei-he.html</link><description>&lt;p&gt;buntu12.04用了一段时间了，不断升级，无用的内核一共占用了2G多磁盘空间。&lt;/p&gt;
 &lt;p&gt;清理方法一：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get remove &amp;lt;无用的内核&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -507,7 +507,7 @@ make &amp;amp;&amp;amp; make install
 
 &lt;p&gt;清理方法二：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;直接使用Ubuntu Tweak，现在的Ubuntu Tweak直接有清理无用内核功能，非常方便。
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="Ubuntu"></category><category term="分辨率"></category></entry><entry><title>dokuwiki修改缓存文件位置</title><link href="http://dqw.github.io/dokuwikixiu-gai-huan-cun-wen-jian-wei-zhi.html" rel="alternate"></link><updated>2012-04-09T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2012-04-09:dokuwikixiu-gai-huan-cun-wen-jian-wei-zhi.html</id><summary type="html">&lt;p&gt;用网盘同步时可以减少同步的文件，在conf下新建local.protected.php&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Sun, 23 Dec 2012 22:53:00 +0800</pubDate><guid>tag:dqw.github.io,2012-12-23:ubuntuqing-li-wu-yong-nei-he.html</guid><category>Ubuntu</category><category>分辨率</category></item><item><title>dokuwiki修改缓存文件位置</title><link>http://dqw.github.io/dokuwikixiu-gai-huan-cun-wen-jian-wei-zhi.html</link><description>&lt;p&gt;用网盘同步时可以减少同步的文件，在conf下新建local.protected.php&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;empty&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$_ENV&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;TEMP&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="nv"&gt;$conf&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cachedir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/tmp/dokuwiki/cache&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -526,7 +526,7 @@ make &amp;amp;&amp;amp; make install
     &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="nb"&gt;mkdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$conf&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;tmpdir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
     &lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="nb"&gt;mkdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$conf&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;lockdir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="dokuwiki"></category></entry><entry><title>MySQL索引总结</title><link href="http://dqw.github.io/mysqlsuo-yin-zong-jie.html" rel="alternate"></link><updated>2012-01-30T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2012-01-30:mysqlsuo-yin-zong-jie.html</id><summary type="html">&lt;h3&gt;索引简介&lt;/h3&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Mon, 09 Apr 2012 22:53:00 +0800</pubDate><guid>tag:dqw.github.io,2012-04-09:dokuwikixiu-gai-huan-cun-wen-jian-wei-zhi.html</guid><category>dokuwiki</category></item><item><title>MySQL索引总结</title><link>http://dqw.github.io/mysqlsuo-yin-zong-jie.html</link><description>&lt;h3&gt;索引简介&lt;/h3&gt;
 &lt;p&gt;系统中最频繁的操作应该就是查询操作了，使用索引可快速访问表中的特定信息，提高查询和排序的操作效率。在关系数据库中，索引是一种与表有关的数据库结构，它可以使对应于表的SQL语句执行得更快。 索引的作用相当于图书的目录，可以根据目录中的页码快速找到所需的内容。当表中有大量记录时如果没有索引，查询时需要对表中的记录逐一匹配，这样做会消耗大量数据库系统时间，并造成大量磁盘I/O操作。索引提供指向存储在表的指定列中的数据值的指针，然后根据您指定的排序顺序对这些指针排序。数据库使用索引的方式与书籍中的索引的方式很相似，它搜索索引以找到特定值，然后顺指针找到包含该值的行。&lt;/p&gt;
 &lt;h3&gt;MySQL的索引类型&lt;/h3&gt;
 &lt;p&gt;1、普通索引&lt;/p&gt;
@@ -620,7 +620,7 @@ query end 0.000002
 freeing items 0.001547
 logging slow query 0.000005
 cleaning up 0.000006
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="MySQL"></category><category term="索引"></category></entry><entry><title>引号对MySQL查询性能的影响</title><link href="http://dqw.github.io/yin-hao-dui-mysqlcha-xun-xing-neng-de-ying-xiang.html" rel="alternate"></link><updated>2012-01-30T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2012-01-30:yin-hao-dui-mysqlcha-xun-xing-neng-de-ying-xiang.html</id><summary type="html">&lt;h3&gt;测试数据&lt;/h3&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Mon, 30 Jan 2012 22:53:00 +0800</pubDate><guid>tag:dqw.github.io,2012-01-30:mysqlsuo-yin-zong-jie.html</guid><category>MySQL</category><category>索引</category></item><item><title>引号对MySQL查询性能的影响</title><link>http://dqw.github.io/yin-hao-dui-mysqlcha-xun-xing-neng-de-ying-xiang.html</link><description>&lt;h3&gt;测试数据&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;CREATE TABLE IF NOT EXISTS `test` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `num` int(11) NOT NULL,
@@ -769,7 +769,7 @@ UPDATE `test` SET num_char = ‘aaa’ WHERE num = 83715999999
 &lt;li&gt;如果字段为字符型，查询关键字一定要加上引号。&lt;/li&gt;
 &lt;li&gt;如果字段为数值型，查询关键字最好不要加引号，虽然只是很小的可能会出现问题，但是性能影响巨大，至于安全隐患可以使用intval函数强制转换来避免。&lt;/li&gt;
 &lt;li&gt;总之要避免隐式转换，隐式转换本身会有系统开销，而且会造成不可预知的影响。&lt;/li&gt;
-&lt;/ol&gt;</summary><category term="MySQL"></category></entry><entry><title>使用cconv批量简体转繁体</title><link href="http://dqw.github.io/shi-yong-cconvpi-liang-jian-ti-zhuan-fan-ti.html" rel="alternate"></link><updated>2011-11-09T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2011-11-09:shi-yong-cconvpi-liang-jian-ti-zhuan-fan-ti.html</id><summary type="html">&lt;p&gt;cconv是一个批量简繁转换项目，目前只能在linux下使用，&lt;a href="http://code.google.com/p/cconv/"&gt;项目地址&lt;/a&gt;&lt;/p&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Mon, 30 Jan 2012 22:53:00 +0800</pubDate><guid>tag:dqw.github.io,2012-01-30:yin-hao-dui-mysqlcha-xun-xing-neng-de-ying-xiang.html</guid><category>MySQL</category></item><item><title>使用cconv批量简体转繁体</title><link>http://dqw.github.io/shi-yong-cconvpi-liang-jian-ti-zhuan-fan-ti.html</link><description>&lt;p&gt;cconv是一个批量简繁转换项目，目前只能在linux下使用，&lt;a href="http://code.google.com/p/cconv/"&gt;项目地址&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;在ubuntu下安装很简单&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get install cconv
 &lt;/pre&gt;&lt;/div&gt;
@@ -788,7 +788,7 @@ find ./ -type f -name &lt;span class="s2"&gt;&amp;quot;*.php&amp;quot;&lt;/span&
 cconv -f UTF8-CN -t UTF8-HK &lt;span class="nv"&gt;$line&lt;/span&gt; -o &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;line&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.zh
 &lt;span class="k"&gt;done&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="cconv"></category></entry><entry><title>apache最简单的url rewrite</title><link href="http://dqw.github.io/apachezui-jian-dan-de-url-rewrite.html" rel="alternate"></link><updated>2011-11-06T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2011-11-06:apachezui-jian-dan-de-url-rewrite.html</id><summary type="html">&lt;p&gt;要实现访问rewrite-xxx.html然后重定向到rewrite.php?id=xxx&lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Wed, 09 Nov 2011 22:53:00 +0800</pubDate><guid>tag:dqw.github.io,2011-11-09:shi-yong-cconvpi-liang-jian-ti-zhuan-fan-ti.html</guid><category>cconv</category></item><item><title>apache最简单的url rewrite</title><link>http://dqw.github.io/apachezui-jian-dan-de-url-rewrite.html</link><description>&lt;p&gt;要实现访问rewrite-xxx.html然后重定向到rewrite.php?id=xxx&lt;/p&gt;
 &lt;p&gt;1、开启apahce的重定向功能，打开apahce的配置文件，httd.conf&lt;/p&gt;
 &lt;p&gt;去掉该行前边的注释&lt;/p&gt;
 &lt;p&gt;LoadModule rewrite_module modules/mod_rewrite.so&lt;/p&gt;
@@ -801,11 +801,11 @@ RewriteRule ^rewrite-(.*).html$  rewrite.php?id=$1
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;windows下没法直接新建.htaccess文件，可以先建立一个合法的名字比如htaccess.txt，然后用dos命令ren htaccess.txt .htaccess改名就可以了&lt;/p&gt;</summary><category term="apache"></category><category term="rewrite"></category></entry><entry><title>总结php的-&gt;、::、this、self、parent</title><link href="http://dqw.github.io/zong-jie-phpde-this-self-parent.html" rel="alternate"></link><updated>2011-11-06T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2011-11-06:zong-jie-phpde-this-self-parent.html</id><summary type="html">&lt;p&gt;-&amp;gt;用于访问对象的的成员&lt;/p&gt;
+&lt;p&gt;windows下没法直接新建.htaccess文件，可以先建立一个合法的名字比如htaccess.txt，然后用dos命令ren htaccess.txt .htaccess改名就可以了&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Sun, 06 Nov 2011 22:53:00 +0800</pubDate><guid>tag:dqw.github.io,2011-11-06:apachezui-jian-dan-de-url-rewrite.html</guid><category>apache</category><category>rewrite</category></item><item><title>总结php的-&gt;、::、this、self、parent</title><link>http://dqw.github.io/zong-jie-phpde-this-self-parent.html</link><description>&lt;p&gt;-&amp;gt;用于访问对象的的成员&lt;/p&gt;
 &lt;p&gt;::用于访问静态成员(static)，或者直接调用类的成员&lt;/p&gt;
 &lt;p&gt;$this用来调用实例化对象的内部成员&lt;/p&gt;
 &lt;p&gt;self代表的是类本身，不是任何一个实例化的对象&lt;/p&gt;
-&lt;p&gt;parent代表父类&lt;/p&gt;</summary><category term="php"></category></entry><entry><title>mysql replication</title><link href="http://dqw.github.io/mysql-replication.html" rel="alternate"></link><updated>2011-10-19T22:53:00+08:00</updated><author><name>dqw</name></author><id>tag:dqw.github.io,2011-10-19:mysql-replication.html</id><summary type="html">&lt;p&gt;mysql的replication是基于二进制日志的，按照手册配置就可以了，配置很简单&lt;/p&gt;
+&lt;p&gt;parent代表父类&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Sun, 06 Nov 2011 22:53:00 +0800</pubDate><guid>tag:dqw.github.io,2011-11-06:zong-jie-phpde-this-self-parent.html</guid><category>php</category></item><item><title>mysql replication</title><link>http://dqw.github.io/mysql-replication.html</link><description>&lt;p&gt;mysql的replication是基于二进制日志的，按照手册配置就可以了，配置很简单&lt;/p&gt;
 &lt;h3&gt;主服务器&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;配置文件mysql.ini
 [mysqld]
@@ -868,4 +868,4 @@ replicate_ignore_table=TD_OA.SYS_LOG
 &lt;p&gt;使用自增字段如果在从服务器写入数据会出现冲突，比如登录日志的表，需要在从服务器排除同步该表&lt;/p&gt;
 &lt;p&gt;show master status empty set 服务器端没有配置ini文件&lt;/p&gt;
 &lt;p&gt;slave_io_running no 检查端口 log文件名 和便宜量 等一会再观察&lt;/p&gt;
-&lt;p&gt;最好主从服务器版本一致&lt;/p&gt;</summary><category term="mysql"></category><category term="replication"></category></entry></feed>
+&lt;p&gt;最好主从服务器版本一致&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">dqw</dc:creator><pubDate>Wed, 19 Oct 2011 22:53:00 +0800</pubDate><guid>tag:dqw.github.io,2011-10-19:mysql-replication.html</guid><category>mysql</category><category>replication</category></item></channel></rss>

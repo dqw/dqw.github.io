@@ -4,407 +4,407 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>http://www.dqw.me/index.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/index.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/archives.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/archives.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tags.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tags.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/categories.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/categories.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/pages/about.html</loc>
-<lastmod>2011-09-06T22:53:00-00:00</lastmod>
+<loc>http://dqw.github.io/pages/about.html</loc>
+<lastmod>2011-09-06T22:53:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/httphe-httpsxia-de-cookiegong-xiang.html</loc>
-<lastmod>2014-04-23T22:47:00-00:00</lastmod>
+<loc>http://dqw.github.io/httphe-httpsxia-de-cookiegong-xiang.html</loc>
+<lastmod>2014-04-23T22:47:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/centosshi-yong-yuman-zhuang-lamp.html</loc>
-<lastmod>2013-10-08T22:47:00-00:00</lastmod>
+<loc>http://dqw.github.io/centosshi-yong-yuman-zhuang-lamp.html</loc>
+<lastmod>2013-10-08T22:47:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/centosyuan-ma-bian-yi-an-zhuang-lnmp.html</loc>
-<lastmod>2013-10-08T22:47:00-00:00</lastmod>
+<loc>http://dqw.github.io/centosyuan-ma-bian-yi-an-zhuang-lnmp.html</loc>
+<lastmod>2013-10-08T22:47:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/mysqlyong-hu-shou-quan-yu-mi-ma-xiu-gai.html</loc>
-<lastmod>2013-10-08T22:40:00-00:00</lastmod>
+<loc>http://dqw.github.io/mysqlyong-hu-shou-quan-yu-mi-ma-xiu-gai.html</loc>
+<lastmod>2013-10-08T22:40:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/shi-yong-pelicanjian-li-blog.html</loc>
-<lastmod>2013-08-19T23:31:00-00:00</lastmod>
+<loc>http://dqw.github.io/shi-yong-pelicanjian-li-blog.html</loc>
+<lastmod>2013-08-19T23:31:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/javascriptshan-chu-shu-zu-zhi-ding-yuan-su.html</loc>
-<lastmod>2013-01-25T22:53:00-00:00</lastmod>
+<loc>http://dqw.github.io/javascriptshan-chu-shu-zu-zhi-ding-yuan-su.html</loc>
+<lastmod>2013-01-25T22:53:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/macosan-zhuang-homebrew.html</loc>
-<lastmod>2013-01-25T22:53:00-00:00</lastmod>
+<loc>http://dqw.github.io/macosan-zhuang-homebrew.html</loc>
+<lastmod>2013-01-25T22:53:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/macosan-zhuang-zim.html</loc>
-<lastmod>2013-01-25T22:53:00-00:00</lastmod>
+<loc>http://dqw.github.io/macosan-zhuang-zim.html</loc>
+<lastmod>2013-01-25T22:53:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/vgaxian-zhi-liang-bu-hao-dao-zhi-wu-fa-diao-zheng-fen-bian-lu.html</loc>
-<lastmod>2013-01-25T22:53:00-00:00</lastmod>
+<loc>http://dqw.github.io/vgaxian-zhi-liang-bu-hao-dao-zhi-wu-fa-diao-zheng-fen-bian-lu.html</loc>
+<lastmod>2013-01-25T22:53:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/ubuntuqing-li-wu-yong-nei-he.html</loc>
-<lastmod>2012-12-23T22:53:00-00:00</lastmod>
+<loc>http://dqw.github.io/ubuntuqing-li-wu-yong-nei-he.html</loc>
+<lastmod>2012-12-23T22:53:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/dokuwikixiu-gai-huan-cun-wen-jian-wei-zhi.html</loc>
-<lastmod>2012-04-09T22:53:00-00:00</lastmod>
+<loc>http://dqw.github.io/dokuwikixiu-gai-huan-cun-wen-jian-wei-zhi.html</loc>
+<lastmod>2012-04-09T22:53:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/mysqlsuo-yin-zong-jie.html</loc>
-<lastmod>2012-01-30T22:53:00-00:00</lastmod>
+<loc>http://dqw.github.io/mysqlsuo-yin-zong-jie.html</loc>
+<lastmod>2012-01-30T22:53:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/yin-hao-dui-mysqlcha-xun-xing-neng-de-ying-xiang.html</loc>
-<lastmod>2012-01-30T22:53:00-00:00</lastmod>
+<loc>http://dqw.github.io/yin-hao-dui-mysqlcha-xun-xing-neng-de-ying-xiang.html</loc>
+<lastmod>2012-01-30T22:53:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/shi-yong-cconvpi-liang-jian-ti-zhuan-fan-ti.html</loc>
-<lastmod>2011-11-09T22:53:00-00:00</lastmod>
+<loc>http://dqw.github.io/shi-yong-cconvpi-liang-jian-ti-zhuan-fan-ti.html</loc>
+<lastmod>2011-11-09T22:53:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/apachezui-jian-dan-de-url-rewrite.html</loc>
-<lastmod>2011-11-06T22:53:00-00:00</lastmod>
+<loc>http://dqw.github.io/apachezui-jian-dan-de-url-rewrite.html</loc>
+<lastmod>2011-11-06T22:53:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/zong-jie-phpde-this-self-parent.html</loc>
-<lastmod>2011-11-06T22:53:00-00:00</lastmod>
+<loc>http://dqw.github.io/zong-jie-phpde-this-self-parent.html</loc>
+<lastmod>2011-11-06T22:53:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/mysql-replication.html</loc>
-<lastmod>2011-10-19T22:53:00-00:00</lastmod>
+<loc>http://dqw.github.io/mysql-replication.html</loc>
+<lastmod>2011-10-19T22:53:00:%s</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/category/apache.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/category/apache.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/category/centos.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/category/centos.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/category/dokuwiki.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/category/dokuwiki.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/category/javascript.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/category/javascript.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/category/linux.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/category/linux.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/category/macos.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/category/macos.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/category/mysql.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/category/mysql.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/category/other.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/category/other.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/category/pelican.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/category/pelican.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/category/php.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/category/php.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/category/xie-yi.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/category/xie-yi.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/pelican.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/pelican.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/xie-yi.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/xie-yi.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/fen-bian-lu.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/fen-bian-lu.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/shu-zu.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/shu-zu.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/rewrite.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/dokuwiki.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/mysql.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/mysql.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/cconv.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/cconv.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/centos.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/centos.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/dokuwiki.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/rewrite.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/vga.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/vga.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/suo-yin.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/suo-yin.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/https.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/https.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/zim.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/zim.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/http.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/http.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/javascript.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/javascript.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/nginx.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/nginx.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/cookie.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/cookie.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/ubuntu.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/ubuntu.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/apache.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/apache.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/homebrew.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/homebrew.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/php.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/php.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/macos.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/macos.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/github.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/github.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/tag/replication.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/tag/replication.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.dqw.me/author/dqw.html</loc>
-<lastmod>2014-05-13T00:14:40-00:00</lastmod>
+<loc>http://dqw.github.io/author/dqw.html</loc>
+<lastmod>2015-09-21T14:59:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

@@ -4,17 +4,17 @@
 
         <title>使用Pelican建立Blog</title>
         <meta charset="utf-8" />
-        <link href="http://www.dqw.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DQW's Blog Full Atom Feed" />
+        <link href="http://dqw.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DQW's Blog Full Atom Feed" />
 
 
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="http://www.dqw.me/theme/gumby.css" />
-        <link rel="stylesheet" type="text/css" href="http://www.dqw.me/theme/style.css" />
-        <link rel="stylesheet" type="text/css" href="http://www.dqw.me/theme/pygment.css" />
+        <link rel="stylesheet" type="text/css" href="http://dqw.github.io/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://dqw.github.io/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://dqw.github.io/theme/pygment.css" />
 
-        <script src="http://www.dqw.me/theme/js/libs/modernizr-2.6.2.min.js"></script>
+        <script src="http://dqw.github.io/theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
 
@@ -31,16 +31,16 @@
         <div class="row">
 
           <header id="banner" class="body">
-                  <h1><a href="http://www.dqw.me">DQW's Blog <strong>用适合的技术解决实际的问题</strong></a></h1>
+                  <h1><a href="http://dqw.github.io">DQW's Blog <strong>用适合的技术解决实际的问题</strong></a></h1>
           </header><!-- /#banner -->
 
             <div id="navigation" class="navbar row">
               <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
              
               <ul class="columns">
-                <li><a href="http://www.dqw.me">Home</a></li>
+                <li><a href="http://dqw.github.io">Home</a></li>
 
-                <li><a href="http://www.dqw.me/pages/about.html">About</a></li>
+                <li><a href="http://dqw.github.io/pages/about.html">About</a></li>
 
               </ul>
             </div>
@@ -53,106 +53,106 @@
 
             <header>
               <h2 class="entry-title">
-                <a href="http://www.dqw.me/shi-yong-pelicanjian-li-blog.html" rel="bookmark"
+                <a href="http://dqw.github.io/shi-yong-pelicanjian-li-blog.html" rel="bookmark"
                    title="Permalink to 使用Pelican建立Blog">使用Pelican建立Blog</a></h2>
            
             </header>
             <footer class="post-info">
-              <abbr class="published" title="2013-08-19T23:31:00">
-                一 19 八月 2013
+              <abbr class="published" title="2013-08-19T23:31:00+08:00">
+                Mon 19 August 2013
               </abbr>
               <address class="vcard author">
-                By <a class="url fn" href="http://www.dqw.me/author/dqw.html">dqw</a>
+                By <a class="url fn" href="http://dqw.github.io/author/dqw.html">dqw</a>
               </address>
             </footer><!-- /.post-info -->
             <div class="entry-content">
               <p>Pelican是用python开发的类似Jekyll静态网站生成工具，支持Markdown、reStructuredText、AsciiDoc等格式，支持RSS输出。</p>
 <h3>安装</h3>
-<div class="highlight"><pre><span class="n">pip</span> <span class="n">install</span> <span class="n">pelican</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">Markdown</span>
+<div class="highlight"><pre>pip install pelican
+pip install Markdown
 </pre></div>
 
 
 <h3>建立Blog</h3>
-<div class="highlight"><pre><span class="n">mkdir</span> <span class="n">blog</span>
-<span class="n">cd</span> <span class="n">blog</span>
-<span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span>
+<div class="highlight"><pre>mkdir blog
+cd blog
+pelican-quickstart
 </pre></div>
 
 
 <h3>写文章</h3>
 <p>在content目录建立hello.md</p>
-<div class="highlight"><pre><span class="nl">Title:</span> <span class="err">文章标题</span>
-<span class="nl">Date:</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">19</span>
-<span class="nl">Category:</span> <span class="err">文章目录</span>
-<span class="nl">Author:</span> <span class="err">文章作者</span>
-<span class="nl">Tag:</span> <span class="err">标签</span>
-<span class="nl">Summary:</span> <span class="err">文章摘要</span>
+<div class="highlight"><pre>Title: 文章标题
+Date: 2013-08-19
+Category: 文章目录
+Author: 文章作者
+Tag: 标签
+Summary: 文章摘要
 
-<span class="err">这里是正文</span>
+这里是正文
 </pre></div>
 
 
 <h3>创建页面</h3>
 <p>在content目录创建pages目录，然后创建about.md</p>
-<div class="highlight"><pre><span class="nl">Title:</span> <span class="err">关于我</span>
-<span class="nl">Date:</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">19</span>
+<div class="highlight"><pre>Title: 关于我
+Date: 2013-08-19
 
-<span class="err">这里是页面正文</span>
+这里是页面正文
 </pre></div>
 
 
 <h3>生成页面</h3>
-<div class="highlight"><pre><span class="n">make</span> <span class="n">html</span>
+<div class="highlight"><pre>make html
 </pre></div>
 
 
 <h3>使用Disqus评论</h3>
 <p>在Disqus申请, 然后在pelicanconf.py里添加如下内容:</p>
-<div class="highlight"><pre><span class="n">DISQUS_SITENAME</span> <span class="o">=</span> <span class="n">u</span><span class="s">&quot;dqw&quot;</span>
+<div class="highlight"><pre>DISQUS_SITENAME = u&quot;dqw&quot;
 </pre></div>
 
 
 <p>然后重新生成页面</p>
 <h3>更换主题</h3>
 <p>把主题目录拷贝到blog目录，然后在pelicanconf.py里添加如下内容:</p>
-<div class="highlight"><pre><span class="n">THEME</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">gum</span><span class="err">&#39;</span>
+<div class="highlight"><pre>THEME = &#39;gum&#39;
 </pre></div>
 
 
 <h3>生成sitemap</h3>
 <p>把pelican-plugins拷贝到blog目录，然后在pelicanconf.py里添加如下内容:</p>
-<div class="highlight"><pre><span class="n">PLUGIN_PATH</span> <span class="o">=</span> <span class="n">u</span><span class="s">&quot;pelican-plugins&quot;</span>
+<div class="highlight"><pre>PLUGIN_PATH = u&quot;pelican-plugins&quot;
 
-<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;sitemap&quot;</span><span class="p">]</span>
+PLUGINS = [&quot;sitemap&quot;]
 
-<span class="cp">## 配置sitemap 插件</span>
-<span class="n">SITEMAP</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">&quot;format&quot;</span><span class="o">:</span> <span class="s">&quot;xml&quot;</span><span class="p">,</span>
-    <span class="s">&quot;priorities&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s">&quot;articles&quot;</span><span class="o">:</span> <span class="mf">0.7</span><span class="p">,</span>
-        <span class="s">&quot;indexes&quot;</span><span class="o">:</span> <span class="mf">0.5</span><span class="p">,</span>
-        <span class="s">&quot;pages&quot;</span><span class="o">:</span> <span class="mf">0.3</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="s">&quot;changefreqs&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s">&quot;articles&quot;</span><span class="o">:</span> <span class="s">&quot;monthly&quot;</span><span class="p">,</span>
-        <span class="s">&quot;indexes&quot;</span><span class="o">:</span> <span class="s">&quot;daily&quot;</span><span class="p">,</span>
-        <span class="s">&quot;pages&quot;</span><span class="o">:</span> <span class="s">&quot;monthly&quot;</span><span class="p">,</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+## 配置sitemap 插件
+SITEMAP = {
+    &quot;format&quot;: &quot;xml&quot;,
+    &quot;priorities&quot;: {
+        &quot;articles&quot;: 0.7,
+        &quot;indexes&quot;: 0.5,
+        &quot;pages&quot;: 0.3,
+    },
+    &quot;changefreqs&quot;: {
+        &quot;articles&quot;: &quot;monthly&quot;,
+        &quot;indexes&quot;: &quot;daily&quot;,
+        &quot;pages&quot;: &quot;monthly&quot;,
+    }
+}
 </pre></div>
 
 
 <p>重新生成页面</p>
 <h3>使用Github的Pages服务托管站点</h3>
-<div class="highlight"><pre><span class="err">新建一个</span><span class="n">Repository</span><span class="err">，</span><span class="n">Repository</span><span class="err">名字可以是</span> <span class="n">xxx</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span> <span class="err">或者</span> <span class="n">xxx</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="err">，其中</span> <span class="n">xxx</span> <span class="err">是您的用户</span><span class="n">ID</span><span class="err">。把生成的页面</span><span class="n">push</span><span class="err">过去就可以了。</span>
+<div class="highlight"><pre>新建一个Repository，Repository名字可以是 xxx.github.io 或者 xxx.github.com，其中 xxx 是您的用户ID。把生成的页面push过去就可以了。
 </pre></div>
 
 
 <h3>绑定域名</h3>
-<div class="highlight"><pre><span class="err">新建一个名为</span><span class="n">CNAME</span><span class="err">的文本文件，里面写入你要绑定的域名，比如</span><span class="n">www</span><span class="p">.</span><span class="n">dqw</span><span class="p">.</span><span class="n">me</span><span class="err">。</span>
+<div class="highlight"><pre>新建一个名为CNAME的文本文件，里面写入你要绑定的域名，比如www.dqw.me。
 
-<span class="err">如果绑定的是顶级域名，则</span><span class="n">DNS</span><span class="err">要新建一条</span><span class="n">A</span><span class="err">记录，指向</span><span class="mf">204.232.175.78</span><span class="err">。如果绑定的是二级域名，则</span><span class="n">DNS</span><span class="err">要新建一条</span><span class="n">CNAME</span><span class="err">记录，指向</span><span class="n">username</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="err">。</span>
+如果绑定的是顶级域名，则DNS要新建一条A记录，指向204.232.175.78。如果绑定的是二级域名，则DNS要新建一条CNAME记录，指向username.github.io。
 </pre></div>
             </div><!-- /.entry-content -->
 
@@ -164,52 +164,27 @@
 <h4>Pages</h4>
 
  <ul>
-      <li><a href="http://www.dqw.me/pages/about.html">About</a></li>
+      <li><a href="http://dqw.github.io/pages/about.html">About</a></li>
   </ul>
 
 <h4>Categories</h4>
 <ul>
-		<li><a href="http://www.dqw.me/category/apache.html">apache</a></li>
-		<li><a href="http://www.dqw.me/category/centos.html">centos</a></li>
-		<li><a href="http://www.dqw.me/category/dokuwiki.html">dokuwiki</a></li>
-		<li><a href="http://www.dqw.me/category/javascript.html">javascript</a></li>
-		<li><a href="http://www.dqw.me/category/linux.html">Linux</a></li>
-		<li><a href="http://www.dqw.me/category/macos.html">macos</a></li>
-		<li><a href="http://www.dqw.me/category/mysql.html">MySQL</a></li>
-		<li><a href="http://www.dqw.me/category/other.html">other</a></li>
-		<li><a href="http://www.dqw.me/category/pelican.html">pelican</a></li>
-		<li><a href="http://www.dqw.me/category/php.html">php</a></li>
-		<li><a href="http://www.dqw.me/category/xie-yi.html">协议</a></li>
+		<li><a href="http://dqw.github.io/category/apache.html">apache</a></li>
+		<li><a href="http://dqw.github.io/category/centos.html">centos</a></li>
+		<li><a href="http://dqw.github.io/category/dokuwiki.html">dokuwiki</a></li>
+		<li><a href="http://dqw.github.io/category/javascript.html">javascript</a></li>
+		<li><a href="http://dqw.github.io/category/linux.html">Linux</a></li>
+		<li><a href="http://dqw.github.io/category/macos.html">macos</a></li>
+		<li><a href="http://dqw.github.io/category/mysql.html">mysql</a></li>
+		<li><a href="http://dqw.github.io/category/other.html">other</a></li>
+		<li><a href="http://dqw.github.io/category/pelican.html">pelican</a></li>
+		<li><a href="http://dqw.github.io/category/php.html">php</a></li>
+		<li><a href="http://dqw.github.io/category/xie-yi.html">协议</a></li>
 </ul>
 
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/github.html">github</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/pelican.html">pelican</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/.html"></a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/ubuntu.html">Ubuntu</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/http.html">http</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/nginx.html">nginx</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/suo-yin.html">索引</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/https.html">https</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/macos.html">macos</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/replication.html">replication</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/cconv.html">cconv</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/centos.html">centos</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/apache.html">apache</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/homebrew.html">homebrew</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/xie-yi.html">协议</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/rewrite.html">rewrite</a></li>
-	    <li class="tag-0"><a href="http://www.dqw.me/tag/mysql.html">mysql</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/vga.html">VGA</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/dokuwiki.html">dokuwiki</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/php.html">php</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/cookie.html">cookie</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/fen-bian-lu.html">分辨率</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/shu-zu.html">数组</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/javascript.html">javascript</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/zim.html">zim</a></li>
 </ul>
 
 
@@ -265,9 +240,9 @@
     </div>
 
 
-  <script src="http://www.dqw.me/theme/js/libs/jquery-1.9.1.min.js"></script>
-  <script src="http://www.dqw.me/theme/js/libs/gumby.min.js"></script>
-  <script src="http://www.dqw.me/theme/js/plugins.js"></script>
+  <script src="http://dqw.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://dqw.github.io/theme/js/libs/gumby.min.js"></script>
+  <script src="http://dqw.github.io/theme/js/plugins.js"></script>
 
 </body>
 </html>

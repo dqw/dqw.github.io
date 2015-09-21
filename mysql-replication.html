@@ -4,17 +4,17 @@
 
         <title>mysql replication</title>
         <meta charset="utf-8" />
-        <link href="http://www.dqw.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DQW's Blog Full Atom Feed" />
+        <link href="http://dqw.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DQW's Blog Full Atom Feed" />
 
 
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="http://www.dqw.me/theme/gumby.css" />
-        <link rel="stylesheet" type="text/css" href="http://www.dqw.me/theme/style.css" />
-        <link rel="stylesheet" type="text/css" href="http://www.dqw.me/theme/pygment.css" />
+        <link rel="stylesheet" type="text/css" href="http://dqw.github.io/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://dqw.github.io/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://dqw.github.io/theme/pygment.css" />
 
-        <script src="http://www.dqw.me/theme/js/libs/modernizr-2.6.2.min.js"></script>
+        <script src="http://dqw.github.io/theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
 
@@ -31,16 +31,16 @@
         <div class="row">
 
           <header id="banner" class="body">
-                  <h1><a href="http://www.dqw.me">DQW's Blog <strong>用适合的技术解决实际的问题</strong></a></h1>
+                  <h1><a href="http://dqw.github.io">DQW's Blog <strong>用适合的技术解决实际的问题</strong></a></h1>
           </header><!-- /#banner -->
 
             <div id="navigation" class="navbar row">
               <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
              
               <ul class="columns">
-                <li><a href="http://www.dqw.me">Home</a></li>
+                <li><a href="http://dqw.github.io">Home</a></li>
 
-                <li><a href="http://www.dqw.me/pages/about.html">About</a></li>
+                <li><a href="http://dqw.github.io/pages/about.html">About</a></li>
 
               </ul>
             </div>
@@ -53,75 +53,75 @@
 
             <header>
               <h2 class="entry-title">
-                <a href="http://www.dqw.me/mysql-replication.html" rel="bookmark"
+                <a href="http://dqw.github.io/mysql-replication.html" rel="bookmark"
                    title="Permalink to mysql replication">mysql replication</a></h2>
            
             </header>
             <footer class="post-info">
-              <abbr class="published" title="2011-10-19T22:53:00">
-                三 19 十月 2011
+              <abbr class="published" title="2011-10-19T22:53:00+08:00">
+                Wed 19 October 2011
               </abbr>
               <address class="vcard author">
-                By <a class="url fn" href="http://www.dqw.me/author/dqw.html">dqw</a>
+                By <a class="url fn" href="http://dqw.github.io/author/dqw.html">dqw</a>
               </address>
             </footer><!-- /.post-info -->
             <div class="entry-content">
               <p>mysql的replication是基于二进制日志的，按照手册配置就可以了，配置很简单</p>
 <h3>主服务器</h3>
-<div class="highlight"><pre><span class="err">配置文件</span><span class="n">mysql</span><span class="p">.</span><span class="n">ini</span>
-<span class="p">[</span><span class="n">mysqld</span><span class="p">]</span>
-<span class="cp">#服务器ID号，整数值，保证唯一标识一台服务器就可以</span>
-<span class="n">server</span><span class="o">-</span><span class="n">id</span> <span class="o">=</span> <span class="mi">410</span>
-<span class="cp">#打开二进制日志</span>
-<span class="n">log</span><span class="o">-</span><span class="n">bin</span><span class="o">=</span><span class="n">e</span><span class="o">:</span><span class="err">\</span><span class="n">myoa</span><span class="err">\</span><span class="n">logs</span><span class="err">\</span><span class="n">mysqlbin</span><span class="p">.</span><span class="n">log</span>
-<span class="cp">#忽略mysql数据库复制</span>
-<span class="n">binlog</span><span class="o">-</span><span class="n">ignore</span><span class="o">-</span><span class="n">db</span><span class="o">=</span><span class="n">mysql</span>
-<span class="cp">#忽略information_schema数据库复制</span>
-<span class="n">binlog</span><span class="o">-</span><span class="n">ignore</span><span class="o">-</span><span class="n">db</span><span class="o">=</span><span class="n">information_schema</span>
+<div class="highlight"><pre>配置文件mysql.ini
+[mysqld]
+#服务器ID号，整数值，保证唯一标识一台服务器就可以
+server-id = 410
+#打开二进制日志
+log-bin=e:\myoa\logs\mysqlbin.log
+#忽略mysql数据库复制
+binlog-ignore-db=mysql
+#忽略information_schema数据库复制
+binlog-ignore-db=information_schema
 </pre></div>
 
 
-<div class="highlight"><pre><span class="cp">#创建用于复制的账号</span>
-<span class="n">GRANT</span> <span class="n">REPLICATION</span> <span class="n">SLAVE</span> <span class="n">ON</span> <span class="o">*</span><span class="p">.</span><span class="o">*</span> <span class="n">TO</span> <span class="err">‘</span><span class="n">repl</span><span class="err">’</span> <span class="n">IDENTIFIED</span> <span class="n">BY</span> <span class="err">‘</span><span class="n">slavepass</span><span class="err">’</span><span class="p">;</span>
-<span class="cp">#选择数据库</span>
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="n">use</span> <span class="n">dbname</span><span class="p">;</span>
-<span class="cp">#设置表为只读</span>
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="n">FLUSH</span> <span class="n">TABLES</span> <span class="n">WITH</span> <span class="n">READ</span> <span class="n">LOCK</span><span class="err">；</span>
-<span class="cp">#备份数据库文件zip</span>
-<span class="cp">#显示并记录日志文件名和状态，需要在从服务器设置</span>
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SHOW</span> <span class="n">MASTER</span> <span class="n">STATUS</span><span class="p">;</span>
-<span class="o">+</span><span class="err">—————</span><span class="o">+</span><span class="err">———</span><span class="o">-+</span><span class="err">————–</span><span class="o">+</span><span class="err">——————</span><span class="o">+</span>
-<span class="o">|</span> <span class="n">File</span>          <span class="o">|</span> <span class="n">Position</span> <span class="o">|</span> <span class="n">Binlog_Do_DB</span> <span class="o">|</span> <span class="n">Binlog_Ignore_DB</span> <span class="o">|</span>
-<span class="o">+</span><span class="err">—————</span><span class="o">+</span><span class="err">———</span><span class="o">-+</span><span class="err">————–</span><span class="o">+</span><span class="err">——————</span><span class="o">+</span>
-<span class="o">|</span> <span class="n">mysql</span><span class="o">-</span><span class="n">bin</span><span class="mf">.003</span> <span class="o">|</span> <span class="mi">73</span>       <span class="o">|</span> <span class="n">test</span>         <span class="o">|</span> <span class="n">manual</span><span class="p">,</span><span class="n">mysql</span>     <span class="o">|</span>
-<span class="o">+</span><span class="err">—————</span><span class="o">+</span><span class="err">———</span><span class="o">-+</span><span class="err">————–</span><span class="o">+</span><span class="err">——————</span><span class="o">+</span>
-<span class="cp">#数据表解锁</span>
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="n">unlock</span> <span class="n">tables</span><span class="p">;</span>
+<div class="highlight"><pre>#创建用于复制的账号
+GRANT REPLICATION SLAVE ON *.* TO ‘repl’ IDENTIFIED BY ‘slavepass’;
+#选择数据库
+mysql&gt; use dbname;
+#设置表为只读
+mysql&gt; FLUSH TABLES WITH READ LOCK；
+#备份数据库文件zip
+#显示并记录日志文件名和状态，需要在从服务器设置
+mysql&gt; SHOW MASTER STATUS;
++—————+———-+————–+——————+
+| File          | Position | Binlog_Do_DB | Binlog_Ignore_DB |
++—————+———-+————–+——————+
+| mysql-bin.003 | 73       | test         | manual,mysql     |
++—————+———-+————–+——————+
+#数据表解锁
+mysql&gt; unlock tables;
 </pre></div>
 
 
 <h3>从服务器</h3>
 <p>把从主服务器备份的文件在从服务器恢复</p>
-<div class="highlight"><pre><span class="cp">#设置主服务器信息</span>
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="n">CHANGE</span> <span class="n">MASTER</span> <span class="n">TO</span>
-           <span class="o">-&gt;</span>  <span class="n">MASTER_HOST</span><span class="o">=</span><span class="err">’</span><span class="mf">192.168.113.128</span><span class="err">′</span><span class="p">,</span>
-            <span class="o">-&gt;</span>  <span class="n">MASTER_PORT</span><span class="o">=</span><span class="mi">3306</span><span class="p">,</span>   
-           <span class="o">-&gt;</span>  <span class="n">MASTER_USER</span><span class="o">=</span><span class="err">’</span><span class="n">repl</span><span class="err">’</span><span class="p">,</span>
-           <span class="o">-&gt;</span>  <span class="n">MASTER_PASSWORD</span><span class="o">=</span><span class="err">’</span><span class="n">slavepass</span><span class="err">’</span><span class="p">,</span>
-           <span class="o">-&gt;</span>  <span class="n">MASTER_LOG_FILE</span><span class="o">=</span><span class="err">’</span><span class="n">recorded_log_file_name</span><span class="err">’</span><span class="p">,</span>
-           <span class="o">-&gt;</span>  <span class="n">MASTER_LOG_POS</span><span class="o">=</span><span class="n">recorded_log_position</span><span class="p">;</span>
-<span class="cp">#启动</span>
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="n">START</span> <span class="n">SLAVE</span><span class="p">;</span>
-<span class="cp">#显示状态 查看状态</span>
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="n">Show</span> <span class="n">slave</span> <span class="n">status</span><span class="err">\</span><span class="n">G</span><span class="p">;</span>
+<div class="highlight"><pre>#设置主服务器信息
+mysql&gt; CHANGE MASTER TO
+           -&gt;  MASTER_HOST=’192.168.113.128′,
+            -&gt;  MASTER_PORT=3306,   
+           -&gt;  MASTER_USER=’repl’,
+           -&gt;  MASTER_PASSWORD=’slavepass’,
+           -&gt;  MASTER_LOG_FILE=’recorded_log_file_name’,
+           -&gt;  MASTER_LOG_POS=recorded_log_position;
+#启动
+mysql&gt; START SLAVE;
+#显示状态 查看状态
+mysql&gt; Show slave status\G;
 </pre></div>
 
 
-<div class="highlight"><pre><span class="err">配置文件</span><span class="n">mysql</span><span class="p">.</span><span class="n">ini</span>
-<span class="n">mysql</span><span class="p">.</span><span class="n">ini</span>
-<span class="n">server</span><span class="o">-</span><span class="n">id</span> <span class="o">=</span><span class="mi">411</span>
-<span class="cp">#排除不需要同步的表</span>
-<span class="n">replicate_ignore_table</span><span class="o">=</span><span class="n">TD_OA</span><span class="p">.</span><span class="n">SYS_LOG</span>
+<div class="highlight"><pre>配置文件mysql.ini
+mysql.ini
+server-id =411
+#排除不需要同步的表
+replicate_ignore_table=TD_OA.SYS_LOG
 </pre></div>
 
 
@@ -140,52 +140,27 @@
 <h4>Pages</h4>
 
  <ul>
-      <li><a href="http://www.dqw.me/pages/about.html">About</a></li>
+      <li><a href="http://dqw.github.io/pages/about.html">About</a></li>
   </ul>
 
 <h4>Categories</h4>
 <ul>
-		<li><a href="http://www.dqw.me/category/apache.html">apache</a></li>
-		<li><a href="http://www.dqw.me/category/centos.html">centos</a></li>
-		<li><a href="http://www.dqw.me/category/dokuwiki.html">dokuwiki</a></li>
-		<li><a href="http://www.dqw.me/category/javascript.html">javascript</a></li>
-		<li><a href="http://www.dqw.me/category/linux.html">Linux</a></li>
-		<li><a href="http://www.dqw.me/category/macos.html">macos</a></li>
-		<li><a href="http://www.dqw.me/category/mysql.html">MySQL</a></li>
-		<li><a href="http://www.dqw.me/category/other.html">other</a></li>
-		<li><a href="http://www.dqw.me/category/pelican.html">pelican</a></li>
-		<li><a href="http://www.dqw.me/category/php.html">php</a></li>
-		<li><a href="http://www.dqw.me/category/xie-yi.html">协议</a></li>
+		<li><a href="http://dqw.github.io/category/apache.html">apache</a></li>
+		<li><a href="http://dqw.github.io/category/centos.html">centos</a></li>
+		<li><a href="http://dqw.github.io/category/dokuwiki.html">dokuwiki</a></li>
+		<li><a href="http://dqw.github.io/category/javascript.html">javascript</a></li>
+		<li><a href="http://dqw.github.io/category/linux.html">Linux</a></li>
+		<li><a href="http://dqw.github.io/category/macos.html">macos</a></li>
+		<li><a href="http://dqw.github.io/category/mysql.html">mysql</a></li>
+		<li><a href="http://dqw.github.io/category/other.html">other</a></li>
+		<li><a href="http://dqw.github.io/category/pelican.html">pelican</a></li>
+		<li><a href="http://dqw.github.io/category/php.html">php</a></li>
+		<li><a href="http://dqw.github.io/category/xie-yi.html">协议</a></li>
 </ul>
 
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/github.html">github</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/pelican.html">pelican</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/.html"></a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/ubuntu.html">Ubuntu</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/http.html">http</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/nginx.html">nginx</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/suo-yin.html">索引</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/https.html">https</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/macos.html">macos</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/replication.html">replication</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/cconv.html">cconv</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/centos.html">centos</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/apache.html">apache</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/homebrew.html">homebrew</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/xie-yi.html">协议</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/rewrite.html">rewrite</a></li>
-	    <li class="tag-0"><a href="http://www.dqw.me/tag/mysql.html">mysql</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/vga.html">VGA</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/dokuwiki.html">dokuwiki</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/php.html">php</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/cookie.html">cookie</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/fen-bian-lu.html">分辨率</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/shu-zu.html">数组</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/javascript.html">javascript</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/zim.html">zim</a></li>
 </ul>
 
 
@@ -241,9 +216,9 @@
     </div>
 
 
-  <script src="http://www.dqw.me/theme/js/libs/jquery-1.9.1.min.js"></script>
-  <script src="http://www.dqw.me/theme/js/libs/gumby.min.js"></script>
-  <script src="http://www.dqw.me/theme/js/plugins.js"></script>
+  <script src="http://dqw.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://dqw.github.io/theme/js/libs/gumby.min.js"></script>
+  <script src="http://dqw.github.io/theme/js/plugins.js"></script>
 
 </body>
 </html>

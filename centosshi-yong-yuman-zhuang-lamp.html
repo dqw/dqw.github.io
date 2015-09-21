@@ -4,17 +4,17 @@
 
         <title>CentOS使用yum安装lamp</title>
         <meta charset="utf-8" />
-        <link href="http://www.dqw.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DQW's Blog Full Atom Feed" />
+        <link href="http://dqw.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DQW's Blog Full Atom Feed" />
 
 
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="http://www.dqw.me/theme/gumby.css" />
-        <link rel="stylesheet" type="text/css" href="http://www.dqw.me/theme/style.css" />
-        <link rel="stylesheet" type="text/css" href="http://www.dqw.me/theme/pygment.css" />
+        <link rel="stylesheet" type="text/css" href="http://dqw.github.io/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://dqw.github.io/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://dqw.github.io/theme/pygment.css" />
 
-        <script src="http://www.dqw.me/theme/js/libs/modernizr-2.6.2.min.js"></script>
+        <script src="http://dqw.github.io/theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
 
@@ -31,16 +31,16 @@
         <div class="row">
 
           <header id="banner" class="body">
-                  <h1><a href="http://www.dqw.me">DQW's Blog <strong>用适合的技术解决实际的问题</strong></a></h1>
+                  <h1><a href="http://dqw.github.io">DQW's Blog <strong>用适合的技术解决实际的问题</strong></a></h1>
           </header><!-- /#banner -->
 
             <div id="navigation" class="navbar row">
               <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
              
               <ul class="columns">
-                <li><a href="http://www.dqw.me">Home</a></li>
+                <li><a href="http://dqw.github.io">Home</a></li>
 
-                <li><a href="http://www.dqw.me/pages/about.html">About</a></li>
+                <li><a href="http://dqw.github.io/pages/about.html">About</a></li>
 
               </ul>
             </div>
@@ -53,111 +53,111 @@
 
             <header>
               <h2 class="entry-title">
-                <a href="http://www.dqw.me/centosshi-yong-yuman-zhuang-lamp.html" rel="bookmark"
+                <a href="http://dqw.github.io/centosshi-yong-yuman-zhuang-lamp.html" rel="bookmark"
                    title="Permalink to CentOS使用yum安装lamp">CentOS使用yum安装lamp</a></h2>
            
             </header>
             <footer class="post-info">
-              <abbr class="published" title="2013-10-08T22:47:00">
-                二 08 十月 2013
+              <abbr class="published" title="2013-10-08T22:47:00+08:00">
+                Tue 08 October 2013
               </abbr>
               <address class="vcard author">
-                By <a class="url fn" href="http://www.dqw.me/author/dqw.html">dqw</a>
+                By <a class="url fn" href="http://dqw.github.io/author/dqw.html">dqw</a>
               </address>
             </footer><!-- /.post-info -->
             <div class="entry-content">
               <h2>LAMP</h2>
-<div class="highlight"><pre><span class="n">yum</span> <span class="n">install</span> <span class="n">httpd</span> <span class="n">php</span> <span class="n">php</span><span class="o">-</span><span class="n">mysql</span> <span class="n">php</span><span class="o">-</span><span class="n">pecl</span><span class="o">-</span><span class="n">memcache</span> <span class="n">php</span><span class="o">-</span><span class="n">gd</span> <span class="n">php</span><span class="o">-</span><span class="n">mbstring</span> <span class="n">php</span><span class="o">-</span><span class="n">mcrypt</span> <span class="n">php</span><span class="o">-</span><span class="n">cli</span> <span class="n">php</span><span class="o">-</span><span class="n">common</span> <span class="n">php</span><span class="o">-</span><span class="n">pdo</span> <span class="n">php</span><span class="o">-</span><span class="n">pear</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span>
+<div class="highlight"><pre>yum install httpd php php-mysql php-pecl-memcache php-gd php-mbstring php-mcrypt php-cli php-common php-pdo php-pear mysql-server
 </pre></div>
 
 
 <h2>LNMP</h2>
-<div class="highlight"><pre><span class="cp"># Nginx源的版本比较新，或者用EPEL源里的也可以但版本比较老</span>
-<span class="n">rpm</span> <span class="o">-</span><span class="n">Uvh</span> <span class="n">http</span><span class="o">:</span><span class="c1">//nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm</span>
+<div class="highlight"><pre># Nginx源的版本比较新，或者用EPEL源里的也可以但版本比较老
+rpm -Uvh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
 </pre></div>
 
 
 <h3>安装软件包</h3>
-<div class="highlight"><pre><span class="n">yum</span> <span class="n">install</span> <span class="n">nginx</span> <span class="n">php</span><span class="o">-</span><span class="n">fpm</span> <span class="n">php</span><span class="o">-</span><span class="n">mysql</span> <span class="n">php</span><span class="o">-</span><span class="n">pecl</span><span class="o">-</span><span class="n">memcache</span> <span class="n">php</span><span class="o">-</span><span class="n">gd</span> <span class="n">php</span><span class="o">-</span><span class="n">mbstring</span> <span class="n">php</span><span class="o">-</span><span class="n">mcrypt</span> <span class="n">php</span><span class="o">-</span><span class="n">cli</span> <span class="n">php</span><span class="o">-</span><span class="n">common</span> <span class="n">php</span><span class="o">-</span><span class="n">pdo</span> <span class="n">php</span><span class="o">-</span><span class="n">pear</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span>
+<div class="highlight"><pre>yum install nginx php-fpm php-mysql php-pecl-memcache php-gd php-mbstring php-mcrypt php-cli php-common php-pdo php-pear mysql-server
 </pre></div>
 
 
 <h3>Nginx配置范例</h3>
-<div class="highlight"><pre><span class="cp">#/etc/nginx/conf.d/default.conf</span>
+<div class="highlight"><pre><span class="err">#</span><span class="o">/</span><span class="nt">etc</span><span class="o">/</span><span class="nt">nginx</span><span class="o">/</span><span class="nt">conf</span><span class="nc">.d</span><span class="o">/</span><span class="nt">default</span><span class="nc">.conf</span>
 
-<span class="cp">#</span>
-<span class="cp"># The default server</span>
-<span class="cp">#</span>
-<span class="n">server</span> <span class="p">{</span>
-    <span class="n">listen</span>       <span class="mi">80</span> <span class="n">default_server</span><span class="p">;</span>
+<span class="err">#</span>
+<span class="err">#</span> <span class="nt">The</span> <span class="nt">default</span> <span class="nt">server</span>
+<span class="err">#</span>
+<span class="nt">server</span> <span class="p">{</span>
+    <span class="n">listen</span>       <span class="m">80</span> <span class="n">default_server</span><span class="p">;</span>
     <span class="n">server_name</span>  <span class="n">_</span><span class="p">;</span>
 
-    <span class="err">#</span><span class="n">charset</span> <span class="n">koi8</span><span class="o">-</span><span class="n">r</span><span class="p">;</span>
+    <span class="m">#charse</span><span class="n">t</span> <span class="n">koi8</span><span class="o">-</span><span class="n">r</span><span class="p">;</span>
 
-    <span class="err">#</span><span class="n">access_log</span>  <span class="n">logs</span><span class="o">/</span><span class="n">host</span><span class="p">.</span><span class="n">access</span><span class="p">.</span><span class="n">log</span>  <span class="n">main</span><span class="p">;</span>
+    <span class="m">#access</span><span class="n">_log</span>  <span class="n">logs</span><span class="o">/</span><span class="n">host</span><span class="o">.</span><span class="n">access</span><span class="o">.</span><span class="n">log</span>  <span class="n">main</span><span class="p">;</span>
 
-    <span class="n">location</span> <span class="o">/</span> <span class="p">{</span>
+    <span class="n">location</span> <span class="o">/</span> <span class="err">{</span>
         <span class="n">root</span>   <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">html</span><span class="p">;</span>
-        <span class="n">index</span>  <span class="n">index</span><span class="p">.</span><span class="n">html</span> <span class="n">index</span><span class="p">.</span><span class="n">htm</span><span class="p">;</span>
+        <span class="n">index</span>  <span class="n">index</span><span class="o">.</span><span class="n">html</span> <span class="n">index</span><span class="o">.</span><span class="n">htm</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="n">error_page</span>  <span class="mi">404</span>              <span class="o">/</span><span class="mf">404.</span><span class="n">html</span><span class="p">;</span>
-    <span class="n">location</span> <span class="o">=</span> <span class="o">/</span><span class="mf">404.</span><span class="n">html</span> <span class="p">{</span>
+    <span class="nt">error_page</span>  <span class="nt">404</span>              <span class="o">/</span><span class="nt">404</span><span class="nc">.html</span><span class="o">;</span>
+    <span class="nt">location</span> <span class="o">=</span> <span class="o">/</span><span class="nt">404</span><span class="nc">.html</span> <span class="p">{</span>
         <span class="n">root</span>   <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">html</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="err">#</span> <span class="n">redirect</span> <span class="n">server</span> <span class="n">error</span> <span class="n">pages</span> <span class="n">to</span> <span class="n">the</span> <span class="k">static</span> <span class="n">page</span> <span class="o">/</span><span class="mi">50</span><span class="n">x</span><span class="p">.</span><span class="n">html</span>
+    <span class="err">#</span> <span class="nt">redirect</span> <span class="nt">server</span> <span class="nt">error</span> <span class="nt">pages</span> <span class="nt">to</span> <span class="nt">the</span> <span class="nt">static</span> <span class="nt">page</span> <span class="o">/</span><span class="nt">50x</span><span class="nc">.html</span>
     <span class="err">#</span>
-    <span class="n">error_page</span>   <span class="mi">500</span> <span class="mi">502</span> <span class="mi">503</span> <span class="mi">504</span>  <span class="o">/</span><span class="mi">50</span><span class="n">x</span><span class="p">.</span><span class="n">html</span><span class="p">;</span>
-    <span class="n">location</span> <span class="o">=</span> <span class="o">/</span><span class="mi">50</span><span class="n">x</span><span class="p">.</span><span class="n">html</span> <span class="p">{</span>
+    <span class="nt">error_page</span>   <span class="nt">500</span> <span class="nt">502</span> <span class="nt">503</span> <span class="nt">504</span>  <span class="o">/</span><span class="nt">50x</span><span class="nc">.html</span><span class="o">;</span>
+    <span class="nt">location</span> <span class="o">=</span> <span class="o">/</span><span class="nt">50x</span><span class="nc">.html</span> <span class="p">{</span>
         <span class="n">root</span>   <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">html</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="err">#</span> <span class="n">proxy</span> <span class="n">the</span> <span class="n">PHP</span> <span class="n">scripts</span> <span class="n">to</span> <span class="n">Apache</span> <span class="n">listening</span> <span class="n">on</span> <span class="mf">127.0.0.1</span><span class="o">:</span><span class="mi">80</span>
+    <span class="err">#</span> <span class="nt">proxy</span> <span class="nt">the</span> <span class="nt">PHP</span> <span class="nt">scripts</span> <span class="nt">to</span> <span class="nt">Apache</span> <span class="nt">listening</span> <span class="nt">on</span> <span class="nt">127</span><span class="nc">.0.0.1</span><span class="nd">:80</span>
     <span class="err">#</span>
-    <span class="err">#</span><span class="n">location</span> <span class="o">~</span> <span class="err">\</span><span class="p">.</span><span class="n">php</span><span class="err">$</span> <span class="p">{</span>
-    <span class="err">#</span>    <span class="n">proxy_pass</span>   <span class="n">http</span><span class="o">:</span><span class="c1">//127.0.0.1;</span>
+    <span class="nf">#location</span> <span class="o">~</span> <span class="err">\</span><span class="nc">.php</span><span class="o">$</span> <span class="p">{</span>
+    <span class="err">#</span>    <span class="n">proxy_pass</span>   <span class="n">http</span><span class="o">://</span><span class="m">127</span><span class="o">.</span><span class="m">0</span><span class="o">.</span><span class="m">0</span><span class="o">.</span><span class="m">1</span><span class="p">;</span>
     <span class="err">#</span><span class="p">}</span>
 
-    <span class="err">#</span> <span class="n">pass</span> <span class="n">the</span> <span class="n">PHP</span> <span class="n">scripts</span> <span class="n">to</span> <span class="n">FastCGI</span> <span class="n">server</span> <span class="n">listening</span> <span class="n">on</span> <span class="mf">127.0.0.1</span><span class="o">:</span><span class="mi">9000</span>
+    <span class="err">#</span> <span class="nt">pass</span> <span class="nt">the</span> <span class="nt">PHP</span> <span class="nt">scripts</span> <span class="nt">to</span> <span class="nt">FastCGI</span> <span class="nt">server</span> <span class="nt">listening</span> <span class="nt">on</span> <span class="nt">127</span><span class="nc">.0.0.1</span><span class="nd">:9000</span>
     <span class="err">#</span>
-    <span class="n">location</span> <span class="o">~</span> <span class="err">\</span><span class="p">.</span><span class="n">php</span><span class="err">$</span> <span class="p">{</span>
-        <span class="err">#</span><span class="n">root</span>           <span class="n">html</span><span class="p">;</span>
-        <span class="n">fastcgi_pass</span>   <span class="mf">127.0.0.1</span><span class="o">:</span><span class="mi">9000</span><span class="p">;</span>
-        <span class="n">fastcgi_index</span>  <span class="n">index</span><span class="p">.</span><span class="n">php</span><span class="p">;</span>
+    <span class="nt">location</span> <span class="o">~</span> <span class="err">\</span><span class="nc">.php</span><span class="o">$</span> <span class="p">{</span>
+        <span class="m">#root</span>           <span class="n">html</span><span class="p">;</span>
+        <span class="n">fastcgi_pass</span>   <span class="m">127</span><span class="o">.</span><span class="m">0</span><span class="o">.</span><span class="m">0</span><span class="o">.</span><span class="m">1</span><span class="o">:</span><span class="m">9000</span><span class="p">;</span>
+        <span class="n">fastcgi_index</span>  <span class="n">index</span><span class="o">.</span><span class="n">php</span><span class="p">;</span>
 
         <span class="err">#</span> <span class="err">这行也要修改为实际路径</span>
         <span class="n">fastcgi_param</span>  <span class="n">SCRIPT_FILENAME</span>  <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">html</span><span class="err">$</span><span class="n">fastcgi_script_name</span><span class="p">;</span>
         <span class="n">include</span>        <span class="n">fastcgi_params</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="err">#</span> <span class="n">deny</span> <span class="n">access</span> <span class="n">to</span> <span class="p">.</span><span class="n">htaccess</span> <span class="n">files</span><span class="p">,</span> <span class="k">if</span> <span class="n">Apache</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">document</span> <span class="n">root</span>
-    <span class="err">#</span> <span class="n">concurs</span> <span class="n">with</span> <span class="n">nginx</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">one</span>
+    <span class="err">#</span> <span class="nt">deny</span> <span class="nt">access</span> <span class="nt">to</span> <span class="nc">.htaccess</span> <span class="nt">files</span><span class="o">,</span> <span class="nt">if</span> <span class="nt">Apache</span><span class="s1">&#39;s document root</span>
+<span class="s1">    # concurs with nginx&#39;</span><span class="nt">s</span> <span class="nt">one</span>
     <span class="err">#</span>
-    <span class="err">#</span><span class="n">location</span> <span class="o">~</span> <span class="o">/</span><span class="err">\</span><span class="p">.</span><span class="n">ht</span> <span class="p">{</span>
+    <span class="nf">#location</span> <span class="o">~</span> <span class="o">/</span><span class="err">\</span><span class="nc">.ht</span> <span class="p">{</span>
     <span class="err">#</span>    <span class="n">deny</span>  <span class="n">all</span><span class="p">;</span>
     <span class="err">#</span><span class="p">}</span>
-<span class="p">}</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <h3>手动启动服务</h3>
-<div class="highlight"><pre><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">nginx</span> <span class="n">start</span>
-<span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">php</span><span class="o">-</span><span class="n">fpm</span> <span class="n">start</span>
-<span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">mysqld</span> <span class="n">start</span>
+<div class="highlight"><pre>/etc/init.d/nginx start
+/etc/init.d/php-fpm start
+/etc/init.d/mysqld start
 </pre></div>
 
 
 <h3>开机自启动</h3>
-<div class="highlight"><pre><span class="n">chkconfig</span> <span class="n">nginx</span> <span class="n">on</span>
-<span class="n">chkconfig</span> <span class="n">php</span><span class="o">-</span><span class="n">fpm</span> <span class="n">on</span>
-<span class="n">chkconfig</span> <span class="n">mysqld</span> <span class="n">on</span>
+<div class="highlight"><pre>chkconfig nginx on
+chkconfig php-fpm on
+chkconfig mysqld on
 </pre></div>
 
 
 <h2>开放端口</h2>
-<div class="highlight"><pre><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">iptables</span> <span class="o">-</span><span class="n">I</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">--</span><span class="n">dport</span> <span class="mi">80</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
-<span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">rc</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">iptables</span> <span class="n">save</span>
+<div class="highlight"><pre>/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+/etc/rc.d/init.d/iptables save
 </pre></div>
             </div><!-- /.entry-content -->
 
@@ -169,52 +169,27 @@
 <h4>Pages</h4>
 
  <ul>
-      <li><a href="http://www.dqw.me/pages/about.html">About</a></li>
+      <li><a href="http://dqw.github.io/pages/about.html">About</a></li>
   </ul>
 
 <h4>Categories</h4>
 <ul>
-		<li><a href="http://www.dqw.me/category/apache.html">apache</a></li>
-		<li><a href="http://www.dqw.me/category/centos.html">centos</a></li>
-		<li><a href="http://www.dqw.me/category/dokuwiki.html">dokuwiki</a></li>
-		<li><a href="http://www.dqw.me/category/javascript.html">javascript</a></li>
-		<li><a href="http://www.dqw.me/category/linux.html">Linux</a></li>
-		<li><a href="http://www.dqw.me/category/macos.html">macos</a></li>
-		<li><a href="http://www.dqw.me/category/mysql.html">MySQL</a></li>
-		<li><a href="http://www.dqw.me/category/other.html">other</a></li>
-		<li><a href="http://www.dqw.me/category/pelican.html">pelican</a></li>
-		<li><a href="http://www.dqw.me/category/php.html">php</a></li>
-		<li><a href="http://www.dqw.me/category/xie-yi.html">协议</a></li>
+		<li><a href="http://dqw.github.io/category/apache.html">apache</a></li>
+		<li><a href="http://dqw.github.io/category/centos.html">centos</a></li>
+		<li><a href="http://dqw.github.io/category/dokuwiki.html">dokuwiki</a></li>
+		<li><a href="http://dqw.github.io/category/javascript.html">javascript</a></li>
+		<li><a href="http://dqw.github.io/category/linux.html">Linux</a></li>
+		<li><a href="http://dqw.github.io/category/macos.html">macos</a></li>
+		<li><a href="http://dqw.github.io/category/mysql.html">mysql</a></li>
+		<li><a href="http://dqw.github.io/category/other.html">other</a></li>
+		<li><a href="http://dqw.github.io/category/pelican.html">pelican</a></li>
+		<li><a href="http://dqw.github.io/category/php.html">php</a></li>
+		<li><a href="http://dqw.github.io/category/xie-yi.html">协议</a></li>
 </ul>
 
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/github.html">github</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/pelican.html">pelican</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/.html"></a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/ubuntu.html">Ubuntu</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/http.html">http</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/nginx.html">nginx</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/suo-yin.html">索引</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/https.html">https</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/macos.html">macos</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/replication.html">replication</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/cconv.html">cconv</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/centos.html">centos</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/apache.html">apache</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/homebrew.html">homebrew</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/xie-yi.html">协议</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/rewrite.html">rewrite</a></li>
-	    <li class="tag-0"><a href="http://www.dqw.me/tag/mysql.html">mysql</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/vga.html">VGA</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/dokuwiki.html">dokuwiki</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/php.html">php</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/cookie.html">cookie</a></li>
-	    <li class="tag-2"><a href="http://www.dqw.me/tag/fen-bian-lu.html">分辨率</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/shu-zu.html">数组</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/javascript.html">javascript</a></li>
-	    <li class="tag-4"><a href="http://www.dqw.me/tag/zim.html">zim</a></li>
 </ul>
 
 
@@ -270,9 +245,9 @@
     </div>
 
 
-  <script src="http://www.dqw.me/theme/js/libs/jquery-1.9.1.min.js"></script>
-  <script src="http://www.dqw.me/theme/js/libs/gumby.min.js"></script>
-  <script src="http://www.dqw.me/theme/js/plugins.js"></script>
+  <script src="http://dqw.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://dqw.github.io/theme/js/libs/gumby.min.js"></script>
+  <script src="http://dqw.github.io/theme/js/plugins.js"></script>
 
 </body>
 </html>
